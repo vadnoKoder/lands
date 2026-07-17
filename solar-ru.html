@@ -139,6 +139,18 @@ footer{padding:34px 0;text-align:center;color:var(--ink3);font-size:13px}
   .sticky{display:block}
   .nav-in .btn{display:none}
 }
+
+/* LIGHTBOX */
+.shot{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:300;background:rgba(20,18,15,.94);display:none;overflow:auto;padding:0}
+.lb.on{display:block}
+.lb-stage{min-height:100%;display:flex;align-items:center;justify-content:center;padding:56px 24px 64px}
+.lb img{display:block;max-width:100%;max-height:calc(100vh - 120px);object-fit:contain;border-radius:6px;cursor:zoom-in;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.lb img.zoom{max-width:none;max-height:none;width:1600px;cursor:zoom-out;border-radius:0}
+.lb-x{position:fixed;top:14px;right:20px;z-index:2;width:42px;height:42px;border-radius:50%;border:none;background:rgba(250,248,244,.14);color:#faf8f4;font-size:26px;line-height:1;cursor:pointer;transition:.2s}
+.lb-x:hover{background:rgba(250,248,244,.28)}
+.lb-cap{position:fixed;left:0;right:0;bottom:0;z-index:2;padding:13px 24px;background:rgba(20,18,15,.86);color:#faf8f4;opacity:.85;font-size:12.5px;line-height:1.45;text-align:center}
+@media(max-width:700px){.lb-stage{padding:52px 8px 60px}.lb img.zoom{width:1100px}}
 </style>
 </head>
 <body>
@@ -406,6 +418,46 @@ const io2 = new IntersectionObserver(es=>{
   es.forEach(e=>{ sticky.classList.toggle('hide', e.isIntersecting); });
 },{threshold:.1});
 io2.observe(document.getElementById('start'));
+
+// LIGHTBOX: клик по скрину открывает его крупно, повторный клик по картинке — зум до 100%
+(function(){
+  const lb = document.createElement('div');
+  lb.className = 'lb';
+  lb.innerHTML = '<button class="lb-x" aria-label="Закрыть">&times;</button>' +
+                 '<div class="lb-stage"><img alt=""></div>' +
+                 '<div class="lb-cap"></div>';
+  document.body.appendChild(lb);
+  const img = lb.querySelector('img');
+  const cap = lb.querySelector('.lb-cap');
+
+  function open(src, alt, caption){
+    img.src = src; img.alt = alt || '';
+    img.classList.remove('zoom');
+    cap.textContent = caption || '';
+    cap.style.display = caption ? 'block' : 'none';
+    lb.classList.add('on');
+    lb.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lb.classList.remove('on');
+    img.classList.remove('zoom');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.shot').forEach(function(el){
+    el.addEventListener('click', function(){
+      const note = el.nextElementSibling;
+      const caption = note && note.classList.contains('shot-note') ? note.textContent.trim() : '';
+      open(el.currentSrc || el.src, el.alt, caption);
+    });
+  });
+
+  img.addEventListener('click', function(e){ e.stopPropagation(); img.classList.toggle('zoom'); });
+  lb.querySelector('.lb-x').addEventListener('click', close);
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && lb.classList.contains('on')) close(); });
+})();
 </script>
 </body>
 </html>
