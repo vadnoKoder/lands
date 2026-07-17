@@ -25,6 +25,16 @@ a.item:hover{border-color:var(--accent);transform:translateY(-2px)}
 .tag{display:inline-block;background:var(--bg3);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:12px}
 .item h2{font-family:'Fraunces',serif;font-size:21px;font-weight:700;margin-bottom:7px}
 .item p{font-size:14.5px;color:var(--ink3)}
+.item-row{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;transition:.2s}
+.item-row:hover{border-color:var(--accent)}
+.item-row h2{font-family:'Fraunces',serif;font-size:21px;font-weight:700;margin-bottom:7px}
+.item-row p{font-size:14.5px;color:var(--ink3);margin-bottom:16px}
+.vers{display:flex;gap:10px;flex-wrap:wrap}
+.vers a{flex:1;min-width:150px;text-align:center;padding:11px 16px;border-radius:100px;text-decoration:none;font-size:13.5px;font-weight:700;transition:.2s;border:1px solid var(--border2, #cec6b5);color:var(--ink2)}
+.vers a:hover{border-color:var(--accent);color:var(--accent)}
+.vers a.dark{background:#000;color:#fff;border-color:#000}
+.vers a.dark:hover{background:#DD0510;border-color:#DD0510;color:#fff}
+.vers a.soon{opacity:.45;pointer-events:none}
 .sec{font-family:'Fraunces',serif;font-weight:900;font-size:26px;letter-spacing:-.02em;margin:52px 0 6px}
 .sec-sub{font-size:15px;color:var(--ink3);margin-bottom:22px;max-width:600px}
 .note{margin-top:40px;padding:22px 24px;background:var(--bg2);border-left:3px solid var(--accent);border-radius:10px;font-size:14.5px;color:var(--ink2)}
@@ -34,27 +44,39 @@ footer{text-align:center;color:var(--ink3);font-size:13px;padding-bottom:40px}
 <body>
 <div class="wrap">
   <h1>Материалы на проверку</h1>
-  <p class="sub">Три ленда и две статьи-лидмагнита, версии на русском. Украинские версии сделаю после ваших правок.</p>
+  <p class="sub">Три ленда и две статьи-лидмагнита, версии на русском. У solar есть два дизайна на выбор: текущий и в фирменном стиле. Украинские версии сделаю после ваших правок.</p>
 
   <h2 class="sec" style="margin-top:36px">Ленды</h2>
   <p class="sec-sub">Один ленд = одна ниша. Кейсы и цифры из кабинета, вход через бесплатный разбор.</p>
 
   <div class="list">
-    <a class="item" href="solar-ru.html">
+    <div class="item-row">
       <span class="tag">ИНВЕСТПРОЕКТЫ · УКРАИНА</span>
       <h2>Инвесторы с чеком от $35 000</h2>
       <p>Для тех, кто привлекает инвестиции в проект. 4 079 заявок за 17 месяцев, заявка с $16 до $7,56.</p>
-    </a>
-    <a class="item" href="nutra-ru.html">
+      <div class="vers">
+        <a href="solar-ru.html">Текущий дизайн</a>
+        <a href="solar-brand.html" class="dark">✳ В фирменном стиле</a>
+      </div>
+    </div>
+    <div class="item-row">
       <span class="tag">НУТРА · COD · ПОЛЬША</span>
       <h2>Нутра по COD</h2>
       <p>$260 в день с ценой заказа $4,63 при KPI клиента $6. Два года подряд.</p>
-    </a>
-    <a class="item" href="tovarka-ru.html">
+      <div class="vers">
+        <a href="nutra-ru.html">Текущий дизайн</a>
+        <a href="#" class="dark soon">В фирменном стиле — скоро</a>
+      </div>
+    </div>
+    <div class="item-row">
       <span class="tag">ТОВАРКА · COD · ПОЛЬША</span>
       <h2>Товарка по COD</h2>
       <p>С $7 до $249 в день, заказ $4,99 при KPI $6. 12 893 заказа за 14 месяцев.</p>
-    </a>
+      <div class="vers">
+        <a href="tovarka-ru.html">Текущий дизайн</a>
+        <a href="#" class="dark soon">В фирменном стиле — скоро</a>
+      </div>
+    </div>
   </div>
 
   <h2 class="sec">Статьи-лидмагниты</h2>
