@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заявки на инвестиции от $35 000 · Вадим Котивец</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4; --bg2:#f2eee6; --bg3:#eae5da; --card:#ffffff;
+  --ink:#1a1714; --ink2:#5c5449; --ink3:#8d8477;
+  --accent:#1a4a3c; --accent2:#123328;
+  --border:#e2dccf; --border2:#cec6b5;
+  --sans:'Mulish',sans-serif; --serif:'Fraunces',serif;
+  --r:12px; --r2:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);line-height:1.08;font-weight:900;letter-spacing:-.02em}
+section{padding:92px 0;border-bottom:1px solid var(--border)}
+.label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;display:block}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:1180px;margin:0 auto;padding:15px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:var(--serif);font-weight:900;font-size:17px;display:flex;align-items:center;gap:9px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.btn{background:var(--accent);color:#faf8f4;border:none;padding:13px 22px;border-radius:100px;font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.btn:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:var(--accent);background:var(--bg3)}
+
+/* HERO — минималистичный, одна цифра */
+.hero{padding:170px 0 88px;text-align:center;border-bottom:1px solid var(--border)}
+.hero h1{font-size:clamp(32px,4.4vw,58px);margin-bottom:26px;max-width:980px;margin-left:auto;margin-right:auto}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:19px;color:var(--ink2);max-width:760px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+.hero-btns .btn{padding:16px 30px;font-size:15px}
+.hero-micro{font-size:12.5px;color:var(--ink3);margin-top:18px}
+
+/* CASES — сразу после hero */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.case{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
+.case-top{padding:28px 28px 22px}
+.case-tag{display:inline-block;background:var(--bg3);border-radius:100px;padding:5px 13px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:15px}
+.case h3{font-size:22px;margin-bottom:9px}
+.case-desc{font-size:14px;color:var(--ink3)}
+.case-m{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.case-m div{background:var(--card);padding:17px 20px}
+.case-m .n{font-family:var(--serif);font-size:23px;font-weight:900;color:var(--ink)}
+.case-m .l{font-size:11.5px;color:var(--ink3);margin-top:3px}
+.case-sum{padding:19px 28px;font-size:14px;color:var(--accent);font-weight:700;background:var(--bg2);border-top:1px solid var(--border)}
+.shot{width:100%;display:block;border-top:1px solid var(--border)}
+.shot-note{padding:11px 28px;font-size:11px;color:var(--ink3);background:var(--bg2);border-top:1px solid var(--border)}
+
+/* DECODE */
+.dec-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:44px;align-items:start}
+.dec-text p{font-size:17px;color:var(--ink2);margin-bottom:17px}
+.dec-text strong{color:var(--ink)}
+.dec-arrows{display:grid;gap:16px}
+.dec-a{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;position:relative;padding-left:52px}
+.dec-a:before{content:'→';position:absolute;left:20px;top:20px;color:var(--accent);font-weight:700;font-size:17px}
+.dec-a h4{font-family:var(--serif);font-size:16px;margin-bottom:6px}
+.dec-a p{font-size:14px;color:var(--ink2)}
+
+/* CTA inline */
+.cta-inline{margin-top:52px;background:var(--accent);color:#faf8f4;border-radius:var(--r2);padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.cta-inline h3{font-size:24px;margin-bottom:9px;line-height:1.2}
+.cta-inline p{font-size:15px;opacity:.82;max-width:540px}
+.cta-inline .btn{background:#faf8f4;color:var(--accent);flex-shrink:0;padding:16px 28px;font-size:15px}
+.cta-inline .btn:hover{background:#fff}
+@media(max-width:700px){.cta-inline{flex-direction:column;text-align:center;align-items:stretch;padding:30px 24px}.cta-inline .btn{width:100%}}
+
+/* PAINS */
+.pains-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+.pain{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:26px}
+.pain h3{font-size:18px;margin-bottom:11px;line-height:1.25}
+.pain p{font-size:14.5px;color:var(--ink2)}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:26px}
+.step-b{display:inline-block;background:var(--accent);color:#faf8f4;border-radius:100px;padding:4px 12px;font-size:10.5px;font-weight:700;letter-spacing:.08em;margin-bottom:14px}
+.step h4{font-family:var(--serif);font-size:17px;margin-bottom:9px}
+.step p{font-size:14px;color:var(--ink2)}
+
+/* FAQ */
+.faq{margin-top:38px;max-width:840px}
+.fq{border-bottom:1px solid var(--border)}
+.fq button{width:100%;background:none;border:none;color:var(--ink);font-family:var(--serif);font-size:18px;font-weight:700;text-align:left;padding:22px 40px 22px 0;cursor:pointer;position:relative}
+.fq button:after{content:'+';position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--accent);font-size:24px;font-family:var(--sans);transition:.25s}
+.fq.on button:after{transform:translateY(-50%) rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.fq.on .fq-a{max-height:420px}
+.fq-a p{padding:0 0 22px;color:var(--ink2);font-size:15px}
+
+/* FINAL */
+.final{background:var(--accent);color:#faf8f4;border-bottom:none}
+.final .label{color:#faf8f4;opacity:.6}
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.final h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:18px}
+.get{list-style:none;margin-top:26px}
+.get li{padding:12px 0 12px 30px;position:relative;font-size:15px;opacity:.86;border-bottom:1px solid rgba(250,248,244,.13)}
+.get li:before{content:'✓';position:absolute;left:0;font-weight:700}
+.form-card{background:var(--card);border-radius:var(--r2);padding:32px;color:var(--ink)}
+.form-card h3{font-size:21px;margin-bottom:8px}
+.form-card>p{font-size:14px;color:var(--ink3);margin-bottom:22px}
+.field{margin-bottom:13px}
+.field input,.field select{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:13px 15px;color:var(--ink);font-family:var(--sans);font-size:14px;outline:none;transition:.2s}
+.field input:focus,.field select:focus{border-color:var(--accent)}
+.field input::placeholder{color:var(--ink3)}
+.form-card .btn{width:100%;padding:15px}
+.micro{font-size:11.5px;color:var(--ink3);margin-top:13px;line-height:1.5;text-align:center}
+.ok{display:none;text-align:center;padding:24px 8px}
+.ok.on{display:block}
+.ok-i{width:52px;height:52px;border-radius:50%;background:var(--accent);color:#faf8f4;font-size:25px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-weight:700}
+
+.sticky{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:90;transition:.3s;display:none}
+.sticky.hide{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(16px)}
+footer{padding:34px 0;text-align:center;color:var(--ink3);font-size:13px}
+
+@media(max-width:960px){
+  .dec-grid,.final-grid{grid-template-columns:1fr;gap:36px}
+  .cases{grid-template-columns:1fr}
+  .pains-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  section{padding:62px 0}
+  .hero{padding:130px 0 60px}
+  .pains-grid,.steps{grid-template-columns:1fr}
+  .sticky{display:block}
+  .nav-in .btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand"><span class="dot"></span>Вадим Котивец</div>
+    <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+  </div>
+</nav>
+
+<!-- HERO: одна цифра -->
+<header class="hero">
+  <div class="wrap">
+    <h1>Продаёте инвестиции в станцию <em>от $35 000</em>, а менеджеры звонят тем, кто просто посмотреть?</h1>
+    <p class="hero-sub">Вывожу инвестпроекты на <b style="color:var(--ink)">588 заявок в месяц по $7,56</b> от людей, которые понимают, что вход стоит десятки тысяч. На старте заявка была $16: сейчас вдвое дешевле при объёме в 6 раз выше. 4 079 заявок за 17 месяцев, бюджет $41 305, проект идёт до сих пор. За счёт своей методики партнёрского залива.</p>
+    <div class="hero-btns">
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Разберите мои цифры бесплатно →</a>
+    </div>
+    <p class="hero-micro">Ответ за 24 часа.</p>
+  </div>
+</header>
+
+<!-- CASES: сразу -->
+<section id="cases">
+  <div class="wrap">
+    <span class="label reveal">Цифры из кабинета, не из презентации</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px);max-width:760px">4 079 человек, готовых говорить про вход от $35 000</h2>
+    <div class="cases">
+      <div class="case reveal">
+        <div class="case-top">
+          <span class="case-tag">ИНВЕСТИЦИИ В СЭС · УКРАИНА · FACEBOOK</span>
+          <h3>17 месяцев, проект с нуля</h3>
+          <p class="case-desc">Компания привлекает инвестиции в солнечную электростанцию. Вход для инвестора — от $35 000. Рекламы до меня не было вообще.</p>
+        </div>
+        <div class="case-m">
+          <div><div class="n">$41 305</div><div class="l">открученный бюджет</div></div>
+          <div><div class="n">4 079</div><div class="l">заявок</div></div>
+          <div><div class="n">$10,13</div><div class="l">средняя заявка за весь период</div></div>
+          <div><div class="n">$7,56</div><div class="l">заявка сейчас</div></div>
+        </div>
+        <div class="case-sum">2025 год — $13,87 за заявку. 2026 — $8,03. Минус 42% при росте объёма.</div>
+        <img src="img/solar-campaigns.jpg" alt="Рекламный кабинет Facebook" class="shot">
+        <div class="shot-note">Скрин с кабинета: $41 403 и 4,6 млн показов. Сходится с посуточной выгрузкой до цента.</div>
+      </div>
+      <div class="case reveal">
+        <div class="case-top">
+          <span class="case-tag">ДИНАМИКА ПО МЕСЯЦАМ</span>
+          <h3>Как падала цена заявки</h3>
+          <p class="case-desc">Март 2025 — $16,04. Июнь 2026 — $7,56. Вдвое вниз, при том что объём вырос со 100 до 588 заявок в месяц.</p>
+        </div>
+        <div class="case-m">
+          <div><div class="n">100 → 588</div><div class="l">заявок в месяц</div></div>
+          <div><div class="n">×6</div><div class="l">рост объёма</div></div>
+          <div><div class="n">2 614</div><div class="l">заявок за 7 мес 2026</div></div>
+          <div><div class="n">1 465</div><div class="l">заявок за 11 мес 2025</div></div>
+        </div>
+        <div class="case-sum">За 7 месяцев 2026 заявок больше, чем за 11 месяцев 2025 — и почти вдвое дешевле</div>
+        <img src="img/solar-table.jpg" alt="Посуточная выгрузка по проекту" class="shot">
+        <div class="shot-note">Посуточная выгрузка: бюджет, показы, CPM, переходы, заявки, цена заявки — по каждому дню.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DECODE -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Расшифровка</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px);max-width:760px">Что эти цифры значат для вашего бизнеса</h2>
+    <div class="dec-grid">
+      <div class="dec-text reveal">
+        <p>Заявка стоила $16. Сейчас $7,56. <strong>Разница — $8,44 с каждой заявки.</strong></p>
+        <p>На дистанции этого проекта, 4 079 заявок, это больше <strong>$34 000</strong>, которые не ушли в Facebook. При входном чеке $35 000 это ровно один инвестор, купленный из воздуха. Вот почему в высоком чеке имеет смысл воевать за каждый доллар в цене заявки: разница конвертируется в сделки напрямую.</p>
+        <p>И вторая вещь, которую видно из этих цифр: <strong>цена заявки не падает сама.</strong> «Алгоритм обучится» — это не стратегия. Она упала в конкретный момент и по конкретной причине: за 17 месяцев с $16 до $7,56, а объём при этом вырос со 100 до 588 заявок в месяц.</p>
+      </div>
+      <div class="dec-arrows">
+        <div class="dec-a reveal">
+          <h4>$41 305 бюджета = 4 079 разговоров с инвестором</h4>
+          <p>Не кликов и не показов. Заявок от людей, которые понимают, что речь про вход от $35 000.</p>
+        </div>
+        <div class="dec-a reveal">
+          <h4>$16 → $7,56 за заявку = больше $34 000 сэкономленного бюджета</h4>
+          <p>Столько стоили бы те же 4 079 заявок по стартовой цене. Эти деньги остались у клиента.</p>
+        </div>
+        <div class="dec-a reveal">
+          <h4>17 месяцев работы = проверка на дистанции</h4>
+          <p>Никто не льёт полтора года и не поднимает дневной бюджет с $60 до $160, если сделок нет.</p>
+        </div>
+        <div class="dec-a reveal">
+          <h4>×6 объёма без роста цены = масштабируемая система</h4>
+          <p>Обычно при росте объёма цена ползёт вверх. Здесь она пошла вниз — и осталась там.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-inline reveal">
+      <div>
+        <h3>Узнали свою ситуацию — забирайте разбор бесплатно</h3>
+        <p>Отдаю бесплатно для инвестпроектов с бюджетом от $50 в день: посмотрю вашу цену заявки против рынка, скажу, почему менеджеры звонят тем, кто «просто посмотреть», и покажу, что мешает поднять объём. От вас — 20 минут и доступ к кабинету. С меня — всё остальное.</p>
+      </div>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Что происходит прямо сейчас</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px);max-width:760px">Четыре вещи, из-за которых заявки есть, а инвесторов нет</h2>
+    <div class="pains-grid">
+      <div class="pain reveal">
+        <h3>Менеджеры звонят тем, кто «просто посмотреть»</h3>
+        <p>Подрядчик отчитался дешёвым лидом и доволен. А отдел продаж весь день греет людей, которые никогда не занесут $35 000. Дешёвая заявка, с которой никто не берёт трубку, дороже нормальной.</p>
+      </div>
+      <div class="pain reveal">
+        <h3>Объём не масштабируется</h3>
+        <p>Поднимаете бюджет, заявка дорожает, экономика перестаёт сходиться. Откатываете назад. И так по кругу месяцами. У моего клиента объём вырос в 6 раз, а заявка при этом упала вдвое.</p>
+      </div>
+      <div class="pain reveal">
+        <h3>Цену заявки не с чем сравнить</h3>
+        <p>Ниша узкая, бенчмарков нет. Первые месяцы вы платите не за заявки, а за то, чтобы узнать рынок. Вопрос только, сколько это займёт и во сколько обойдётся.</p>
+      </div>
+      <div class="pain reveal">
+        <h3>Формат выбирают по цене, а не по качеству</h3>
+        <p>Сообщения в директ всегда дешевле лид-формы. Если смотреть только на цифру в кабинете, останетесь на дешёвом формате и завалите отдел продаж мусором.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Как это работало</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px);max-width:760px">Что конкретно сделали на проекте</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-b">ШАГ 01</span>
+        <h4>Протестировали три формата</h4>
+        <p>Лид-форма, сообщения в директ, трафик на сайт. Победила лид-форма — по балансу цены и качества, а не по цене.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-b">ШАГ 02</span>
+        <h4>Оставили $10 в день на директ</h4>
+        <p>Формат, проигравший в сплите, работает на свой сегмент: человек перед переводом крупной суммы хочет написать живому человеку и проверить, ответят ли.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-b">ШАГ 03</span>
+        <h4>Зашли в видео с реального объекта</h4>
+        <p>Не рендеры, а съёмки станции, которая физически стоит и работает. Это снимает вопрос «а меня не кинут на 35 тысяч?» ещё до звонка менеджера. Перелом дало именно оно: с декабря 2025 заявка стабильно ниже $9.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-b">ШАГ 04</span>
+        <h4>Дальше вы про трафик не думаете</h4>
+        <p>Дневной бюджет вырос с $60 до $160, объём со 100 до 588 заявок в месяц, цена ушла вниз вдвое. 17-й месяц подряд. Обычно при росте объёма цена ползёт вверх: здесь она пошла вниз и осталась там.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Вопросы</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px)">Что обычно спрашивают</h2>
+    <div class="faq">
+      <div class="fq reveal"><button onclick="tFaq(this)">Сколько из этих 4 079 заявок закрылось в сделки?</button><div class="fq-a"><p>Отвечу так, как есть: цифр по договорам у меня нет, клиент их не передавал, а придумывать их со ссылкой на NDA я не буду. Зато есть факт, который стоит дороже любой красивой цифры: проект идёт 17-й месяц, дневной бюджет за это время вырос с $60 до $160, а объём со 100 до 588 заявок в месяц. Никто не поднимает бюджет втрое и не льёт полтора года на продукт с входом $35 000, если сделок нет.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">Даёте гарантию цены заявки?</button><div class="fq-a"><p>Нет. Любой, кто гарантирует цену заявки до первых тестов, либо не понимает, о чём говорит, либо врёт: в узкой нише её не знает никто, пока не открутит бюджет. Что я могу — показать цифры за первые недели, и тогда будет предметный разговор.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">У нас не solar, другой инвестпроект. Подойдёт?</button><div class="fq-a"><p>Кейс не про солнечные панели. Он про один тип продукта: человек отдаёт вам десятки тысяч вперёд и до последней секунды думает «а меня не кинут?». Энергетика, недвижимость, фонды, любые проекты, где вы продаёте долю или вход от нескольких десятков тысяч, механика та же: снять недоверие до звонка, привести человека к разговору, а не к импульсной покупке. Если ваш продукт покупают на эмоции и за $200, я вам не нужен, и скажу это на первой минуте разбора.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">Какой нужен бюджет?</button><div class="fq-a"><p>Минимум, с которым берусь, $50 в день. Проект в кейсе шёл на $60–160 в день. Меньше $50 смысла нет: данных копится мало, и вы дольше и дороже нащупываете цену заявки. Конкретную цифру назову, когда посмотрю на ваш продукт и гео.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">Кто делает креативы?</button><div class="fq-a"><p>ТЗ, подходы и идеи — мои. Видео снимает дизайнер, баннеры делаю через свою ИИ-систему, обученную на моём опыте и креативах, которые реально отработали. Главное в этой нише — видео с реального объекта: снимать придётся вам или вашей команде, и это принципиально. Именно оно снимает возражение «а это существует?».</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">Что будет на бесплатном аудите?</button><div class="fq-a"><p>Посмотрю ваш кабинет и цифры, скажу, где вы теряете и почему заявка стоит столько, сколько стоит. Если проблема не в трафике — скажу и это. Никакой презентации услуг: либо у меня есть что предложить, либо нет, и вы узнаете об этом за один разговор.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="start">
+  <div class="wrap final-grid">
+    <div class="reveal">
+      <span class="label">Первый шаг</span>
+      <h2>Покажите цифры — скажу, почему до менеджеров не доходят инвесторы</h2>
+      <p style="opacity:.85;font-size:16.5px">Отдаю бесплатно для инвестпроектов с бюджетом от $50 в день. От вас — 20 минут и доступ к кабинету. С меня — всё остальное.</p>
+      <ul class="get">
+        <li>Оценю вашу цену заявки против рынка — честно, без «у вас всё плохо, платите мне»</li>
+        <li>Скажу, какой формат заявки везёт разговоры, а какой заваливает отдел продаж людьми «просто посмотреть»</li>
+        <li>Разберу, что мешает поднять бюджет без роста цены заявки</li>
+        <li>Покажу, где человек с $35 000 перестаёт вам верить, и что с этим делать</li>
+      </ul>
+    </div>
+    <div class="form-card reveal" id="f2">
+      <div id="f2-form">
+        <h3>Разбор ваших цифр</h3>
+        <p>Отвечу в течение 24 часов.</p>
+        <div class="field"><input type="text" placeholder="Имя" id="n2"></div>
+        <div class="field"><input type="text" placeholder="Telegram или телефон" id="c2"></div>
+        <div class="field">
+          <select id="s2">
+            <option value="">Тип проекта</option>
+            <option>Энергетика / solar</option>
+            <option>Недвижимость</option>
+            <option>Инвестфонд</option>
+            <option>Другой инвестпроект</option>
+          </select>
+        </div>
+        <div class="field">
+          <select id="b2">
+            <option value="">Бюджет в день</option>
+            <option>До $50</option>
+            <option>$50–150</option>
+            <option>$150–300</option>
+            <option>Больше $300</option>
+          </select>
+        </div>
+        <button class="btn" onclick="submitForm('f2-form','f2-ok')">Забрать разбор →</button>
+        <p class="micro">Без спама. Ответ за 24 часа.</p>
+      </div>
+      <div class="ok" id="f2-ok">
+        <div class="ok-i">✓</div>
+        <h3>Принято</h3>
+        <p style="margin-top:10px">Напишу в течение 24 часов. Подготовьте доступ к кабинету или выгрузку — разберём предметно.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn sticky" id="sticky">Забрать разбор →</a>
+
+<footer>
+  <div class="wrap">Вадим Котивец · таргетолог-партнёр для инвестпроектов с входом от $35 000 · <a href="https://t.me/VadimkT" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:700">@VadimkT</a></div>
+</footer>
+
+<script>
+function tFaq(btn){
+  const item = btn.parentElement;
+  const open = item.classList.contains('on');
+  document.querySelectorAll('.fq').forEach(f=>f.classList.remove('on'));
+  if(!open) item.classList.add('on');
+}
+// !!! ВНИМАНИЕ: форма НЕ отправляет данные — это заглушка.
+// НЕ публиковать лендинг в сеть, пока не подключён Telegram-бот или Formspree.
+// Иначе заявки будут пропадать, а люди — ждать ответа.
+function submitForm(formId, okId){
+  const f = document.getElementById(formId);
+  const ok = document.getElementById(okId);
+  const inputs = f.querySelectorAll('input');
+  let valid = true;
+  inputs.forEach(i=>{
+    if(!i.value.trim()){ i.style.borderColor = '#c0392b'; valid = false; }
+    else { i.style.borderColor = ''; }
+  });
+  if(!valid) return;
+  f.style.display = 'none';
+  ok.classList.add('on');
+}
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const sticky = document.getElementById('sticky');
+const io2 = new IntersectionObserver(es=>{
+  es.forEach(e=>{ sticky.classList.toggle('hide', e.isIntersecting); });
+},{threshold:.1});
+io2.observe(document.getElementById('start'));
+</script>
+</body>
+</html>

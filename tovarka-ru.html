@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Таргетолог-партнёр для товарки и COD — Вадим Котивец</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1a2d; --bg2:#122238; --bg3:#182c46; --card:#152740;
+  --ink:#f2f6fa; --ink2:#9fb0c4; --ink3:#67788c;
+  --accent:#e8c84a; --accent2:#d4b229;
+  --border:#22384f; --border2:#31485f;
+  --sans:'Mulish',sans-serif; --serif:'Unbounded',sans-serif;
+  --r:14px; --r2:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;font-weight:800;letter-spacing:-.02em}
+section{padding:96px 0;border-bottom:1px solid var(--border)}
+.label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;display:block}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,26,45,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:var(--serif);font-weight:800;font-size:17px;display:flex;align-items:center;gap:9px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.btn{background:var(--accent);color:#0d1a2d;border:none;padding:13px 22px;border-radius:100px;font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.btn:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--border2)}
+.btn-ghost:hover{background:var(--bg3);border-color:var(--accent)}
+
+/* HERO */
+.hero{padding:150px 0 84px;border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:56px;align-items:start}
+.hero h1{font-size:clamp(34px,4.6vw,60px);margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:19px;color:var(--ink2);margin-bottom:36px;max-width:560px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px}
+.stat-n{font-family:var(--serif);font-size:27px;font-weight:800;color:var(--accent);line-height:1}
+.stat-l{font-size:12px;color:var(--ink3);margin-top:7px;line-height:1.35}
+.ticker{background:var(--bg3);border:1px solid var(--border);border-radius:100px;padding:11px 20px;font-size:13px;color:var(--ink2);display:flex;align-items:center;gap:10px;overflow:hidden}
+.ticker .dot{flex-shrink:0}
+.form-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:30px;position:sticky;top:96px}
+.form-card h3{font-size:21px;margin-bottom:8px}
+.form-card p{font-size:14px;color:var(--ink3);margin-bottom:22px}
+.field{margin-bottom:13px}
+.field input,.field select{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:13px 15px;color:var(--ink);font-family:var(--sans);font-size:14px;outline:none;transition:.2s}
+.field input:focus,.field select:focus{border-color:var(--accent)}
+.field input::placeholder{color:var(--ink3)}
+.form-card .btn{width:100%;padding:15px}
+.micro{font-size:11.5px;color:var(--ink3);margin-top:13px;line-height:1.5;text-align:center}
+.ok{display:none;text-align:center;padding:26px 8px}
+.ok.on{display:block}
+.ok-i{width:52px;height:52px;border-radius:50%;background:var(--accent);color:#0d1a2d;font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-weight:700}
+
+/* PAINS */
+.pains-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.pain{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px;transition:.25s}
+.pain:hover{border-color:var(--border2);transform:translateY(-3px)}
+.pain-q{font-size:13px;color:var(--accent);font-weight:700;margin-bottom:12px;font-family:var(--serif)}
+.pain h3{font-size:19px;margin-bottom:12px;line-height:1.25}
+.pain p{font-size:14.5px;color:var(--ink2);margin-bottom:14px}
+.pain-cost{font-size:14px;font-weight:700;color:var(--ink);padding-top:13px;border-top:1px solid var(--border)}
+
+/* REASON */
+.reason{background:var(--accent);color:#0d1a2d;border-bottom:none}
+.reason .label{color:#0d1a2d;opacity:.62}
+.reason-in{max-width:840px;margin:0 auto;text-align:center}
+.arrow{font-size:34px;margin:22px 0;opacity:.4}
+.reason h2{font-size:clamp(30px,4vw,50px);margin-bottom:30px;letter-spacing:-.03em}
+.reason p{font-size:18.5px;margin-bottom:20px;text-align:left;opacity:.86}
+.reason-out{font-family:var(--serif);font-size:clamp(22px,2.8vw,32px);font-weight:800;margin-top:38px;padding-top:32px;border-top:2px solid rgba(13,26,45,.16);line-height:1.25}
+
+/* SOLUTION */
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:44px;align-items:start}
+.sol-text p{font-size:16.5px;color:var(--ink2);margin-bottom:17px}
+.sol-list{list-style:none;margin-top:26px}
+.sol-list li{padding:13px 0 13px 28px;border-bottom:1px solid var(--border);position:relative;font-size:15px;color:var(--ink)}
+.sol-list li:before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700}
+.sol-cards{display:grid;gap:14px}
+.sol-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.sol-card h4{font-family:var(--serif);font-size:17px;margin-bottom:9px;color:var(--accent)}
+.sol-card p{font-size:14px;color:var(--ink2)}
+
+/* COMPARE */
+.cmp{width:100%;border-collapse:collapse;margin-top:40px;font-size:14.5px}
+.cmp th{text-align:left;padding:16px;background:var(--bg3);font-family:var(--serif);font-size:15px;border-bottom:1px solid var(--border2)}
+.cmp th:last-child{color:var(--accent)}
+.cmp td{padding:15px 16px;border-bottom:1px solid var(--border);color:var(--ink2);vertical-align:top}
+.cmp td:first-child{color:var(--ink);font-weight:500;width:26%}
+.cmp td:last-child{color:var(--ink)}
+.cmp tr:hover td{background:var(--bg2)}
+.cmp-wrap{overflow-x:auto}
+
+/* CASES */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+.case{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column}
+.case-top{padding:26px 26px 20px}
+.case-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:100px;padding:5px 12px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.05em;margin-bottom:14px}
+.case h3{font-size:19px;margin-bottom:8px}
+.case-desc{font-size:13.5px;color:var(--ink3);margin-bottom:18px}
+.case-m{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.case-m div{background:var(--card);padding:15px}
+.case-m .n{font-family:var(--serif);font-size:20px;font-weight:800;color:var(--ink)}
+.case-m .l{font-size:11px;color:var(--ink3);margin-top:3px}
+.case-sum{padding:18px 26px;font-size:13.5px;color:var(--accent);font-weight:700;background:var(--bg2)}
+.shot{width:100%;display:block;border-top:1px solid var(--border);background:#fff}
+.shot-note{padding:11px 26px;font-size:11px;color:var(--ink3);background:var(--bg2);border-top:1px solid var(--border)}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.metric{text-align:center;padding:32px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--r2)}
+.metric .n{font-family:var(--serif);font-size:37px;font-weight:800;color:var(--accent);line-height:1}
+.metric .l{font-size:13px;color:var(--ink2);margin-top:11px}
+
+/* FAQ */
+.faq{margin-top:40px;max-width:840px}
+.fq{border-bottom:1px solid var(--border)}
+.fq button{width:100%;background:none;border:none;color:var(--ink);font-family:var(--serif);font-size:17.5px;font-weight:700;text-align:left;padding:22px 40px 22px 0;cursor:pointer;position:relative}
+.fq button:after{content:'+';position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--accent);font-size:24px;font-family:var(--sans);transition:.25s}
+.fq.on button:after{transform:translateY(-50%) rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.fq.on .fq-a{max-height:400px}
+.fq-a p{padding:0 0 22px;color:var(--ink2);font-size:15px}
+
+/* FINAL */
+.final{background:var(--bg2);border-bottom:none}
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.final h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:20px}
+.get{list-style:none;margin-top:26px}
+.get li{padding:12px 0 12px 30px;position:relative;color:var(--ink2);font-size:15px;border-bottom:1px solid var(--border)}
+.get li:before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
+
+.cta-inline{margin-top:54px;background:var(--bg3);border:1px solid var(--accent);border-radius:var(--r2);padding:34px 38px;display:flex;justify-content:space-between;align-items:center;gap:30px;position:relative;overflow:hidden}
+.cta-inline:before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+.cta-inline h3{font-size:23px;margin-bottom:9px;line-height:1.2}
+.cta-inline p{font-size:15px;color:var(--ink2);max-width:520px}
+.cta-inline .btn{flex-shrink:0;padding:16px 28px;font-size:15px}
+@media(max-width:700px){.cta-inline{flex-direction:column;text-align:center;padding:30px 22px;align-items:stretch}.cta-inline .btn{width:100%}}
+
+/* STICKY */
+.sticky{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:90;transition:.3s;display:none}
+.sticky.hide{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(16px)}
+footer{padding:36px 0;text-align:center;color:var(--ink3);font-size:13px}
+
+@media(max-width:960px){
+  .hero-grid,.sol-grid,.final-grid{grid-template-columns:1fr;gap:36px}
+  .form-card{position:static}
+  .pains-grid,.cases{grid-template-columns:1fr 1fr}
+  .metrics{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  section{padding:64px 0}
+  .hero{padding:120px 0 60px}
+  .pains-grid,.cases,.metrics,.stats{grid-template-columns:1fr}
+  .sticky{display:block}
+  .nav-in .btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand"><span class="dot"></span>vadim_kotivets</div>
+    <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Получить разбор →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Ваш таргетолог радуется дешёвому заказу, а склад забит невыкупом? <em>Гоните его в шею</em></h1>
+      <p class="hero-sub">В товарке маржа тонкая: дешёвый заказ с плохим выкупом это убыток, который в кабинете выглядит как победа. Разогнал товарку клиента <b style="color:var(--ink)">с $7 до $249 в день</b> и держал <b style="color:var(--ink)">заказ $4,99 при его KPI $6</b> — 12 893 заказа, за 14 месяцев работы один выход за планку. За счёт своей методики партнёрского залива.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">$4,99</div><div class="stat-l">средний заказ за всё время при KPI $6</div></div>
+        <div class="stat"><div class="stat-n">$408</div><div class="stat-l">пик в день по клиенту — товарка и нутра вместе</div></div>
+        <div class="stat"><div class="stat-n">1 из 14</div><div class="stat-l">месяцев с выходом за KPI</div></div>
+      </div>
+      <div class="ticker"><span class="dot"></span> Сейчас в работе: COD-направления, Польша — второй год с тем же клиентом</div>
+    </div>
+    <div class="form-card" id="f1">
+      <div id="f1-form">
+        <h3>Бесплатный разбор</h3>
+        <p>Посмотрю ваши цифры и скажу, где вы упираетесь в потолок. Без продажи в лоб.</p>
+        <div class="field"><input type="text" placeholder="Имя" id="n1"></div>
+        <div class="field"><input type="text" placeholder="Telegram или телефон" id="c1"></div>
+        <div class="field">
+          <select id="s1">
+            <option value="">Направление</option>
+            <option>Товарка</option>
+            <option>Нутра / БАДы</option>
+            <option>Товарка + нутра</option>
+            <option>Другое COD</option>
+          </select>
+        </div>
+        <div class="field">
+          <select id="b1">
+            <option value="">Текущий бюджет в день</option>
+            <option>До $100</option>
+            <option>$100–300</option>
+            <option>$300–1000</option>
+            <option>Больше $1000</option>
+          </select>
+        </div>
+        <button class="btn" onclick="submitForm('f1-form','f1-ok')">Получить разбор →</button>
+        <p class="micro">Без спама. Отвечу за 24 часа. Разбор ваших цифр, а не презентация.</p>
+      </div>
+      <div class="ok" id="f1-ok">
+        <div class="ok-i">✓</div>
+        <h3>Принято</h3>
+        <p style="margin-top:10px">Напишу в течение 24 часов. Подготовьте выгрузку по спенду и заказам — разберём предметно.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PAINS -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Что происходит прямо сейчас</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px);max-width:760px">Четыре вещи, из-за которых товарка не приносит денег</h2>
+    <div class="pains-grid">
+      <div class="pain reveal">
+        <div class="pain-q">01</div>
+        <h3>Дешёвый заказ, а прибыли нет</h3>
+        <p>В кабинете красиво: заказ по $4. А на складе лежит товар, который никто не выкупил. Байер отчитался, деньги ушли, прибыли нет.</p>
+        <div class="pain-cost">Заказ по $4 с выкупом 50% хуже, чем по $5,20 с выкупом 80%</div>
+      </div>
+      <div class="pain reveal">
+        <div class="pain-q">02</div>
+        <h3>Маржа не прощает</h3>
+        <p>Товар дешевле БАДов, наценка меньше. В нутре заказ по $5,50 ещё можно пережить — в товарке он уже съедает прибыль. KPI тут не пожелание, а выключатель.</p>
+        <div class="pain-cost">Каждый доллар перерасхода — минус из вашего кармана</div>
+      </div>
+      <div class="pain reveal">
+        <div class="pain-q">03</div>
+        <h3>Потолок объёма</h3>
+        <p>Поднимаешь бюджет — цена заказа ползёт вверх и экономика перестаёт сходиться. Откатываешь назад. И так по кругу месяцами.</p>
+        <div class="pain-cost">Объём стоит на $100/день вместо $249</div>
+      </div>
+      <div class="pain reveal">
+        <div class="pain-q">04</div>
+        <h3>Кабинеты горят</h3>
+        <p>Бан — залив встал. Пока поднимаешь новый кабинет и переучиваешь кампании, обороты падают, а цена на перезапуске улетает.</p>
+        <div class="pain-cost">Месяц на восстановление вместо месяца роста. У меня за 2 года — 2 кабинета из 10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASON -->
+<section class="reason">
+  <div class="wrap reason-in">
+    <span class="label">Главная причина</span>
+    <div class="arrow">↓</div>
+    <h2>Байер не в доле</h2>
+    <p>Все четыре проблемы выше — не про лень и не про квалификацию. Они про то, как устроены деньги.</p>
+    <p>Наёмному байеру платят за процесс: за настройку, за ведение, за открученный бюджет. Поэтому он и приносит процесс — клики, показы, «мы протестировали». Он не видит вашего склада, не считает выкуп, не знает вашей маржи. И не должен: ему за это не платят.</p>
+    <p>Отсюда всё остальное. Зачем строить инфраструктуру из десяти кабинетов, если можно лить в один, пока он не сгорит? Зачем говорить, что офер выгорел, если процент капает с бюджета? Зачем лезть в выкуп, если в кабинете и так «дешёвый лид»?</p>
+    <div class="reason-out">Вам не нужен человек, который настраивает рекламу.<br>Вам нужен человек, который считает ваши деньги как свои.</div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Противоядие</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px);max-width:760px">Таргетолог-партнёр, а не наёмный байер</h2>
+    <div class="sol-grid">
+      <div class="sol-text reveal">
+        <p>Я захожу в проект как партнёр, а не как исполнитель задач. Смотрю на цифры как предприниматель: не на цену клика в кабинете, а на то, что доехало до склада и сколько на этом заработал владелец.</p>
+        <p>Я отслеживаю всю цепочку — от креатива до выкупа — и говорю вам правду, даже когда она мне невыгодна. Ровно поэтому этот клиент со мной второй год, а не третий байер подряд.</p>
+        <p>Клиент, с которым мы разгоняли товарку, начинал с трёх байеров одновременно — раздал всем бюджеты и смотрел, кто что привезёт. Остался со мной. А когда оферы выгорели, я сам предложил закрыть направление и переложить бюджет туда, где он работает — хотя мог бы тянуть его и дальше, пока капает процент.</p>
+        <ul class="sol-list">
+          <li>8 лет на белом и сером трафике: знаю, как обходить правила и работать с банами</li>
+          <li>Работаю только с прямыми реклами по COD: считаю вашу маржу и выкуп, а не цену клика</li>
+          <li>ТЗ, подходы и идеи к креативам — мои. Вам не надо приносить гипотезы и потом проверять, сделали ли их</li>
+          <li>Скажу вслух, когда офер выгорел, и предложу, куда переложить бюджет</li>
+        </ul>
+      </div>
+      <div class="sol-cards">
+        <div class="sol-card reveal">
+          <h4>Инфраструктура, а не один кабинет</h4>
+          <p>За два года — 10 кабинетов: часть крутит постоянно, часть подключаем под новые заливы. Объём растёт не тогда, когда вы поднимаете бюджет, а когда его есть куда переложить.</p>
+        </div>
+        <div class="sol-card reveal">
+          <h4>Авторский подход в работе с банами</h4>
+          <p>2 потерянных кабинета из 10 за два года на серой нише. Отклонов почти не было. Это наработанные подходы к текстам на сайте и креативах, а не везение.</p>
+        </div>
+        <div class="sol-card reveal">
+          <h4>Считаю по выкупу, а не по кабинету</h4>
+          <p>В товарке с тонкой маржей дешёвый заказ с плохим выкупом — это убыток, который выглядит как победа. Прямой рекл даёт доступ к реальной экономике: видно не CPL, а что доехало до склада.</p>
+        </div>
+        <div class="sol-card reveal">
+          <h4>Скажу, когда пора остановиться</h4>
+          <p>Оферы выгорают. Партнёр говорит об этом вслух и предлагает переложить бюджет туда, где он работает. Наёмник молчит, пока капает процент.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cta-inline reveal">
+      <div>
+        <h3>Узнал свою ситуацию — забирай разбор бесплатно</h3>
+        <p>Отдаю бесплатно для товарки и COD от $50 в день: посчитаю вашу экономику с учётом выкупа, а не по цифре из кабинета, и скажу, где именно упирается объём. От вас — 20 минут и выгрузка по спенду и заказам. С меня — всё остальное.</p>
+      </div>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Разница</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px)">Наёмный байер и партнёр</h2>
+    <div class="cmp-wrap">
+    <table class="cmp reveal">
+      <tr><th></th><th>Наёмный байер</th><th>Таргетолог-партнёр</th></tr>
+      <tr><td>За что платят</td><td>За процесс: настройку и ведение</td><td>За результат: заказы в вашем KPI</td></tr>
+      <tr><td>Главная метрика</td><td>Цена лида в кабинете</td><td>Цена заказа с учётом выкупа</td></tr>
+      <tr><td>Рост объёма</td><td>Поднять бюджет в текущем кабинете</td><td>Расширять инфраструктуру и фронт оферов</td></tr>
+      <tr><td>Бан кабинета</td><td>«Так бывает, поднимаем новый»</td><td>Подходы к текстам и модерации: 2 из 10 за 2 года</td></tr>
+      <tr><td>Выгорел офер</td><td>Тянет, пока платят</td><td>Говорит вслух и предлагает переложить бюджет</td></tr>
+      <tr><td>Креативы</td><td>«Дайте вводные и референсы»</td><td>ТЗ, подходы и идеи — свои</td></tr>
+      <tr><td>Отчётность</td><td>Клики, показы, CTR</td><td>Спенд, заказы, цена заказа, динамика по месяцам</td></tr>
+      <tr><td>Что с ценой заказа при росте</td><td>Растёт вместе с бюджетом — «ниша перегрета»</td><td>Держится: $4,99 средняя при KPI $6 за всё время</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Подтверждение</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px);max-width:760px">Два направления одного клиента, живые выгрузки</h2>
+    <div class="cases">
+      <div class="case reveal">
+        <div class="case-top">
+          <span class="case-tag">ТОВАРКА · ПОЛЬША + UK</span>
+          <h3>С $7 до $249 в день за 8 месяцев</h3>
+          <p class="case-desc">Тот же клиент, второе направление. Закрыли, когда оферы выгорели.</p>
+        </div>
+        <div class="case-m">
+          <div><div class="n">$64 341</div><div class="l">бюджет</div></div>
+          <div><div class="n">12 893</div><div class="l">заказа</div></div>
+          <div><div class="n">$4,99</div><div class="l">заказ при KPI $6</div></div>
+          <div><div class="n">5 мес</div><div class="l">на $200+/день</div></div>
+        </div>
+        <div class="case-sum">За 14 месяцев работы вышли за KPI один раз</div>
+        <img src="img/tovarka-perfume.jpg" alt="Рекламный кабинет — товарка" class="shot">
+        <div class="shot-note">Скрин с кабинета. Видно сегментацию по возрасту и работу по креативам.</div>
+      </div>
+      <div class="case reveal">
+        <div class="case-top">
+          <span class="case-tag">НУТРА · ПОЛЬША</span>
+          <h3>×6 объёма, заказ подешевел</h3>
+          <p class="case-desc">Прямой рекл, COD. Работаем 2 года, продолжаем сейчас.</p>
+        </div>
+        <div class="case-m">
+          <div><div class="n">$85 384</div><div class="l">бюджет</div></div>
+          <div><div class="n">18 437</div><div class="l">заказов</div></div>
+          <div><div class="n">$4,63</div><div class="l">заказ при KPI $6</div></div>
+          <div><div class="n">$44→$260</div><div class="l">в день</div></div>
+        </div>
+        <div class="case-sum">Цена заказа падала каждый год: $5,04 → $4,99 → $4,20</div>
+        <img src="img/nutra-cabinet.jpg" alt="Рекламный кабинет — нутра" class="shot">
+        <div class="shot-note">Скрин с кабинета. Кампании удалялись и пересоздавались — показано то, что осталось.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Вопросы</span>
+    <h2 class="reveal" style="font-size:clamp(28px,3.6vw,44px)">Что обычно спрашивают</h2>
+    <div class="faq">
+      <div class="fq reveal"><button onclick="tFaq(this)">Даёте гарантию результата?</button><div class="fq-a"><p>Нет. Любой, кто гарантирует вам цену заказа до первых тестов, либо не понимает, о чём говорит, либо врёт. Я говорю, что покажу цифры по вашему оферу за первые недели — и тогда будет предметный разговор. Если вам нужны гарантии до тестов — нам не по пути, и это честнее, чем пообещать и не сделать.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">Какой минимальный бюджет?</button><div class="fq-a"><p>От $50 в день — ровно с этой суммы начинал клиент, с которым мы второй год работаем. Меньше — это не про «дорого», это про то, что алгоритму не хватит данных, и вы заплатите за тесты, которые ничего не покажут. Если сейчас меньше — приходите на разбор всё равно, скажу, что имеет смысл делать до старта.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">С кем не работаете?</button><div class="fq-a"><p>Со стартапами без бюджета, которые хотят «попробовать на пару сотен». И с теми, кто требует гарантий до первых данных.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">А если офер выгорит?</button><div class="fq-a"><p>Выгорит обязательно — в товарке это нормальный цикл. Вопрос в том, что будет дальше. Я скажу об этом вслух и предложу переложить бюджет туда, где он работает. Именно так и вышло с этим клиентом: товарку мы закрыли на пике отработки, ресурс ушёл в нутру, и работа с клиентом продолжается второй год. Подрядчик, живущий с процента от бюджета, будет тянуть мёртвое направление, пока вы платите.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">Кабинеты чьи? Кто платит за баны?</button><div class="fq-a"><p>Инфраструктуру строю и веду я — под ваш проект, а не «с общего склада». У этого клиента за два года это 10 кабинетов: часть крутит постоянно, часть держится под новые заливы. Потеряли 2 из 10. Расходы и схему владения фиксируем на старте письменно. Бан не должен быть вашей проблемой — на то и фронт кабинетов, чтобы объём просто переложился.</p></div></div>
+      <div class="fq reveal"><button onclick="tFaq(this)">Кто делает креативы и ленды?</button><div class="fq-a"><p>Креативы — я: ТЗ, подходы и идеи мои, видео снимает дизайнер, баннеры делаю через свою ИИ-систему, обученную на отработавших креативах. Ленды — зона клиента. В кейсе с товаркой ленды делал программист заказчика, и результат выше получен на них. Чужую работу себе не приписываю.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="start">
+  <div class="wrap final-grid">
+    <div class="reveal">
+      <span class="label">Первый шаг</span>
+      <h2>Покажите цифры — посчитаем вашу реальную экономику</h2>
+      <p style="color:var(--ink2);font-size:16.5px">Отдаю бесплатно для товарки и COD от $50 в день. От вас — 20 минут и выгрузка по спенду и заказам. С меня — всё остальное.</p>
+      <ul class="get">
+        <li>Посчитаю вашу экономику с учётом выкупа, а не по цифре из кабинета</li>
+        <li>Оценю цену заказа против рынка — честно, без «у вас всё плохо, платите мне»</li>
+        <li>Скажу, где вы упираетесь в потолок объёма и что с банами</li>
+        <li>Отвечу, стоит ли ещё тянуть ваше текущее направление — или пора перекладывать бюджет</li>
+      </ul>
+    </div>
+    <div class="form-card reveal" id="f2">
+      <div id="f2-form">
+        <h3>Разбор ваших цифр</h3>
+        <p>Отвечу в течение 24 часов.</p>
+        <div class="field"><input type="text" placeholder="Имя" id="n2"></div>
+        <div class="field"><input type="text" placeholder="Telegram или телефон" id="c2"></div>
+        <div class="field">
+          <select id="s2">
+            <option value="">Направление</option>
+            <option>Товарка</option>
+            <option>Нутра / БАДы</option>
+            <option>Товарка + нутра</option>
+            <option>Другое COD</option>
+          </select>
+        </div>
+        <div class="field">
+          <select id="b2">
+            <option value="">Текущий бюджет в день</option>
+            <option>До $100</option>
+            <option>$100–300</option>
+            <option>$300–1000</option>
+            <option>Больше $1000</option>
+          </select>
+        </div>
+        <button class="btn" onclick="submitForm('f2-form','f2-ok')">Получить разбор →</button>
+        <p class="micro">Без спама. Ответ за 24 часа. Заберёте план в любом случае — даже если работать не начнём.</p>
+      </div>
+      <div class="ok" id="f2-ok">
+        <div class="ok-i">✓</div>
+        <h3>Принято</h3>
+        <p style="margin-top:10px">Напишу в течение 24 часов. Подготовьте выгрузку по спенду и заказам — разберём предметно.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="#start" class="btn sticky" id="sticky">Получить разбор →</a>
+
+<footer>
+  <div class="wrap">Вадим Котивец · таргетолог-партнёр · товарка, нутра, COD · <a href="https://t.me/VadimkT" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">@VadimkT</a></div>
+</footer>
+
+<script>
+function tFaq(btn){
+  const item = btn.parentElement;
+  const open = item.classList.contains('on');
+  document.querySelectorAll('.fq').forEach(f=>f.classList.remove('on'));
+  if(!open) item.classList.add('on');
+}
+// !!! ВНИМАНИЕ: форма НЕ отправляет данные — это заглушка.
+// НЕ публиковать лендинг в сеть, пока не подключён Telegram-бот или Formspree.
+// Иначе заявки будут пропадать, а люди — ждать ответа.
+function submitForm(formId, okId){
+  const f = document.getElementById(formId);
+  const ok = document.getElementById(okId);
+  const inputs = f.querySelectorAll('input');
+  let valid = true;
+  inputs.forEach(i=>{
+    if(!i.value.trim()){ i.style.borderColor = '#d4390a'; valid = false; }
+    else { i.style.borderColor = ''; }
+  });
+  if(!valid) return;
+  f.style.display = 'none';
+  ok.classList.add('on');
+}
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const sticky = document.getElementById('sticky');
+const final = document.getElementById('start');
+const io2 = new IntersectionObserver(es=>{
+  es.forEach(e=>{ sticky.classList.toggle('hide', e.isIntersecting); });
+},{threshold:.1});
+io2.observe(final);
+</script>
+</body>
+</html>
