@@ -72,13 +72,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .case-m .n{font-family:var(--disp);font-size:21px;font-weight:800;color:var(--red);letter-spacing:-.02em}
 .case-m .l{font-size:11.5px;color:var(--ink3);margin-top:5px;line-height:1.4}
 .case-sum{padding:18px 28px;font-size:13.5px;color:var(--cyan);font-weight:700;background:var(--bg3);border-top:1px solid var(--line)}
-.case-facts{list-style:none;margin-top:16px;display:grid;gap:10px}
-.case-facts li{padding-left:22px;position:relative;font-size:14.5px;color:var(--ink2)}
-.case-facts li:before{content:'✳';position:absolute;left:0;top:3px;color:var(--red);font-size:11px}
-.case-rows{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line)}
-.case-rows .row{background:var(--bg2);padding:17px 28px;display:flex;justify-content:space-between;align-items:baseline;gap:18px}
-.case-rows .row .n{font-family:var(--disp);font-size:26px;font-weight:800;color:var(--red);letter-spacing:-.02em;line-height:1;white-space:nowrap}
-.case-rows .row .l{font-size:13px;color:var(--ink3);text-align:right;line-height:1.35}
 .shot{width:100%;display:block;border-top:1px solid var(--line);cursor:zoom-in}
 .shot-note{padding:11px 28px;font-size:11px;color:var(--ink3);background:var(--bg3);border-top:1px solid var(--line)}
 
@@ -87,8 +80,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .dec-text p{font-size:17px;color:var(--ink2);margin-bottom:18px}
 .dec-text strong{color:var(--ink);font-weight:800}
 .dec-arrows{display:grid;gap:14px}
-.dec-2col{grid-template-columns:1fr 1fr;margin-top:44px}
-@media(max-width:700px){.dec-2col{grid-template-columns:1fr}}
 .dec-a{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px 20px 52px;position:relative}
 .dec-a:before{content:'✳';position:absolute;left:19px;top:19px;color:var(--red);font-size:15px}
 .dec-a h4{font-family:var(--disp);font-size:14.5px;font-weight:700;margin-bottom:7px;line-height:1.3}
@@ -105,8 +96,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 
 /* PAINS */
 .pains-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-.pains-3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:960px){.pains-3{grid-template-columns:1fr}}
 .pain{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);padding:26px;position:relative;transition:.25s}
 .pain:hover{border-color:var(--cyan)}
 .pain-n{font-family:var(--disp);font-size:11px;font-weight:800;color:var(--red);letter-spacing:.1em;margin-bottom:12px}
@@ -194,8 +183,10 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="star s2">✳</div>
   <div class="star s3">✳</div>
   <div class="wrap hero-in">
-    <h1>Ищете инвесторов <em style="white-space:nowrap">от $35&nbsp;000</em>, а в отделе продаж одни зеваки?</h1>
-    <p class="hero-sub">Показал, как завожу инвестпроектам квалифицированных лидов вдвое дешевле, чем вам дают сейчас — без просадки в объёме.</p>
+    <h1>Ищете инвесторов <em>от $35 000</em>, а в отделе продаж одни зеваки?</h1>
+    <p class="hero-sub">Вывожу инвестпроекты на <b>588 заявок в месяц по $7,56</b> от людей, которые понимают, что вход стоит десятки тысяч. На старте заявка была $16: сейчас вдвое дешевле при объёме в 6 раз выше. 4 079 заявок за 17 месяцев, бюджет $41 305, проект идёт до сих пор. За счёт своей методики партнёрского залива.</p>
+    <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn" style="padding:17px 32px;font-size:14px">Разберите мои цифры бесплатно</a>
+    <p class="hero-micro">ОТВЕТ ЗА 24 ЧАСА</p>
   </div>
 </header>
 
@@ -209,37 +200,40 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <!-- CASES -->
 <section id="cases">
   <div class="wrap">
-    <span class="label reveal">Цифры из кабинета</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">4 079 человек, готовых инвестировать от $35 000</h2>
+    <span class="label reveal">Цифры из кабинета, не из презентации</span>
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">4 079 человек, готовых говорить про вход от $35 000</h2>
     <div class="cases">
       <div class="case reveal">
         <div class="case-top">
           <span class="case-tag">ИНВЕСТИЦИИ В СЭС · УКРАИНА · FACEBOOK</span>
           <h3>17 месяцев, проект с нуля</h3>
-          <ul class="case-facts">
-            <li>Привлекают инвестиции в солнечную электростанцию</li>
-            <li>Вход — от $35 000</li>
-            <li>Рекламы до меня не было</li>
-          </ul>
+          <p class="case-desc">Компания привлекает инвестиции в солнечную электростанцию. Вход для инвестора — от $35 000. Рекламы до меня не было вообще.</p>
         </div>
-        <div class="case-rows">
-          <div class="row"><span class="n">$41 305</span><span class="l">открученный бюджет</span></div>
-          <div class="row"><span class="n">4 079</span><span class="l">заявок</span></div>
-          <div class="row"><span class="n">$10,13</span><span class="l">средняя заявка за весь период</span></div>
-          <div class="row"><span class="n">$7,56</span><span class="l">заявка сейчас</span></div>
+        <div class="case-m">
+          <div><div class="n">$41 305</div><div class="l">открученный бюджет</div></div>
+          <div><div class="n">4 079</div><div class="l">заявок</div></div>
+          <div><div class="n">$10,13</div><div class="l">средняя заявка за весь период</div></div>
+          <div><div class="n">$7,56</div><div class="l">заявка сейчас</div></div>
         </div>
+        <div class="case-sum">2025 год — $13,87 за заявку. 2026 — $8,03. Минус 42% при росте объёма.</div>
         <img src="img/solar-campaigns.jpg" alt="Рекламный кабинет Facebook" class="shot">
+        <div class="shot-note">Скрин с кабинета: $41 403 и 4,6 млн показов. Сходится с посуточной выгрузкой до цента.</div>
       </div>
       <div class="case reveal">
         <div class="case-top">
           <span class="case-tag">ДИНАМИКА ПО МЕСЯЦАМ</span>
-          <h3>Цена вниз, объём вверх</h3>
+          <h3>Как падала цена заявки</h3>
+          <p class="case-desc">Март 2025 — $16,04. Июнь 2026 — $7,56. Вдвое вниз, при том что объём вырос со 100 до 588 заявок в месяц.</p>
         </div>
-        <div class="case-rows">
-          <div class="row"><span class="n">$16,04 → $7,56</span><span class="l">снизили цену лида</span></div>
-          <div class="row"><span class="n">100 → 588</span><span class="l">объём вырос, заявок в месяц</span></div>
+        <div class="case-m">
+          <div><div class="n">100 → 588</div><div class="l">заявок в месяц</div></div>
+          <div><div class="n">×6</div><div class="l">рост объёма</div></div>
+          <div><div class="n">2 614</div><div class="l">заявок за 7 мес 2026</div></div>
+          <div><div class="n">1 465</div><div class="l">заявок за 11 мес 2025</div></div>
         </div>
+        <div class="case-sum">За 7 месяцев 2026 заявок больше, чем за 11 месяцев 2025 — и почти вдвое дешевле</div>
         <img src="img/solar-table.jpg" alt="Посуточная выгрузка по проекту" class="shot">
+        <div class="shot-note">Посуточная выгрузка: бюджет, показы, CPM, переходы, заявки, цена заявки — по каждому дню.</div>
       </div>
     </div>
   </div>
@@ -249,30 +243,37 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <section>
   <div class="wrap">
     <span class="label reveal">Расшифровка</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Что это значит для вас</h2>
-    <div class="dec-arrows dec-2col">
-      <div class="dec-a reveal">
-        <h4>$41 305 бюджета = 4 079 разговоров с инвестором</h4>
-        <p>Не клики и показы — заявки от людей, готовых к входу от $35 000.</p>
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Что эти цифры значат для вашего бизнеса</h2>
+    <div class="dec-grid">
+      <div class="dec-text reveal">
+        <p>Заявка стоила $16. Сейчас $7,56. <strong>Разница — $8,44 с каждой заявки.</strong></p>
+        <p>На дистанции этого проекта, 4 079 заявок, это больше <strong>$34 000</strong>, которые не ушли в Facebook. При входном чеке $35 000 это ровно один инвестор, купленный из воздуха. Вот почему в высоком чеке имеет смысл воевать за каждый доллар в цене заявки: разница конвертируется в сделки напрямую.</p>
+        <p>И вторая вещь, которую видно из этих цифр: <strong>цена заявки не падает сама.</strong> «Алгоритм обучится» — это не стратегия. Она упала в конкретный момент и по конкретной причине: за 17 месяцев с $16 до $7,56, а объём при этом вырос со 100 до 588 заявок в месяц.</p>
       </div>
-      <div class="dec-a reveal">
-        <h4>$16 → $7,56 за заявку = больше $34 000 мимо Facebook</h4>
-        <p>На 4 079 заявок это ровно один инвестор, купленный из воздуха.</p>
-      </div>
-      <div class="dec-a reveal">
-        <h4>17 месяцев работы = проверка на дистанции</h4>
-        <p>Никто не льёт полтора года, если сделок нет.</p>
-      </div>
-      <div class="dec-a reveal">
-        <h4>×6 объёма без роста цены = система, а не везение</h4>
-        <p>Обычно объём растёт — цена вверх. Здесь пошла вниз и осталась там.</p>
+      <div class="dec-arrows">
+        <div class="dec-a reveal">
+          <h4>$41 305 бюджета = 4 079 разговоров с инвестором</h4>
+          <p>Не кликов и не показов. Заявок от людей, которые понимают, что речь про вход от $35 000.</p>
+        </div>
+        <div class="dec-a reveal">
+          <h4>$16 → $7,56 за заявку = больше $34 000 сэкономленного бюджета</h4>
+          <p>Столько стоили бы те же 4 079 заявок по стартовой цене. Эти деньги остались у клиента.</p>
+        </div>
+        <div class="dec-a reveal">
+          <h4>17 месяцев работы = проверка на дистанции</h4>
+          <p>Никто не льёт полтора года и не поднимает дневной бюджет с $60 до $160, если сделок нет.</p>
+        </div>
+        <div class="dec-a reveal">
+          <h4>×6 объёма без роста цены = масштабируемая система</h4>
+          <p>Обычно при росте объёма цена ползёт вверх. Здесь она пошла вниз — и осталась там.</p>
+        </div>
       </div>
     </div>
 
     <div class="cta-inline reveal">
       <div>
-        <h3>Хотите квал. лидов вдвое дешевле?</h3>
-        <p>Разберу ваш кабинет бесплатно. От вас — доступ и 20 минут.</p>
+        <h3>Узнали свою ситуацию — забирайте разбор бесплатно</h3>
+        <p>Отдаю бесплатно для инвестпроектов с бюджетом от $50 в день: посмотрю вашу цену заявки против рынка, скажу, почему менеджеры звонят тем, кто «просто посмотреть», и покажу, что мешает поднять объём. От вас — 20 минут и доступ к кабинету. С меня — всё остальное.</p>
       </div>
       <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор</a>
     </div>
@@ -281,8 +282,8 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 
 <div class="tape tape-w">
   <div class="tape-in">
-    <span>ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ? ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ? ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ? ✳ </span>
-    <span>ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ? ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ? ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ? ✳ </span>
+    <span>ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ ✳ </span>
+    <span>ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ ✳ ЗАЯВКИ ЕСТЬ ✳ ИНВЕСТОРОВ НЕТ ✳ </span>
   </div>
 </div>
 
@@ -290,22 +291,27 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <section>
   <div class="wrap">
     <span class="label reveal">Что происходит прямо сейчас</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">В чём проблема всех инвестпроектов</h2>
-    <div class="pains-grid pains-3">
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Четыре вещи, из-за которых заявки есть, а инвесторов нет</h2>
+    <div class="pains-grid">
       <div class="pain reveal">
         <div class="pain-n">01</div>
         <h3>Менеджеры звонят тем, кто «просто посмотреть»</h3>
-        <p>Подрядчик рад дешёвому лиду. А продажники весь день греют тех, кто никогда не занесёт $35 000.</p>
+        <p>Подрядчик отчитался дешёвым лидом и доволен. А отдел продаж весь день греет людей, которые никогда не занесут $35 000. Дешёвая заявка, с которой никто не берёт трубку, дороже нормальной.</p>
       </div>
       <div class="pain reveal">
         <div class="pain-n">02</div>
         <h3>Объём не масштабируется</h3>
-        <p>Поднимаете бюджет — заявка дорожает, откатываете назад. И так по кругу. У моего клиента объём вырос ×6, а заявка упала вдвое.</p>
+        <p>Поднимаете бюджет, заявка дорожает, экономика перестаёт сходиться. Откатываете назад. И так по кругу месяцами. У моего клиента объём вырос в 6 раз, а заявка при этом упала вдвое.</p>
       </div>
       <div class="pain reveal">
         <div class="pain-n">03</div>
-        <h3>Сливаете деньги на тесты</h3>
-        <p>Работаете с таргетологом, который не знает ни рынка, ни рабочих подходов в инвесте. Он нащупывает их за ваш бюджет — месяцами.</p>
+        <h3>Цену заявки не с чем сравнить</h3>
+        <p>Ниша узкая, бенчмарков нет. Первые месяцы вы платите не за заявки, а за то, чтобы узнать рынок. Вопрос только, сколько это займёт и во сколько обойдётся.</p>
+      </div>
+      <div class="pain reveal">
+        <div class="pain-n">04</div>
+        <h3>Формат выбирают по цене, а не по качеству</h3>
+        <p>Сообщения в директ всегда дешевле лид-формы. Если смотреть только на цифру в кабинете, останетесь на дешёвом формате и завалите отдел продаж мусором.</p>
       </div>
     </div>
   </div>
@@ -315,27 +321,27 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <section>
   <div class="wrap">
     <span class="label reveal">Как это работало</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Как мы добились успешных результатов в проекте</h2>
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Что конкретно сделали на проекте</h2>
     <div class="steps">
       <div class="step reveal">
         <span class="step-b">ШАГ 01</span>
         <h4>Протестировали три формата</h4>
-        <p>Лид-форма, директ, трафик на сайт. Победила лид-форма — по балансу цены и качества, а не по цене.</p>
+        <p>Лид-форма, сообщения в директ, трафик на сайт. Победила лид-форма — по балансу цены и качества, а не по цене.</p>
       </div>
       <div class="step reveal">
         <span class="step-b">ШАГ 02</span>
         <h4>Оставили $10 в день на директ</h4>
-        <p>Проигравший формат работает на свой сегмент: перед крупным переводом человек хочет написать живому менеджеру и проверить, ответят ли.</p>
+        <p>Формат, проигравший в сплите, работает на свой сегмент: человек перед переводом крупной суммы хочет написать живому человеку и проверить, ответят ли.</p>
       </div>
       <div class="step reveal">
         <span class="step-b">ШАГ 03</span>
         <h4>Зашли в видео с реального объекта</h4>
-        <p>Не рендеры, а съёмки работающей станции. Снимает вопрос «а меня не кинут на 35 тысяч?» ещё до звонка. Перелом дало именно оно: с декабря 2025 заявка стабильно ниже $9.</p>
+        <p>Не рендеры, а съёмки станции, которая физически стоит и работает. Это снимает вопрос «а меня не кинут на 35 тысяч?» ещё до звонка менеджера. Перелом дало именно оно: с декабря 2025 заявка стабильно ниже $9.</p>
       </div>
       <div class="step reveal">
         <span class="step-b">ШАГ 04</span>
         <h4>Дальше вы про трафик не думаете</h4>
-        <p>Бюджет вырос с $60 до $160, объём — со 100 до 588 заявок, цена ушла вниз вдвое. 17-й месяц подряд.</p>
+        <p>Дневной бюджет вырос с $60 до $160, объём со 100 до 588 заявок в месяц, цена ушла вниз вдвое. 17-й месяц подряд.</p>
       </div>
     </div>
   </div>
@@ -362,15 +368,30 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="wrap final-grid">
     <div class="reveal">
       <span class="label">Первый шаг</span>
-      <h2>Покажите цифры — скажу, где теряете инвесторов</h2>
-      <p style="color:var(--ink2);font-size:16px">Бесплатно для инвестпроектов от $50/день. От вас — 20 минут и доступ к кабинету, остальное с меня.</p>
+      <h2>Покажите цифры — скажу, почему до менеджеров не доходят инвесторы</h2>
+      <p style="color:var(--ink2);font-size:16px">Отдаю бесплатно для инвестпроектов с бюджетом от $50 в день. От вас — 20 минут и доступ к кабинету. С меня — всё остальное.</p>
+      <ul class="get">
+        <li>Оценю вашу цену заявки против рынка — честно, без «у вас всё плохо, платите мне»</li>
+        <li>Скажу, какой формат заявки везёт разговоры, а какой заваливает отдел продаж людьми «просто посмотреть»</li>
+        <li>Разберу, что мешает поднять бюджет без роста цены заявки</li>
+        <li>Покажу, где человек с $35 000 перестаёт вам верить, и что с этим делать</li>
+      </ul>
     </div>
     <div class="form-card reveal" id="f2">
       <div id="f2-form">
         <h3>Разбор ваших цифр</h3>
         <p>Отвечу в течение 24 часов.</p>
+        <div class="field"><input type="text" placeholder="Имя" id="n2"></div>
         <div class="field"><input type="text" placeholder="Telegram или телефон" id="c2"></div>
-        <div class="field"><input type="text" placeholder="Что у вас за бизнес?" id="s2"></div>
+        <div class="field">
+          <select id="s2">
+            <option value="">Тип проекта</option>
+            <option>Энергетика / solar</option>
+            <option>Недвижимость</option>
+            <option>Инвестфонд</option>
+            <option>Другой инвестпроект</option>
+          </select>
+        </div>
         <div class="field">
           <select id="b2">
             <option value="">Бюджет в день</option>
