@@ -366,7 +366,8 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
       <div class="ok" id="f2-ok">
         <div class="ok-i">✳</div>
         <h3>Принято</h3>
-        <p style="margin-top:10px;color:var(--ink2)">Напишу в течение 24 часов. Подготовьте доступ к кабинету или выгрузку — разберём предметно.</p>
+        <p style="margin-top:10px;color:var(--ink2)">Переношу вас в Telegram — напишите там пару слов о проекте. Отвечу в течение 24 часов.</p>
+        <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn" style="margin-top:16px">Открыть Telegram →</a>
       </div>
     </div>
   </div>
@@ -385,8 +386,10 @@ function tFaq(btn){
   document.querySelectorAll('.fq').forEach(f=>f.classList.remove('on'));
   if(!open) item.classList.add('on');
 }
-// !!! ВНИМАНИЕ: форма НЕ отправляет данные — это заглушка.
-// НЕ публиковать лендинг на трафик, пока не подключён Telegram-бот или Formspree.
+// ВНИМАНИЕ: форма НЕ отправляет данные на сервер — после отправки человека
+// перебрасывает в Telegram, где он пишет сам. Введённые в поля данные никуда
+// не сохраняются: если нужен сбор заявок в базу — подключить Formspree или бота.
+const TG_LINK = 'https://t.me/VadimkT';
 function submitForm(formId, okId){
   const f = document.getElementById(formId);
   const ok = document.getElementById(okId);
@@ -399,6 +402,7 @@ function submitForm(formId, okId){
   if(!valid) return;
   f.style.display = 'none';
   ok.classList.add('on');
+  setTimeout(function(){ window.location.href = TG_LINK; }, 1200);
 }
 const io = new IntersectionObserver(es=>{
   es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
