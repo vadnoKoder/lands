@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>300 заявок, ноль инвесторов · Вадим Котивец</title>
+<title>Как таргетолог с отрисованными кейсами похоронил инвестпроект · Вадим Котивец</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
@@ -65,6 +65,46 @@ blockquote p{margin:0;font-size:17px;color:var(--ink);font-style:italic}
 .nums .n{font-family:var(--serif);font-size:24px;font-weight:900;color:var(--accent);line-height:1.1}
 .nums .l{font-size:13px;color:var(--ink3);margin-top:6px;line-height:1.4}
 
+.cta-line{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:17px 22px;margin:32px 0}
+.cta-line p{margin:0;font-size:15.5px;color:var(--ink2);flex:1;min-width:230px}
+.cta-line .btn{padding:11px 20px;font-size:13.5px;white-space:nowrap}
+
+.ai{background:var(--bg2);border-top:1px solid var(--border);padding:58px 0}
+.ai .lead{font-size:16.5px;color:var(--ink2);margin-top:12px}
+.ai-tag{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:5px 13px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:16px}
+.ai-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 30px;margin-top:26px}
+.fld{margin-bottom:17px}
+.fld label{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.fld input,.fld textarea{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
+.fld input:focus,.fld textarea:focus{border-color:var(--accent)}
+.fld textarea{resize:vertical;min-height:76px;line-height:1.5}
+.ai-box .btn{width:100%;padding:16px;font-size:15px;text-align:center}
+.ai-hint{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:12px}
+.err{font-size:13px;color:#a33;margin-top:10px;display:none}
+
+.load{display:none;text-align:center;padding:34px 6px 30px}
+.spin{width:38px;height:38px;border:3px solid var(--bg3);border-top-color:var(--accent);border-radius:50%;margin:0 auto 22px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-txt{font-size:16px;color:var(--ink2);min-height:26px;transition:opacity .25s}
+.bar{height:4px;background:var(--bg3);border-radius:100px;margin:24px auto 0;max-width:290px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:100px;transition:width .5s ease}
+
+.res{display:none;animation:pop .45s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.res-found{font-size:13px;color:var(--ink3);text-align:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--border)}
+.res-found b{color:var(--accent)}
+.res-top{display:flex;gap:20px;align-items:center}
+.ava{width:82px;height:82px;flex:0 0 82px;border-radius:50%;background:var(--accent);color:#faf8f4;font-family:var(--serif);font-weight:900;font-size:27px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ava img{width:100%;height:100%;object-fit:cover;display:block}
+.res-name{font-family:var(--serif);font-size:22px;font-weight:900;line-height:1.15}
+.res-role{font-size:14px;color:var(--ink3);margin-top:5px}
+.match{display:inline-block;background:var(--bg3);color:var(--accent);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:700;margin-top:10px}
+.res-desc{font-size:16px;color:var(--ink2);margin-top:20px}
+.res-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:22px 0 24px}
+.res-facts div{background:var(--card);padding:15px 12px;text-align:center}
+.res-facts b{display:block;font-family:var(--serif);font-size:18px;color:var(--accent);line-height:1.1}
+.res-facts span{display:block;font-size:11.5px;color:var(--ink3);line-height:1.35;margin-top:5px}
+
 .final{background:var(--bg3);border-top:1px solid var(--border);padding:60px 0}
 .final h2{margin-top:0}
 .final ul{list-style:none;margin:22px 0}
@@ -81,6 +121,11 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
   article p{font-size:16.5px}
   .nums{grid-template-columns:1fr}
   .nav-in .btn{display:none}
+  .cta-line .btn{width:100%;text-align:center}
+  .ai-box{padding:24px 20px}
+  .res-facts{grid-template-columns:1fr}
+  .res-top{gap:16px}
+  .ava{width:64px;height:64px;flex:0 0 64px;font-size:22px}
 }
 </style>
 </head>
@@ -97,25 +142,32 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
   <div class="wrap">
     <a href="index.html" class="back">← Ко всем материалам</a>
     <span class="art-tag">ИНВЕСТПРОЕКТЫ · ВХОД ОТ $35 000</span>
-    <h1>300 заявок, ноль инвесторов: как таргетолог с отрисованными кейсами похоронил инвестпроект за 3 месяца</h1>
+    <h1>Как таргетолог с отрисованными кейсами похоронил инвестпроект за 3 месяца</h1>
     <p class="art-meta">Вадим Котивец · таргетолог-партнёр · 7 минут чтения</p>
   </div>
 </header>
 
 <article>
   <div class="wrap">
-    <p>Компания привлекала инвестиции в свой проект. Вход для инвестора — от $35 000. До этого работали как все в нише: личные связи, знакомые знакомых, пара инвесторов в год, каждый из которых пришёл через чью-то рекомендацию.</p>
-    <p>Потом решили масштабироваться. Логика простая: если сарафан даёт двух инвесторов в год, то реклама даст двадцать. Осталось найти человека, который в этом разбирается.</p>
-    <p>Нашли.</p>
+    <p>Компания привлекала инвестиции в проект. Вход для инвестора — от $35 000. Наняли таргетолога, дали бюджет, за три месяца получили около трёхсот заявок и ни одного инвестора.</p>
+    <p>Владелец закрыл рекламу и решил, что в инвестициях она не работает. А через полгода увидел, как соседний проект — тот же рынок, тот же чек — собирает инвесторов через ту же самую площадку.</p>
+    <p>Разница была не в рекламе. Ниже — три ошибки, которые убили этот проект, и то, на что надо было смотреть вместо цены заявки. Все три повторяются в нише из проекта в проект. И все три видно заранее, если знать, куда смотреть.</p>
+
+    <div class="cta-line">
+      <p>Читать некогда? Скажу то же самое про ваш проект и по вашим цифрам. Бесплатно, 20 минут.</p>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+    </div>
 
     <h2>Месяц первый: всё идёт отлично</h2>
-    <p>Таргетолог показал портфолио. Скриншоты кабинетов, графики вниз, «лил на инвестиции два года», отзывы. Всё выглядело солидно. Договорились на процент от бюджета, начали с тысячи долларов в месяц.</p>
+    <p>До рекламы работали как все в нише: личные связи, знакомые знакомых, пара инвесторов в год и каждый по чьей-то рекомендации. Потом решили масштабироваться. Логика простая: если сарафан даёт двух инвесторов в год, реклама даст двадцать. Осталось найти человека, который в этом разбирается.</p>
+    <p>Нашли.</p>
+    <p>Таргетолог показал портфолио. Скриншоты кабинетов, графики, где цена лида уверенно ползёт вниз, «лил на инвестиции два года», отзывы. Всё выглядело солидно. Договорились на процент от бюджета, начали с тысячи долларов в месяц.</p>
     <p>Через две недели пошли первые заявки. По $14. Ещё через неделю таргетолог отчитался: разогнал до $8, минус 43%.</p>
     <p>Владелец был доволен. Впервые за всё время заявки шли не от знакомых, а с рынка. Отдел продаж получил список и начал звонить.</p>
 
     <h2>Месяц второй: первые звоночки</h2>
     <p>Начальник отдела продаж пришёл к владельцу и сказал, что идёт мусор.</p>
-    <p>Владелец переспросил, что значит мусор. Тот объяснил: люди берут трубку, слушают, задают один и тот же вопрос про доходность и пропадают. Про то, что вход от $35 000, половина слышит впервые и сразу сворачивает разговор.</p>
+    <p>Владелец переспросил, что значит мусор. Тот объяснил: люди берут трубку, слушают, спрашивают одно и то же про доходность и пропадают. А про то, что вход от $35 000, половина слышит впервые — и сразу сворачивает разговор.</p>
     <p>Владелец пошёл к таргетологу. Тот показал кабинет: заявок стало больше, цена упала до $7,20, всё в порядке, работаем дальше. И добавил фразу, которую владелец потом будет вспоминать:</p>
     <blockquote><p>«Это уже вопрос к отделу продаж, я привожу лиды, а закрывают они.»</p></blockquote>
     <p>Звучало логично. Владелец собрал менеджеров и провёл с ними разговор про мотивацию.</p>
@@ -128,9 +180,7 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <p>Таргетолог к тому моменту показывал заявку по $6,80 и считал, что делает отличную работу. Формально он был прав: его KPI — цена заявки, и он её выполнил с запасом. Вдвое улучшил показатель, за который ему платили.</p>
     <p>Владелец закрыл рекламу и сделал вывод, к которому приходит большинство в этой нише:</p>
     <p class="punch">«В инвестициях реклама не работает. Тут только личные связи».</p>
-    <p>А через полгода он увидел, как соседний проект на том же рынке, с тем же чеком, собирает инвесторов через ту же самую площадку.</p>
-
-    <p class="note">История типичная, собрана из того, что я вижу в нише постоянно. Имён не будет. Если узнали себя, значит совпало не случайно.</p>
+    <p>Сосед по рынку в это время продолжал лить.</p>
 
     <h2>Вскрытие: три ошибки, которые убили этот проект</h2>
     <p>Реклама здесь ни при чём. Провалились три конкретные вещи, и каждая из них повторяется в нише из проекта в проект.</p>
@@ -189,7 +239,7 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <p>Не «нанять таргетолога получше». Смотреть на другие цифры.</p>
     <p>Формат заявки выбирается не по цене в кабинете, а по тому, доходит ли человек до разговора. Это единственная метрика, которая связана с вашими деньгами, и в рекламных отчётах её нет: она живёт там, где сидят ваши менеджеры. Пока эти два мира не соединены, вы платите вслепую.</p>
     <p>Второе, и это специфика именно инвестиций. Человек, который несёт $35 000 незнакомой компании, покупает не доходность. Он покупает ответ на один вопрос: <strong>«это существует или меня кинут?»</strong>. Закат, солнечные панели и надпись «инвестируйте в будущее» на этот вопрос не отвечают. Поэтому такая реклама и стоит дорого: вы платите за недоверие.</p>
-    <p>Я веду инвестпроекты постоянно: недвижимость, крипта, энергетика. Ниши разные, боль одна и та же.</p>
+    <p>Я веду инвестпроекты постоянно: недвижимость, крипта, энергетика. Ниши разные, боль одна и та же. Работаю не как исполнитель задач, а как партнёр: считаю не цену заявки, а то, доходит ли человек до разговора и во что вам обошёлся этот разговор.</p>
     <p>Как это выглядит на дистанции — проект, который я веду 17-й месяц. Компания привлекает инвестиции в солнечную электростанцию, Украина, вход от $35 000, рекламы до меня не было вообще:</p>
     <div class="nums">
       <div><div class="n">$41 305</div><div class="l">бюджета и 4 079 заявок за 17 месяцев</div></div>
@@ -203,15 +253,71 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
   </div>
 </article>
 
+<section class="ai">
+  <div class="wrap">
+    <span class="ai-tag">ПОДБОР СПЕЦИАЛИСТА</span>
+    <h2>Поиск таргетолога под ваш проект</h2>
+    <p class="lead">База проверенных специалистов. ИИ прочитает вашу задачу и отберёт кандидата под нишу, проблему и бюджет.</p>
+
+    <div class="ai-box">
+      <form id="aiForm" novalidate>
+        <div class="fld">
+          <label for="f1">Ваша ниша</label>
+          <input id="f1" type="text" placeholder="Инвестпроект, недвижимость, энергетика, крипта…" autocomplete="off">
+        </div>
+        <div class="fld">
+          <label for="f2">Почему ищете специалиста</label>
+          <textarea id="f2" placeholder="Коротко: заявки идут, но не покупают. Или объём стоит. Или подрядчик отчитывается кликами…"></textarea>
+        </div>
+        <div class="fld">
+          <label for="f3">Бюджет на рекламу</label>
+          <input id="f3" type="text" placeholder="$50 в день / $3 000 в месяц" autocomplete="off">
+        </div>
+        <button type="submit" class="btn">Запустить ИИ →</button>
+        <p class="err" id="aiErr">Заполните все три поля — иначе подбирать не по чему.</p>
+        <p class="ai-hint">Данные никуда не уходят: подбор происходит прямо в браузере.</p>
+      </form>
+
+      <div class="load" id="aiLoad">
+        <div class="spin"></div>
+        <div class="load-txt" id="aiTxt">Читаю вашу задачу…</div>
+        <div class="bar"><i id="aiBar"></i></div>
+      </div>
+
+      <div class="res" id="aiRes">
+        <p class="res-found">Под нишу «<b id="resNiche">инвестпроекты</b>» и бюджет <b id="resBudget">—</b> подходит <b>1 специалист</b> из базы</p>
+        <div class="res-top">
+          <div class="ava" id="ava">ВК</div>
+          <div>
+            <div class="res-name">Вадим Котивец</div>
+            <div class="res-role">Таргетолог-партнёр · инвестпроекты, COD, товарка</div>
+            <span class="match">Совпадение 94%</span>
+          </div>
+        </div>
+        <p class="res-desc">Ведёт инвестпроекты и прямых реклов на дистанции, а не запусками. Считает не цену заявки, а то, доходит ли человек до разговора и во что этот разговор обошёлся. Заходит в проект как партнёр: смотрит на цифры со стороны владельца, а не со стороны кабинета.</p>
+        <div class="res-facts">
+          <div><b>17 мес.</b><span>на одном инвестпроекте без пауз</span></div>
+          <div><b>4 079</b><span>заявок, цена с $16 до $7,56</span></div>
+          <div><b>×6</b><span>рост объёма без роста цены</span></div>
+        </div>
+        <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Связаться со специалистом →</a>
+        <p class="ai-hint">Напишите слово РАЗБОР — первые 20 минут бесплатно.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="final">
   <div class="wrap">
     <h2>Разбор</h2>
-    <p>Если вы привлекаете инвестиции в свой проект и узнали в этой истории свою, напишите мне в Telegram слово <strong>РАЗБОР</strong>.</p>
+    <p>Если вы привлекаете инвестиции в свой проект и узнали в этой истории свою, напишите мне в Telegram слово <strong>РАЗБОР</strong>. Вот что вы заберёте с этих двадцати минут:</p>
     <ul>
-      <li>Оценю вашу цену заявки против рынка, честно, без «у вас всё плохо, платите мне»</li>
-      <li>Скажу, какой формат заявки везёт разговоры, а какой заваливает отдел продаж зеваками</li>
-      <li>Разберу, что мешает поднять бюджет без роста цены заявки</li>
-      <li>Покажу, где человек с $35 000 перестаёт вам верить</li>
+      <li>Аудит текущих кампаний: за что вы переплачиваете в каждой заявке</li>
+      <li>Разбор креативов и оферов: что везёт разговоры, а что заваливает отдел продаж зеваками</li>
+      <li>Оценку вашей цены заявки против рынка — честно, без «у вас всё плохо, платите мне»</li>
+      <li>Точку, где человек с $35 000 перестаёт вам верить</li>
+      <li>Что мешает поднять бюджет без роста цены заявки</li>
+      <li>Roadmap: с чего начать в ближайшие 30 дней</li>
     </ul>
     <p>Отдаю бесплатно для инвестпроектов с бюджетом от $50 в день. От вас — 20 минут и доступ к кабинету. С меня — всё остальное.</p>
     <p>Без продажи в лоб. Если проблема не в трафике, я скажу и это.</p>
@@ -222,6 +328,62 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 <footer>
   <div class="wrap">Вадим Котивец · таргетолог-партнёр · <a href="https://t.me/VadimkT" target="_blank" rel="noopener">@VadimkT</a></div>
 </footer>
+
+<script>
+(function(){
+  var form=document.getElementById('aiForm'),
+      load=document.getElementById('aiLoad'),
+      res=document.getElementById('aiRes'),
+      txt=document.getElementById('aiTxt'),
+      bar=document.getElementById('aiBar'),
+      err=document.getElementById('aiErr');
+
+  var steps=[
+    'Читаю вашу задачу…',
+    'Отбираю кандидатов по нише…',
+    'Проверяю кейсы и цифры из кабинетов…',
+    'Сверяю отзывы и историю проектов…',
+    'Отсекаю тех, кто не тянет ваш бюджет…',
+    'Нашёл.'
+  ];
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var niche=document.getElementById('f1').value.trim(),
+        pain=document.getElementById('f2').value.trim(),
+        budget=document.getElementById('f3').value.trim();
+
+    if(!niche||!pain||!budget){ err.style.display='block'; return; }
+    err.style.display='none';
+
+    document.getElementById('resNiche').textContent=niche;
+    document.getElementById('resBudget').textContent=budget;
+
+    form.style.display='none';
+    load.style.display='block';
+
+    var i=0;
+    function next(){
+      txt.style.opacity=0;
+      setTimeout(function(){
+        txt.textContent=steps[i];
+        txt.style.opacity=1;
+        bar.style.width=Math.round((i+1)/steps.length*100)+'%';
+        i++;
+        if(i<steps.length){ setTimeout(next, i===steps.length-1?900:1150); }
+        else{
+          setTimeout(function(){
+            load.style.display='none';
+            res.style.display='block';
+          },700);
+        }
+      },250);
+    }
+    txt.textContent=steps[0]; bar.style.width=Math.round(1/steps.length*100)+'%'; i=1;
+    setTimeout(next,1150);
+  });
+})();
+</script>
 
 </body>
 </html>

@@ -65,6 +65,46 @@ blockquote p{margin:0;font-size:17px;color:var(--ink);font-style:italic}
 .nums .n{font-family:var(--serif);font-size:24px;font-weight:900;color:var(--accent);line-height:1.1}
 .nums .l{font-size:13px;color:var(--ink3);margin-top:6px;line-height:1.4}
 
+.cta-line{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:17px 22px;margin:32px 0}
+.cta-line p{margin:0;font-size:15.5px;color:var(--ink2);flex:1;min-width:230px}
+.cta-line .btn{padding:11px 20px;font-size:13.5px;white-space:nowrap}
+
+.ai{background:var(--bg2);border-top:1px solid var(--border);padding:58px 0}
+.ai .lead{font-size:16.5px;color:var(--ink2);margin-top:12px}
+.ai-tag{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:5px 13px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:16px}
+.ai-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 30px;margin-top:26px}
+.fld{margin-bottom:17px}
+.fld label{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.fld input,.fld textarea{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
+.fld input:focus,.fld textarea:focus{border-color:var(--accent)}
+.fld textarea{resize:vertical;min-height:76px;line-height:1.5}
+.ai-box .btn{width:100%;padding:16px;font-size:15px;text-align:center}
+.ai-hint{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:12px}
+.err{font-size:13px;color:#a33;margin-top:10px;display:none}
+
+.load{display:none;text-align:center;padding:34px 6px 30px}
+.spin{width:38px;height:38px;border:3px solid var(--bg3);border-top-color:var(--accent);border-radius:50%;margin:0 auto 22px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-txt{font-size:16px;color:var(--ink2);min-height:26px;transition:opacity .25s}
+.bar{height:4px;background:var(--bg3);border-radius:100px;margin:24px auto 0;max-width:290px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:100px;transition:width .5s ease}
+
+.res{display:none;animation:pop .45s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.res-found{font-size:13px;color:var(--ink3);text-align:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--border)}
+.res-found b{color:var(--accent)}
+.res-top{display:flex;gap:20px;align-items:center}
+.ava{width:82px;height:82px;flex:0 0 82px;border-radius:50%;background:var(--accent);color:#faf8f4;font-family:var(--serif);font-weight:900;font-size:27px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ava img{width:100%;height:100%;object-fit:cover;display:block}
+.res-name{font-family:var(--serif);font-size:22px;font-weight:900;line-height:1.15}
+.res-role{font-size:14px;color:var(--ink3);margin-top:5px}
+.match{display:inline-block;background:var(--bg3);color:var(--accent);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:700;margin-top:10px}
+.res-desc{font-size:16px;color:var(--ink2);margin-top:20px}
+.res-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:22px 0 24px}
+.res-facts div{background:var(--card);padding:15px 12px;text-align:center}
+.res-facts b{display:block;font-family:var(--serif);font-size:18px;color:var(--accent);line-height:1.1}
+.res-facts span{display:block;font-size:11.5px;color:var(--ink3);line-height:1.35;margin-top:5px}
+
 .final{background:var(--bg3);border-top:1px solid var(--border);padding:60px 0}
 .final h2{margin-top:0}
 .final ul{list-style:none;margin:22px 0}
@@ -81,6 +121,11 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
   article p{font-size:16.5px}
   .nums{grid-template-columns:1fr}
   .nav-in .btn{display:none}
+  .cta-line .btn{width:100%;text-align:center}
+  .ai-box{padding:24px 20px}
+  .res-facts{grid-template-columns:1fr}
+  .res-top{gap:16px}
+  .ava{width:64px;height:64px;flex:0 0 64px;font-size:22px}
 }
 </style>
 </head>
@@ -104,8 +149,14 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 
 <article>
   <div class="wrap">
-    <p>У вас может быть нормальный отчёт: заказ по $4, бюджет откручен, байер доволен. А на складе лежит товар, который не выкупили, и в конце месяца вы считаете прибыль и не понимаете, куда она делась.</p>
-    <p>Если это про вас, проблема почти никогда не в креативах. Чаще всего прямой рекл теряет деньги в трёх точках, которых не видно из рекламного кабинета. Ни одна из них не выглядит как проблема, пока вы смотрите в отчёт.</p>
+    <p>Отчёт нормальный: заказ по $4, бюджет откручен, байер доволен. А на складе лежит товар, который не выкупили, и в конце месяца вы считаете прибыль и не понимаете, куда она делась.</p>
+    <p>Если это про вас, проблема почти никогда не в креативах. Прямой рекл теряет деньги в трёх точках, которых не видно из рекламного кабинета. Ни одна из них не выглядит как проблема, пока вы смотрите в отчёт.</p>
+    <p>Ниже — все три: как каждая выглядит в отчёте, почему вы её не видите и во что она обходится. И то, что надо считать вместо цены заказа, чтобы разрыв между кабинетом и складом закрылся.</p>
+
+    <div class="cta-line">
+      <p>Читать некогда? Посчитаю вашу реальную экономику по вашим же цифрам. Бесплатно, 20 минут.</p>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+    </div>
 
     <h2>Как выбирают байера в COD и почему это ничего не решает</h2>
     <p>Один прямой рекл, с которым я работаю второй год, начинал так: раздал бюджеты <strong>трём байерам одновременно</strong> и стал смотреть, кто вывезет.</p>
@@ -184,14 +235,71 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
   </div>
 </article>
 
+<section class="ai">
+  <div class="wrap">
+    <span class="ai-tag">ПОДБОР СПЕЦИАЛИСТА</span>
+    <h2>Поиск байера под ваш проект</h2>
+    <p class="lead">База проверенных специалистов. ИИ прочитает вашу задачу и отберёт кандидата под нишу, проблему и бюджет.</p>
+
+    <div class="ai-box">
+      <form id="aiForm" novalidate>
+        <div class="fld">
+          <label for="f1">Ваша ниша</label>
+          <input id="f1" type="text" placeholder="Нутра COD, товарка COD, Польша, Румыния…" autocomplete="off">
+        </div>
+        <div class="fld">
+          <label for="f2">Почему ищете специалиста</label>
+          <textarea id="f2" placeholder="Коротко: объём стоит на месте. Или выкуп проседает. Или подрядчик отчитывается кликами…"></textarea>
+        </div>
+        <div class="fld">
+          <label for="f3">Бюджет на рекламу</label>
+          <input id="f3" type="text" placeholder="$100 в день / $5 000 в месяц" autocomplete="off">
+        </div>
+        <button type="submit" class="btn">Запустить ИИ →</button>
+        <p class="err" id="aiErr">Заполните все три поля — иначе подбирать не по чему.</p>
+        <p class="ai-hint">Данные никуда не уходят: подбор происходит прямо в браузере.</p>
+      </form>
+
+      <div class="load" id="aiLoad">
+        <div class="spin"></div>
+        <div class="load-txt" id="aiTxt">Читаю вашу задачу…</div>
+        <div class="bar"><i id="aiBar"></i></div>
+      </div>
+
+      <div class="res" id="aiRes">
+        <p class="res-found">Под нишу «<b id="resNiche">товарка COD</b>» и бюджет <b id="resBudget">—</b> подходит <b>1 специалист</b> из базы</p>
+        <div class="res-top">
+          <div class="ava" id="ava">ВК</div>
+          <div>
+            <div class="res-name">Вадим Котивец</div>
+            <div class="res-role">Таргетолог-партнёр · COD, товарка, нутра, инвестпроекты</div>
+            <span class="match">Совпадение 96%</span>
+          </div>
+        </div>
+        <p class="res-desc">Работает по методике партнёрского залива: заходит в проект как партнёр, а не как исполнитель задач. Считает не цену заказа из кабинета, а то, что доехало до склада и сколько на этом заработал владелец. Про выгоревший офер говорит вслух, а не когда бюджет уже слит.</p>
+        <div class="res-facts">
+          <div><b>$4,63</b><span>цена заказа по нутре за два года при KPI $6</span></div>
+          <div><b>12 893</b><span>заказа по товарке, средняя $4,99</span></div>
+          <div><b>$7 → $249</b><span>дневной бюджет без роста цены заказа</span></div>
+        </div>
+        <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Связаться со специалистом →</a>
+        <p class="ai-hint">Напишите слово РАЗБОР — первые 20 минут бесплатно.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="final">
   <div class="wrap">
     <h2>Разбор</h2>
-    <p>Если у вас прямой рекл, COD и цена заказа, которая не держится при попытке вырасти, напишите мне в Telegram слово <strong>РАЗБОР</strong>.</p>
+    <p>Если у вас прямой рекл, COD и цена заказа, которая не держится при попытке вырасти, напишите мне в Telegram слово <strong>РАЗБОР</strong>. Вот что вы заберёте с этих двадцати минут:</p>
     <ul>
-      <li>Посчитаю вашу экономику с учётом выкупа, а не по цифре из кабинета</li>
-      <li>Покажу, где именно упирается объём и почему заказ дорожает при росте бюджета</li>
-      <li>Скажу, какие направления пора закрывать, а какие масштабировать</li>
+      <li>Расчёт вашей реальной экономики с учётом выкупа, а не по цифре из кабинета</li>
+      <li>Аудит текущих кампаний: где сливается бюджет и на чём держится цена заказа</li>
+      <li>Разбор оферов: какие пора закрывать, а какие масштабировать</li>
+      <li>Точку, в которую упирается объём, и почему заказ дорожает при росте бюджета</li>
+      <li>Оценку вашей инфраструктуры кабинетов: доживёт ли она до нужного объёма</li>
+      <li>Roadmap: с чего начать в ближайшие 30 дней</li>
     </ul>
     <p>Отдаю бесплатно для товарки и нутры по COD от $50 в день. От вас — 20 минут и выгрузка по спенду и заказам. С меня — всё остальное.</p>
     <p>Без продажи в лоб. Если проблема не в трафике, я скажу и это.</p>
@@ -202,6 +310,62 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 <footer>
   <div class="wrap">Вадим Котивец · таргетолог-партнёр · <a href="https://t.me/VadimkT" target="_blank" rel="noopener">@VadimkT</a></div>
 </footer>
+
+<script>
+(function(){
+  var form=document.getElementById('aiForm'),
+      load=document.getElementById('aiLoad'),
+      res=document.getElementById('aiRes'),
+      txt=document.getElementById('aiTxt'),
+      bar=document.getElementById('aiBar'),
+      err=document.getElementById('aiErr');
+
+  var steps=[
+    'Читаю вашу задачу…',
+    'Отбираю кандидатов по нише…',
+    'Проверяю кейсы и цифры из кабинетов…',
+    'Сверяю отзывы и историю проектов…',
+    'Отсекаю тех, кто не тянет ваш бюджет…',
+    'Нашёл.'
+  ];
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var niche=document.getElementById('f1').value.trim(),
+        pain=document.getElementById('f2').value.trim(),
+        budget=document.getElementById('f3').value.trim();
+
+    if(!niche||!pain||!budget){ err.style.display='block'; return; }
+    err.style.display='none';
+
+    document.getElementById('resNiche').textContent=niche;
+    document.getElementById('resBudget').textContent=budget;
+
+    form.style.display='none';
+    load.style.display='block';
+
+    var i=0;
+    function next(){
+      txt.style.opacity=0;
+      setTimeout(function(){
+        txt.textContent=steps[i];
+        txt.style.opacity=1;
+        bar.style.width=Math.round((i+1)/steps.length*100)+'%';
+        i++;
+        if(i<steps.length){ setTimeout(next, i===steps.length-1?900:1150); }
+        else{
+          setTimeout(function(){
+            load.style.display='none';
+            res.style.display='block';
+          },700);
+        }
+      },250);
+    }
+    txt.textContent=steps[0]; bar.style.width=Math.round(1/steps.length*100)+'%'; i=1;
+    setTimeout(next,1150);
+  });
+})();
+</script>
 
 </body>
 </html>
