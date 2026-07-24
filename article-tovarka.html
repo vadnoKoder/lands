@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Заказ по $4,20 в кабинете и минус на складе · Вадим Котивец</title>
+<title>Заказ по $4,20 в кабинете и минус на складе · Разбор трафика</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
   --r:12px; --r2:20px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.72;-webkit-font-smoothing:antialiased}
 .wrap{max-width:720px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--serif);line-height:1.14;font-weight:900;letter-spacing:-.02em}
@@ -123,6 +124,22 @@ blockquote p{margin:0;font-size:17px;color:var(--ink);font-style:italic}
 .final li:before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
 .final .btn{margin-top:14px;padding:16px 32px;font-size:15px}
 
+.shot{width:100%;border:1px solid var(--border);border-radius:var(--r);display:block;margin-top:6px}
+.cap{font-size:13px;color:var(--ink3);text-align:center;margin-top:10px}
+
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:26px 28px;margin-top:26px;max-width:540px}
+.field{margin-bottom:13px}
+.field input{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
+.field input:focus{border-color:var(--accent)}
+.form-card .btn{width:100%;padding:15px;text-align:center;margin-top:4px}
+.form-note{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:12px}
+.ok{display:none;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:30px 28px;margin-top:26px;max-width:540px;text-align:center}
+.ok.on{display:block}
+.ok-i{font-size:28px;color:var(--accent);line-height:1;margin-bottom:12px}
+.ok h3{font-family:var(--serif);font-size:21px;font-weight:900;margin-bottom:8px}
+.ok p{font-size:15px;color:var(--ink2);margin-bottom:18px}
+#start{scroll-margin-top:84px}
+
 footer{padding:34px 0;text-align:center;color:var(--ink3);font-size:13px}
 footer a{color:var(--accent);text-decoration:none;font-weight:700}
 .back{display:inline-block;margin-bottom:26px;color:var(--ink3);text-decoration:none;font-size:14px}
@@ -145,8 +162,8 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 
 <nav>
   <div class="nav-in">
-    <a href="index.html" class="brand"><span class="dot"></span>Вадим Котивец</a>
-    <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+    <a href="index.html" class="brand"><span class="dot"></span>Разбор трафика</a>
+    <a href="#start" class="btn">Забрать разбор →</a>
   </div>
 </nav>
 
@@ -155,7 +172,7 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <a href="index.html" class="back">← Ко всем материалам</a>
     <span class="art-tag">ТОВАРКА И НУТРА · COD · ПРЯМЫЕ РЕКЛЫ</span>
     <h1>Заказ по $4,20 в кабинете и минус на складе. Где в COD ломается экономика</h1>
-    <p class="art-meta">Вадим Котивец · таргетолог-партнёр · 4 минуты чтения</p>
+    <p class="art-meta">4 минуты чтения</p>
   </div>
 </header>
 
@@ -277,7 +294,7 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 
     <div class="cta-box">
       <p>Здесь логично остановиться и проверить: я посчитаю вашу реальную экономику по вашим же цифрам. Бесплатно.</p>
-      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Написать слово РАЗБОР →</a>
+      <a href="#start" class="btn">Забрать разбор →</a>
     </div>
 
     <h2>Что с этим делать</h2>
@@ -290,25 +307,34 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
       <div><div class="n">1 из 14</div><div class="l">месяцев с выходом за KPI</div></div>
       <div><div class="n">2 из 10</div><div class="l">кабинетов потеряно за два года на серой нише</div></div>
     </div>
+    <img src="img/tovarka-perfume.jpg" alt="Рекламный кабинет по товарке" class="shot">
+    <p class="cap">Рекламный кабинет по товарке: спенд, заказы, цена заказа</p>
     <p>Не потому что я знаю секретный креатив. Потому что за два года ничего не сломалось.</p>
   </div>
 </article>
 
-<section class="final">
+<section class="final" id="start">
   <div class="wrap">
-    <h2>Разбор</h2>
-    <p>Если у вас прямой рекл, COD и цена заказа, которая не держится при попытке вырасти, напишите мне в Telegram слово <strong>РАЗБОР</strong>. Вот что вы заберёте с этих двадцати минут:</p>
+    <h2>Разбор ваших цифр</h2>
+    <p>Бесплатно для товарки и нутры по COD от $50 в день. За 20 минут вы заберёте:</p>
     <ul>
-      <li>Расчёт вашей реальной экономики с учётом выкупа, а не по цифре из кабинета</li>
-      <li>Аудит текущих кампаний: где сливается бюджет и на чём держится цена заказа</li>
+      <li>Расчёт реальной экономики с учётом выкупа, а не по цифре из кабинета</li>
+      <li>Аудит кампаний: где сливается бюджет и на чём держится цена заказа</li>
       <li>Разбор оферов: какие пора закрывать, а какие масштабировать</li>
-      <li>Точку, в которую упирается объём, и почему заказ дорожает при росте бюджета</li>
-      <li>Оценку вашей инфраструктуры кабинетов: доживёт ли она до нужного объёма</li>
-      <li>Roadmap: с чего начать в ближайшие 30 дней</li>
+      <li>Roadmap на 30 дней</li>
     </ul>
-    <p>Отдаю бесплатно для товарки и нутры по COD от $50 в день. От вас 20 минут и выгрузка по спенду и заказам. С меня всё остальное.</p>
-    <p>Без продажи в лоб. Если проблема не в трафике, я скажу и это.</p>
-    <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+    <div class="form-card" id="leadForm">
+      <div class="field"><input type="text" id="fContact" placeholder="Телефон или Telegram" autocomplete="off"></div>
+      <div class="field"><input type="text" id="fNiche" placeholder="Ваша ниша и задача в двух словах" autocomplete="off"></div>
+      <button type="button" class="btn" id="fSend">Забрать разбор →</button>
+      <p class="form-note">Без продажи в лоб. Если проблема не в трафике, я скажу и это.</p>
+    </div>
+    <div class="ok" id="leadOk">
+      <div class="ok-i">✳</div>
+      <h3>Принято</h3>
+      <p>Переношу вас в Telegram. Напишите там пару слов о проекте, отвечу в течение суток.</p>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Открыть Telegram →</a>
+    </div>
   </div>
 </section>
 
@@ -317,6 +343,28 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 </footer>
 
 <script>
+// Форма-заглушка: данные никуда не отправляются, человека перебрасывает
+// в Telegram, где он пишет сам. Нужен сбор в базу: подключить Formspree или бота.
+(function(){
+  var btn=document.getElementById('fSend');
+  if(!btn) return;
+  var form=document.getElementById('leadForm'),
+      ok=document.getElementById('leadOk'),
+      fields=form.querySelectorAll('input');
+
+  btn.addEventListener('click',function(){
+    var valid=true;
+    Array.prototype.forEach.call(fields,function(i){
+      if(!i.value.trim()){ i.style.borderColor='#a33'; valid=false; }
+      else { i.style.borderColor=''; }
+    });
+    if(!valid) return;
+    form.style.display='none';
+    ok.classList.add('on');
+    setTimeout(function(){ window.location.href='https://t.me/VadimkT'; },1200);
+  });
+})();
+
 (function(){
   var list=document.getElementById('chk');
   if(!list) return;
