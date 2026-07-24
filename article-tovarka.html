@@ -50,10 +50,18 @@ blockquote p{margin:0;font-size:17px;color:var(--ink);font-style:italic}
 .check ul{list-style:none}
 .check li{position:relative;padding:11px 0 11px 34px;font-size:16px;color:var(--ink2);border-bottom:1px solid var(--border)}
 .check li:last-child{border-bottom:none}
-.check li:before{content:'';position:absolute;left:0;top:15px;width:17px;height:17px;border:2px solid var(--border2);border-radius:4px}
+.check li:before{content:'';position:absolute;left:0;top:15px;width:17px;height:17px;border:2px solid var(--border2);border-radius:4px;transition:.15s}
+.check li[tabindex]{cursor:pointer;-webkit-user-select:none;user-select:none;outline:none}
+.check li[tabindex]:hover:before{border-color:var(--accent)}
+.check li[tabindex]:focus-visible{color:var(--ink)}
+.check li[tabindex]:focus-visible:before{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,74,60,.15)}
+.check li.on{color:var(--ink)}
+.check li.on:before{background:var(--accent);border-color:var(--accent)}
+.check li.on:after{content:'✓';position:absolute;left:0;top:15px;width:17px;height:17px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#faf8f4}
 .score{margin-top:24px;padding-top:22px;border-top:2px solid var(--border)}
 .score p{font-size:15.5px;margin-bottom:12px}
 .score p:last-child{margin-bottom:0}
+.score-count{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:13px}
 
 .cta-box{background:var(--accent);color:#faf8f4;border-radius:var(--r2);padding:32px 34px;margin:44px 0;text-align:center}
 .cta-box p{color:#faf8f4;opacity:.9;font-size:16.5px;margin-bottom:20px}
@@ -195,19 +203,18 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <p><strong>К чему приводит.</strong> Бюджет месяцами уходит в направление, которое уже не везёт. Оферы выгорают — это нормально. Ненормально узнавать об этом последним.</p>
 
     <h2>Проверьте себя за 30 секунд</h2>
-    <p>Поставьте плюс, если это про вас:</p>
+    <p>Отметьте то, что про вас:</p>
     <div class="check">
-      <ul>
-        <li>Вы знаете цену заказа из кабинета, но не знаете свою цену <strong>выкупленного</strong> заказа</li>
-        <li>Ваш подрядчик ни разу не говорил вам «этот офер пора закрывать»</li>
-        <li>Объём стоит на месте больше двух месяцев подряд</li>
-        <li>Вы льёте в один-два кабинета, а новый поднимаете уже после бана</li>
-        <li>Ваш подрядчик отчитывается кликами и показами, а про склад спрашиваете вы сами</li>
+      <ul id="chk">
+        <li tabindex="0">Вы знаете цену заказа из кабинета, но не знаете свою цену <strong>выкупленного</strong> заказа</li>
+        <li tabindex="0">Ваш подрядчик ни разу не говорил вам «этот офер пора закрывать»</li>
+        <li tabindex="0">Объём стоит на месте больше двух месяцев подряд</li>
+        <li tabindex="0">Вы льёте в один-два кабинета, а новый поднимаете уже после бана</li>
+        <li tabindex="0">Ваш подрядчик отчитывается кликами и показами, а про склад спрашиваете вы сами</li>
       </ul>
       <div class="score">
-        <p><strong>0–1 плюс.</strong> Экономика у вас под контролем, дальше можно не читать.</p>
-        <p><strong>2–3 плюса.</strong> Вы теряете не на цене заказа, а на разнице между кабинетом и складом. Обычно это десятки процентов прибыли, которые не видно ни в одном отчёте.</p>
-        <p><strong>4–5 плюсов.</strong> Ваш подрядчик оптимизирует свои метрики, а не ваши деньги. И скорее всего он не виноват: ему так платят.</p>
+        <div class="score-count" id="scoreCount">Отмечено: 0 из 5</div>
+        <p id="scoreTxt">Отметьте пункты — скажу, где у вас сейчас утекают деньги.</p>
       </div>
     </div>
 
@@ -312,6 +319,38 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 </footer>
 
 <script>
+(function(){
+  var list=document.getElementById('chk');
+  if(!list) return;
+  var items=list.querySelectorAll('li'),
+      cnt=document.getElementById('scoreCount'),
+      out=document.getElementById('scoreTxt'),
+      touched=false;
+
+  var TXT={
+    0:'<strong>Ни одной отметки.</strong> Редкий случай, и тогда вопрос другой: до какого дневного бюджета ваша текущая связка доживёт без роста цены заказа? Потолок объёма приходит и к тем, у кого экономика сходится. Просто позже, и обычно в самый неудобный месяц.',
+    1:'<strong>Один пункт.</strong> Это не «всё под контролем». Это точка, где кабинет и склад начинают расходиться. Пока она одна, закрыть её стоит дёшево — дальше расхождение растёт само.',
+    2:'<strong>Два пункта.</strong> Вы теряете не на цене заказа, а на разнице между кабинетом и складом. Пока месяц не закрыт, эту разницу не видно ни в одном отчёте.',
+    3:'<strong>Три пункта.</strong> Разрыв между кабинетом и складом у вас уже системный. Обычно это десятки процентов прибыли, которые уходят тихо и не выглядят как проблема.',
+    4:'<strong>Четыре пункта.</strong> Ваш подрядчик оптимизирует свои метрики, а не ваши деньги. Скорее всего он не виноват: ему так платят.',
+    5:'<strong>Все пять.</strong> Полный набор. Решения у вас принимаются по цифре из кабинета, а деньги считаются на складе, и между этими двумя реальностями сейчас никого нет. Что это означает для вашей цены заказа — в следующем абзаце.'
+  };
+
+  function upd(){
+    var n=list.querySelectorAll('li.on').length;
+    cnt.textContent='Отмечено: '+n+' из '+items.length;
+    if(touched) out.innerHTML=TXT[n];
+  }
+
+  Array.prototype.forEach.call(items,function(li){
+    function toggle(){ li.classList.toggle('on'); touched=true; upd(); }
+    li.addEventListener('click',toggle);
+    li.addEventListener('keydown',function(e){
+      if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); }
+    });
+  });
+})();
+
 (function(){
   var form=document.getElementById('aiForm'),
       load=document.getElementById('aiLoad'),
