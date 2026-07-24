@@ -73,16 +73,18 @@ blockquote p{margin:0;font-size:17px;color:var(--ink);font-style:italic}
 .nums .n{font-family:var(--serif);font-size:24px;font-weight:900;color:var(--accent);line-height:1.1}
 .nums .l{font-size:13px;color:var(--ink3);margin-top:6px;line-height:1.4}
 
-.cta-line{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:17px 22px;margin:32px 0}
-.cta-line p{margin:0;font-size:15.5px;color:var(--ink2);flex:1;min-width:230px}
-.cta-line .btn{padding:11px 20px;font-size:13.5px;white-space:nowrap}
+.ai-widget p{margin-bottom:0}
 
 .ai{background:var(--bg2);border-top:1px solid var(--border);padding:58px 0}
 .ai .lead{font-size:16.5px;color:var(--ink2);margin-top:12px}
 .ai-tag{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:5px 13px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:16px}
 .ai-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 30px;margin-top:26px}
-.fld{margin-bottom:17px}
-.fld label{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.ai-inline{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:26px 28px;margin:36px 0}
+.ai-inline .ai-h{font-family:var(--serif);font-size:23px;font-weight:900;letter-spacing:-.02em;line-height:1.15;margin:0 0 10px;color:var(--ink)}
+.ai-inline .ai-sub{font-size:15.5px;color:var(--ink2);margin:0}
+.ai-inline .ai-box{margin-top:20px;padding:24px 24px}
+.fld{display:block;margin-bottom:17px}
+.fld > span{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
 .fld input,.fld textarea{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
 .fld input:focus,.fld textarea:focus{border-color:var(--accent)}
 .fld textarea{resize:vertical;min-height:76px;line-height:1.5}
@@ -131,6 +133,8 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
   .nav-in .btn{display:none}
   .cta-line .btn{width:100%;text-align:center}
   .ai-box{padding:24px 20px}
+  .ai-inline{padding:22px 18px}
+  .ai-inline .ai-box{padding:20px 16px}
   .res-facts{grid-template-columns:1fr}
   .res-top{gap:16px}
   .ava{width:64px;height:64px;flex:0 0 64px;font-size:22px}
@@ -161,9 +165,53 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <p>Владелец закрыл рекламу и решил, что в инвестициях она не работает. А через полгода увидел, как соседний проект — тот же рынок, тот же чек — собирает инвесторов через ту же самую площадку.</p>
     <p>Разница была не в рекламе. Ниже — три ошибки, которые убили этот проект, и то, на что надо было смотреть вместо цены заявки. Все три повторяются в нише из проекта в проект. И все три видно заранее, если знать, куда смотреть.</p>
 
-    <div class="cta-line">
-      <p>Читать некогда? Скажу то же самое про ваш проект и по вашим цифрам. Бесплатно, 20 минут.</p>
-      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор →</a>
+    <div class="ai-inline">
+      <span class="ai-tag">ПОДБОР СПЕЦИАЛИСТА</span>
+      <p class="ai-h">Читать некогда? Пусть подберёт ИИ</p>
+      <p class="ai-sub">База проверенных таргетологов. Опишите проект в трёх строках — покажу, кто подходит под вашу нишу, задачу и бюджет.</p>
+
+      <div class="ai-box ai-widget">
+        <form class="w-form" novalidate>
+          <label class="fld"><span>Ваша ниша</span>
+            <input class="w-f1" type="text" placeholder="Инвестпроект, недвижимость, энергетика, крипта…" autocomplete="off">
+          </label>
+          <label class="fld"><span>Почему ищете специалиста</span>
+            <textarea class="w-f2" placeholder="Коротко: заявки идут, но не покупают. Или объём стоит. Или подрядчик отчитывается кликами…"></textarea>
+          </label>
+          <label class="fld"><span>Бюджет на рекламу</span>
+            <input class="w-f3" type="text" placeholder="$50 в день / $3 000 в месяц" autocomplete="off">
+          </label>
+          <button type="submit" class="btn">Запустить ИИ →</button>
+          <p class="err w-err">Заполните все три поля — иначе подбирать не по чему.</p>
+          <p class="ai-hint">Данные никуда не уходят: подбор происходит прямо в браузере.</p>
+        </form>
+
+        <div class="load w-load">
+          <div class="spin"></div>
+          <div class="load-txt w-txt">Читаю вашу задачу…</div>
+          <div class="bar"><i class="w-bar"></i></div>
+        </div>
+
+        <div class="res w-res">
+          <p class="res-found">Под нишу «<b class="w-niche">инвестпроекты</b>» и бюджет <b class="w-budget">—</b> подходит <b>1 специалист</b> из базы</p>
+          <div class="res-top">
+            <div class="ava">ВК</div>
+            <div>
+              <div class="res-name">Вадим Котивец</div>
+              <div class="res-role">Таргетолог-партнёр · инвестпроекты, COD, товарка</div>
+              <span class="match">Совпадение 94%</span>
+            </div>
+          </div>
+          <p class="res-desc">Ведёт инвестпроекты и прямых реклов на дистанции, а не запусками. Считает не цену заявки, а то, доходит ли человек до разговора и во что этот разговор обошёлся. Заходит в проект как партнёр: смотрит на цифры со стороны владельца, а не со стороны кабинета.</p>
+          <div class="res-facts">
+            <div><b>17 мес.</b><span>на одном инвестпроекте без пауз</span></div>
+            <div><b>4 079</b><span>заявок, цена с $16 до $7,56</span></div>
+            <div><b>×6</b><span>рост объёма без роста цены</span></div>
+          </div>
+          <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Связаться со специалистом →</a>
+          <p class="ai-hint">Напишите слово РАЗБОР — первые 20 минут бесплатно.</p>
+        </div>
+      </div>
     </div>
 
     <h2>Месяц первый: всё идёт отлично</h2>
@@ -266,35 +314,32 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <h2>Поиск таргетолога под ваш проект</h2>
     <p class="lead">База проверенных специалистов. ИИ прочитает вашу задачу и отберёт кандидата под нишу, проблему и бюджет.</p>
 
-    <div class="ai-box">
-      <form id="aiForm" novalidate>
-        <div class="fld">
-          <label for="f1">Ваша ниша</label>
-          <input id="f1" type="text" placeholder="Инвестпроект, недвижимость, энергетика, крипта…" autocomplete="off">
-        </div>
-        <div class="fld">
-          <label for="f2">Почему ищете специалиста</label>
-          <textarea id="f2" placeholder="Коротко: заявки идут, но не покупают. Или объём стоит. Или подрядчик отчитывается кликами…"></textarea>
-        </div>
-        <div class="fld">
-          <label for="f3">Бюджет на рекламу</label>
-          <input id="f3" type="text" placeholder="$50 в день / $3 000 в месяц" autocomplete="off">
-        </div>
+    <div class="ai-box ai-widget">
+      <form class="w-form" novalidate>
+        <label class="fld"><span>Ваша ниша</span>
+          <input class="w-f1" type="text" placeholder="Инвестпроект, недвижимость, энергетика, крипта…" autocomplete="off">
+        </label>
+        <label class="fld"><span>Почему ищете специалиста</span>
+          <textarea class="w-f2" placeholder="Коротко: заявки идут, но не покупают. Или объём стоит. Или подрядчик отчитывается кликами…"></textarea>
+        </label>
+        <label class="fld"><span>Бюджет на рекламу</span>
+          <input class="w-f3" type="text" placeholder="$50 в день / $3 000 в месяц" autocomplete="off">
+        </label>
         <button type="submit" class="btn">Запустить ИИ →</button>
-        <p class="err" id="aiErr">Заполните все три поля — иначе подбирать не по чему.</p>
+        <p class="err w-err">Заполните все три поля — иначе подбирать не по чему.</p>
         <p class="ai-hint">Данные никуда не уходят: подбор происходит прямо в браузере.</p>
       </form>
 
-      <div class="load" id="aiLoad">
+      <div class="load w-load">
         <div class="spin"></div>
-        <div class="load-txt" id="aiTxt">Читаю вашу задачу…</div>
-        <div class="bar"><i id="aiBar"></i></div>
+        <div class="load-txt w-txt">Читаю вашу задачу…</div>
+        <div class="bar"><i class="w-bar"></i></div>
       </div>
 
-      <div class="res" id="aiRes">
-        <p class="res-found">Под нишу «<b id="resNiche">инвестпроекты</b>» и бюджет <b id="resBudget">—</b> подходит <b>1 специалист</b> из базы</p>
+      <div class="res w-res">
+        <p class="res-found">Под нишу «<b class="w-niche">инвестпроекты</b>» и бюджет <b class="w-budget">—</b> подходит <b>1 специалист</b> из базы</p>
         <div class="res-top">
-          <div class="ava" id="ava">ВК</div>
+          <div class="ava">ВК</div>
           <div>
             <div class="res-name">Вадим Котивец</div>
             <div class="res-role">Таргетолог-партнёр · инвестпроекты, COD, товарка</div>
@@ -370,13 +415,6 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 })();
 
 (function(){
-  var form=document.getElementById('aiForm'),
-      load=document.getElementById('aiLoad'),
-      res=document.getElementById('aiRes'),
-      txt=document.getElementById('aiTxt'),
-      bar=document.getElementById('aiBar'),
-      err=document.getElementById('aiErr');
-
   var steps=[
     'Читаю вашу задачу…',
     'Отбираю кандидатов по нише…',
@@ -386,40 +424,50 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     'Нашёл.'
   ];
 
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var niche=document.getElementById('f1').value.trim(),
-        pain=document.getElementById('f2').value.trim(),
-        budget=document.getElementById('f3').value.trim();
+  Array.prototype.forEach.call(document.querySelectorAll('.ai-widget'),function(box){
+    var form=box.querySelector('.w-form'),
+        load=box.querySelector('.w-load'),
+        res=box.querySelector('.w-res'),
+        txt=box.querySelector('.w-txt'),
+        bar=box.querySelector('.w-bar'),
+        err=box.querySelector('.w-err');
 
-    if(!niche||!pain||!budget){ err.style.display='block'; return; }
-    err.style.display='none';
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var niche=box.querySelector('.w-f1').value.trim(),
+          pain=box.querySelector('.w-f2').value.trim(),
+          budget=box.querySelector('.w-f3').value.trim();
 
-    document.getElementById('resNiche').textContent=niche;
-    document.getElementById('resBudget').textContent=budget;
+      if(!niche||!pain||!budget){ err.style.display='block'; return; }
+      err.style.display='none';
 
-    form.style.display='none';
-    load.style.display='block';
+      box.querySelector('.w-niche').textContent=niche;
+      box.querySelector('.w-budget').textContent=budget;
 
-    var i=0;
-    function next(){
-      txt.style.opacity=0;
-      setTimeout(function(){
-        txt.textContent=steps[i];
-        txt.style.opacity=1;
-        bar.style.width=Math.round((i+1)/steps.length*100)+'%';
-        i++;
-        if(i<steps.length){ setTimeout(next, i===steps.length-1?900:1150); }
-        else{
-          setTimeout(function(){
-            load.style.display='none';
-            res.style.display='block';
-          },700);
-        }
-      },250);
-    }
-    txt.textContent=steps[0]; bar.style.width=Math.round(1/steps.length*100)+'%'; i=1;
-    setTimeout(next,1150);
+      form.style.display='none';
+      load.style.display='block';
+
+      var i=1;
+      function next(){
+        txt.style.opacity=0;
+        setTimeout(function(){
+          txt.textContent=steps[i];
+          txt.style.opacity=1;
+          bar.style.width=Math.round((i+1)/steps.length*100)+'%';
+          i++;
+          if(i<steps.length){ setTimeout(next, i===steps.length-1?900:1150); }
+          else{
+            setTimeout(function(){
+              load.style.display='none';
+              res.style.display='block';
+            },700);
+          }
+        },250);
+      }
+      txt.textContent=steps[0];
+      bar.style.width=Math.round(1/steps.length*100)+'%';
+      setTimeout(next,1150);
+    });
   });
 })();
 </script>
