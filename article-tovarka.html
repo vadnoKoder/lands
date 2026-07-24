@@ -85,8 +85,10 @@ blockquote p{margin:0;font-size:17px;color:var(--ink);font-style:italic}
 .ai-inline .ai-box{margin-top:20px;padding:24px 24px}
 .fld{display:block;margin-bottom:17px}
 .fld > span{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
-.fld input,.fld textarea{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
-.fld input:focus,.fld textarea:focus{border-color:var(--accent)}
+.fld input,.fld textarea,.fld select{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--accent)}
+.fld select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:42px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='none' stroke='%238d8477' stroke-width='2' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
+.fld select:invalid{color:var(--ink3)}
 .fld textarea{resize:vertical;min-height:76px;line-height:1.5}
 .ai-box .btn{width:100%;padding:16px;font-size:15px;text-align:center}
 .ai-hint{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:12px}
@@ -178,7 +180,13 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
             <textarea class="w-f2" placeholder="Коротко: объём стоит на месте. Или выкуп проседает. Или подрядчик отчитывается кликами…"></textarea>
           </label>
           <label class="fld"><span>Бюджет на рекламу</span>
-            <input class="w-f3" type="text" placeholder="$100 в день / $5 000 в месяц" autocomplete="off">
+            <select class="w-f3" required>
+              <option value="" disabled selected>Выберите бюджет</option>
+              <option>до $50 в день</option>
+              <option>до $250 в день</option>
+              <option>до $1 000 в день</option>
+              <option>больше $1 000 в день</option>
+            </select>
           </label>
           <button type="submit" class="btn">Запустить ИИ →</button>
           <p class="err w-err">Заполните все три поля — иначе подбирать не по чему.</p>
@@ -304,7 +312,13 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
           <textarea class="w-f2" placeholder="Коротко: объём стоит на месте. Или выкуп проседает. Или подрядчик отчитывается кликами…"></textarea>
         </label>
         <label class="fld"><span>Бюджет на рекламу</span>
-          <input class="w-f3" type="text" placeholder="$100 в день / $5 000 в месяц" autocomplete="off">
+          <select class="w-f3" required>
+            <option value="" disabled selected>Выберите бюджет</option>
+            <option>до $50 в день</option>
+            <option>до $250 в день</option>
+            <option>до $1 000 в день</option>
+            <option>больше $1 000 в день</option>
+          </select>
         </label>
         <button type="submit" class="btn">Запустить ИИ →</button>
         <p class="err w-err">Заполните все три поля — иначе подбирать не по чему.</p>
