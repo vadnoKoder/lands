@@ -17,8 +17,6 @@
   --r:14px; --r2:22px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-#start{scroll-margin-top:80px}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1.06;letter-spacing:-.03em}
@@ -53,11 +51,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .85fr;gap:56px;align-items:start}
 .hero h1{font-size:clamp(30px,4.2vw,58px);margin-bottom:22px}
 .hero h1 em{font-style:normal;color:var(--red)}
-.hero-col{max-width:840px}
 .hero-sub{font-size:17.5px;color:var(--ink2);margin-bottom:34px;max-width:600px}
 .hero-sub b{color:var(--ink);font-weight:800}
-.stats-h{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.01em;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:9px}
-.stats-h:before{content:'✳';color:var(--red);font-size:15px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:26px}
 .stat{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px}
 .stat-n{font-family:var(--disp);font-size:25px;font-weight:800;color:var(--red);line-height:1;letter-spacing:-.02em}
@@ -95,10 +90,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .sol-list{list-style:none;margin-top:26px}
 .sol-list li{padding:13px 0 13px 30px;border-bottom:1px solid var(--line);position:relative;font-size:15px;color:var(--ink2)}
 .sol-list li:before{content:'✳';position:absolute;left:0;top:14px;color:var(--red);font-size:12px}
-.sub-h{font-size:clamp(21px,2.4vw,28px);margin:54px 0 22px}
 .sol-cards{display:grid;gap:14px}
-.sol-cards-2{grid-template-columns:1fr 1fr}
-@media(max-width:700px){.sol-cards-2{grid-template-columns:1fr}}
 .sol-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px 20px 52px;position:relative}
 .sol-card:before{content:'✳';position:absolute;left:19px;top:19px;color:var(--red);font-size:15px}
 .sol-card h4{font-family:var(--disp);font-size:14.5px;font-weight:700;margin-bottom:7px;line-height:1.3}
@@ -206,7 +198,7 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <nav>
   <div class="nav-in">
     <a href="index.html" class="brand"><span>✳</span>VADIM KOTIVETS</a>
-    <a href="#start" class="btn">Забрать план →</a>
+    <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Получить разбор</a>
   </div>
 </nav>
 
@@ -215,15 +207,48 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="star s1">✳</div>
   <div class="star s2">✳</div>
   <div class="star s3">✳</div>
-  <div class="wrap">
-    <div class="hero-col">
+  <div class="wrap hero-grid">
+    <div>
       <h1>Ваш таргетолог радуется дешёвому заказу, а склад забит невыкупом? <em>Гоните его в шею</em></h1>
-      <p class="hero-sub">Наращиваю объём в товарке так, чтобы заказ не вылетал за KPI, а склад не забивался невыкупом.</p>
-      <div class="stats-h">Результат клиента за 14 месяцев</div>
+      <p class="hero-sub">В товарке маржа тонкая: дешёвый заказ с плохим выкупом это убыток, который в кабинете выглядит как победа. Разогнал товарку клиента <b>с $7 до $249 в день</b> и держал <b>заказ $4,99 при его KPI $6</b> — 12 893 заказа, за 14 месяцев работы один выход за планку. За счёт своей методики партнёрского залива.</p>
       <div class="stats">
         <div class="stat"><div class="stat-n">$4,99</div><div class="stat-l">средний заказ за всё время при KPI $6</div></div>
-        <div class="stat"><div class="stat-n">$408 / в день</div><div class="stat-l">дневной рекламный бюджет на пике</div></div>
+        <div class="stat"><div class="stat-n">$408</div><div class="stat-l">пик в день по клиенту — товарка и нутра вместе</div></div>
         <div class="stat"><div class="stat-n">1 из 14</div><div class="stat-l">месяцев с выходом за KPI</div></div>
+      </div>
+      <div class="ticker"><span class="ast">✳</span> Сейчас в работе: COD-направления, Польша — второй год с тем же клиентом</div>
+    </div>
+    <div class="form-card" id="f1">
+      <div id="f1-form">
+        <h3>Бесплатный разбор</h3>
+        <p>Посмотрю ваши цифры и скажу, где вы упираетесь в потолок. Без продажи в лоб.</p>
+        <div class="field"><input type="text" placeholder="Имя" id="n1"></div>
+        <div class="field"><input type="text" placeholder="Telegram или телефон" id="c1"></div>
+        <div class="field">
+          <select id="s1">
+            <option value="">Направление</option>
+            <option>Товарка</option>
+            <option>Нутра / БАДы</option>
+            <option>Товарка + нутра</option>
+            <option>Другое COD</option>
+          </select>
+        </div>
+        <div class="field">
+          <select id="b1">
+            <option value="">Текущий бюджет в день</option>
+            <option>До $100</option>
+            <option>$100–300</option>
+            <option>$300–1000</option>
+            <option>Больше $1000</option>
+          </select>
+        </div>
+        <button class="btn" onclick="submitForm('f1-form','f1-ok')">Получить разбор</button>
+        <p class="micro">Без спама. Отвечу за 24 часа. Разбор ваших цифр, а не презентация.</p>
+      </div>
+      <div class="ok" id="f1-ok">
+        <div class="ok-i">✳</div>
+        <h3>Принято</h3>
+        <p style="margin-top:10px;color:var(--ink2)">Напишу в течение 24 часов. Подготовьте выгрузку по спенду и заказам — разберём предметно.</p>
       </div>
     </div>
   </div>
@@ -245,22 +270,26 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
       <div class="pain reveal">
         <div class="pain-n">01</div>
         <h3>Дешёвый заказ, а прибыли нет</h3>
-        <p>В кабинете красиво: заказ по $4. А на складе лежит товар, который никто не выкупил.</p>
+        <p>В кабинете красиво: заказ по $4. А на складе лежит товар, который никто не выкупил. Байер отчитался, деньги ушли, прибыли нет.</p>
+        <div class="pain-cost">Заказ по $4 с выкупом 50% хуже, чем по $5,20 с выкупом 80%</div>
       </div>
       <div class="pain reveal">
         <div class="pain-n">02</div>
         <h3>Маржа не прощает</h3>
-        <p>Товар дешевле БАДов, наценка меньше. Лишний доллар за заказ уже съедает прибыль.</p>
+        <p>Товар дешевле БАДов, наценка меньше. В нутре заказ по $5,50 ещё можно пережить — в товарке он уже съедает прибыль. KPI тут не пожелание, а выключатель.</p>
+        <div class="pain-cost">Каждый доллар перерасхода — минус из вашего кармана</div>
       </div>
       <div class="pain reveal">
         <div class="pain-n">03</div>
         <h3>Потолок объёма</h3>
-        <p>Поднимаете бюджет — заказ дорожает, экономика не сходится. Откатываете назад. И так по кругу.</p>
+        <p>Поднимаешь бюджет — цена заказа ползёт вверх и экономика перестаёт сходиться. Откатываешь назад. И так по кругу месяцами.</p>
+        <div class="pain-cost">Объём стоит на $100/день вместо $249</div>
       </div>
       <div class="pain reveal">
         <div class="pain-n">04</div>
         <h3>Кабинеты горят</h3>
-        <p>Бан — и залив встал. Пока поднимаете новый кабинет, обороты падают.</p>
+        <p>Бан — залив встал. Пока поднимаешь новый кабинет и переучиваешь кампании, обороты падают, а цена на перезапуске улетает.</p>
+        <div class="pain-cost">Месяц на восстановление вместо месяца роста. У меня за 2 года — 2 кабинета из 10</div>
       </div>
     </div>
   </div>
@@ -271,9 +300,10 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="wrap reason-in">
     <span class="label">Главная причина</span>
     <div class="arrow">↓</div>
-    <h2>Пока байер не в доле — вы не заработаете</h2>
-    <p>Все четыре проблемы выше — про то, как устроены деньги.</p>
-    <p>Наёмному байеру платят за процесс: за настройку, за ведение, за открученный бюджет. Поэтому он и приносит процесс — клики, показы, «мы протестировали». Он не видит вашего склада, не считает выкуп, не знает вашей маржи.</p>
+    <h2>Байер не в доле</h2>
+    <p>Все четыре проблемы выше — не про лень и не про квалификацию. Они про то, как устроены деньги.</p>
+    <p>Наёмному байеру платят за процесс: за настройку, за ведение, за открученный бюджет. Поэтому он и приносит процесс — клики, показы, «мы протестировали». Он не видит вашего склада, не считает выкуп, не знает вашей маржи. И не должен: ему за это не платят.</p>
+    <p>Отсюда всё остальное. Зачем строить инфраструктуру из десяти кабинетов, если можно лить в один, пока он не сгорит? Зачем говорить, что офер выгорел, если процент капает с бюджета? Зачем лезть в выкуп, если в кабинете и так «дешёвый лид»?</p>
     <div class="reason-out">Вам не нужен человек, который настраивает рекламу.<br>Вам нужен человек, который считает ваши деньги как свои.</div>
   </div>
 </section>
@@ -289,40 +319,65 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <section>
   <div class="wrap">
     <span class="label reveal">Противоядие</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Вам нужен таргетолог-партнёр, а не наёмный байер</h2>
-    <div class="sol-text reveal" style="max-width:780px;margin-top:30px">
-      <p>Захожу как партнёр, а не исполнитель задач.</p>
-      <p>Отслеживаю всю цепочку — от креатива до выкупа — и говорю правду, даже когда она мне невыгодна. Поэтому клиент со мной второй год.</p>
-    </div>
-    <h3 class="sub-h reveal">Преимущества работы со мной</h3>
-    <div class="sol-cards sol-cards-2">
-      <div class="sol-card reveal">
-        <h4>Выстрою инфраструктуру под ваш проект</h4>
-        <p>Кабинеты, фанпейджи, стабильный залив — собираю систему, а не один кабинет, который страшно потерять.</p>
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Таргетолог-партнёр, а не наёмный байер</h2>
+    <div class="sol-grid">
+      <div class="sol-text reveal">
+        <p>Я захожу в проект как партнёр, а не как исполнитель задач. Смотрю на цифры как предприниматель: не на цену клика в кабинете, а на то, что доехало до склада и сколько на этом заработал владелец.</p>
+        <p>Я отслеживаю всю цепочку — от креатива до выкупа — и говорю вам правду, даже когда она мне невыгодна. Ровно поэтому этот клиент со мной второй год, а не третий байер подряд.</p>
+        <p>Клиент, с которым мы разгоняли товарку, начинал с трёх байеров одновременно — раздал всем бюджеты и смотрел, кто что привезёт. Остался со мной. А когда оферы выгорели, я сам предложил закрыть направление и переложить бюджет туда, где он работает — хотя мог бы тянуть его и дальше, пока капает процент.</p>
+        <ul class="sol-list">
+          <li>8 лет на белом и сером трафике: знаю, как обходить правила и работать с банами</li>
+          <li>Работаю только с прямыми реклами по COD: считаю вашу маржу и выкуп, а не цену клика</li>
+          <li>ТЗ, подходы и идеи к креативам — мои. Вам не надо приносить гипотезы и потом проверять, сделали ли их</li>
+          <li>Скажу вслух, когда офер выгорел, и предложу, куда переложить бюджет</li>
+        </ul>
       </div>
-      <div class="sol-card reveal">
-        <h4>Авторский подход к банам</h4>
-        <p>2 потерянных кабинета из 10 за 2 года на серой нише. Это подходы к текстам и креативам, а не везение.</p>
-      </div>
-      <div class="sol-card reveal">
-        <h4>Считаю по выкупу, а не по кабинету</h4>
-        <p>Дешёвый заказ с плохим выкупом — это убыток, который выглядит как победа. Смотрю, что доехало до склада, а не CPL.</p>
-      </div>
-      <div class="sol-card reveal">
-        <h4>Скажу, когда пора остановиться</h4>
-        <p>Оферы выгорают. Партнёр говорит вслух и предлагает переложить бюджет. Наёмник молчит, пока капает процент.</p>
-      </div>
-      <div class="sol-card reveal" style="grid-column:1/-1">
-        <h4>Заказ держится в KPI, а не растёт</h4>
-        <p>$4,99 средняя цена заказа при KPI клиента $6 — на 12 893 заказах. За 14 месяцев работы вышли за планку один раз.</p>
+      <div class="sol-cards">
+        <div class="sol-card reveal">
+          <h4>Инфраструктура, а не один кабинет</h4>
+          <p>За два года — 10 кабинетов: часть крутит постоянно, часть подключаем под новые заливы. Объём растёт не тогда, когда вы поднимаете бюджет, а когда его есть куда переложить.</p>
+        </div>
+        <div class="sol-card reveal">
+          <h4>Авторский подход в работе с банами</h4>
+          <p>2 потерянных кабинета из 10 за два года на серой нише. Отклонов почти не было. Это наработанные подходы к текстам на сайте и креативах, а не везение.</p>
+        </div>
+        <div class="sol-card reveal">
+          <h4>Считаю по выкупу, а не по кабинету</h4>
+          <p>В товарке с тонкой маржей дешёвый заказ с плохим выкупом — это убыток, который выглядит как победа. Прямой рекл даёт доступ к реальной экономике: видно не CPL, а что доехало до склада.</p>
+        </div>
+        <div class="sol-card reveal">
+          <h4>Скажу, когда пора остановиться</h4>
+          <p>Оферы выгорают. Партнёр говорит об этом вслух и предлагает переложить бюджет туда, где он работает. Наёмник молчит, пока капает процент.</p>
+        </div>
       </div>
     </div>
     <div class="cta-inline reveal">
       <div>
-        <h3>Хотите объём без роста цены заказа?</h3>
-        <p>Разберу ваши цифры бесплатно. От вас — 20 минут и выгрузка.</p>
+        <h3>Узнал свою ситуацию — забирай разбор бесплатно</h3>
+        <p>Отдаю бесплатно для товарки и COD от $50 в день: посчитаю вашу экономику с учётом выкупа, а не по цифре из кабинета, и скажу, где именно упирается объём. От вас — 20 минут и выгрузка по спенду и заказам. С меня — всё остальное.</p>
       </div>
-      <a href="#start" class="btn">Забрать план →</a>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Забрать разбор</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section>
+  <div class="wrap">
+    <span class="label reveal">Разница</span>
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px)">Наёмный байер и партнёр</h2>
+    <div class="cmp-wrap">
+    <table class="cmp reveal">
+      <tr><th></th><th>Наёмный байер</th><th>Таргетолог-партнёр</th></tr>
+      <tr><td>За что платят</td><td>За процесс: настройку и ведение</td><td>За результат: заказы в вашем KPI</td></tr>
+      <tr><td>Главная метрика</td><td>Цена лида в кабинете</td><td>Цена заказа с учётом выкупа</td></tr>
+      <tr><td>Рост объёма</td><td>Поднять бюджет в текущем кабинете</td><td>Расширять инфраструктуру и фронт оферов</td></tr>
+      <tr><td>Бан кабинета</td><td>«Так бывает, поднимаем новый»</td><td>Подходы к текстам и модерации: 2 из 10 за 2 года</td></tr>
+      <tr><td>Выгорел офер</td><td>Тянет, пока платят</td><td>Говорит вслух и предлагает переложить бюджет</td></tr>
+      <tr><td>Креативы</td><td>«Дайте вводные и референсы»</td><td>ТЗ, подходы и идеи — свои</td></tr>
+      <tr><td>Отчётность</td><td>Клики, показы, CTR</td><td>Спенд, заказы, цена заказа, динамика по месяцам</td></tr>
+      <tr><td>Что с ценой заказа при росте</td><td>Растёт вместе с бюджетом — «ниша перегрета»</td><td>Держится: $4,99 средняя при KPI $6 за всё время</td></tr>
+    </table>
     </div>
   </div>
 </section>
@@ -345,7 +400,9 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
           <div><div class="n">$4,99</div><div class="l">заказ при KPI $6</div></div>
           <div><div class="n">5 мес</div><div class="l">на $200+/день</div></div>
         </div>
+        <div class="case-sum">За 14 месяцев работы вышли за KPI один раз</div>
         <img src="img/tovarka-perfume.jpg" alt="Рекламный кабинет — товарка" class="shot">
+        <div class="shot-note">Скрин с кабинета. Видно сегментацию по возрасту и работу по креативам.</div>
       </div>
       <div class="case reveal">
         <div class="case-top">
@@ -361,6 +418,7 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
         </div>
         <div class="case-sum">Цена заказа падала каждый год: $5,04 → $4,99 → $4,20</div>
         <img src="img/nutra-cabinet.jpg" alt="Рекламный кабинет — нутра" class="shot">
+        <div class="shot-note">Скрин с кабинета. Кампании удалялись и пересоздавались — показано то, что осталось.</div>
       </div>
     </div>
   </div>
@@ -387,15 +445,30 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="wrap final-grid">
     <div class="reveal">
       <span class="label">Первый шаг</span>
-      <h2>Разберу вашу экономику и покажу, как подниму объём без потери прибыли</h2>
-      <p style="color:var(--ink2);font-size:16px">За 20 минут смотрю вашу связку: реальную цену заказа с учётом выкупа, где упирается объём, что делать с банами. На выходе — план на 30 дней: что конкретно я сделаю в вашем проекте и нужен ли вам подрядчик вообще. Бесплатно для товарки и COD с рекламным бюджетом от $50 в день.</p>
+      <h2>Покажите цифры — посчитаем вашу реальную экономику</h2>
+      <p style="color:var(--ink2);font-size:16px">Отдаю бесплатно для товарки и COD от $50 в день. От вас — 20 минут и выгрузка по спенду и заказам. С меня — всё остальное.</p>
+      <ul class="get">
+        <li>Посчитаю вашу экономику с учётом выкупа, а не по цифре из кабинета</li>
+        <li>Оценю цену заказа против рынка — честно, без «у вас всё плохо, платите мне»</li>
+        <li>Скажу, где вы упираетесь в потолок объёма и что с банами</li>
+        <li>Отвечу, стоит ли ещё тянуть ваше текущее направление — или пора перекладывать бюджет</li>
+      </ul>
     </div>
     <div class="form-card reveal" id="f2">
       <div id="f2-form">
-        <h3>Ваш план на 30 дней</h3>
+        <h3>Разбор ваших цифр</h3>
         <p>Отвечу в течение 24 часов.</p>
+        <div class="field"><input type="text" placeholder="Имя" id="n2"></div>
         <div class="field"><input type="text" placeholder="Telegram или телефон" id="c2"></div>
-        <div class="field"><input type="text" placeholder="Ваше направление?" id="s2"></div>
+        <div class="field">
+          <select id="s2">
+            <option value="">Направление</option>
+            <option>Товарка</option>
+            <option>Нутра / БАДы</option>
+            <option>Товарка + нутра</option>
+            <option>Другое COD</option>
+          </select>
+        </div>
         <div class="field">
           <select id="b2">
             <option value="">Текущий бюджет в день</option>
@@ -405,7 +478,8 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
             <option>Больше $1000</option>
           </select>
         </div>
-        <button class="btn" onclick="submitForm('f2-form','f2-ok')">Забрать план →</button>
+        <button class="btn" onclick="submitForm('f2-form','f2-ok')">Получить разбор</button>
+        <p class="micro">Без спама. Ответ за 24 часа. Заберёте план в любом случае — даже если работать не начнём.</p>
       </div>
       <div class="ok" id="f2-ok">
         <div class="ok-i">✳</div>
@@ -416,7 +490,7 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   </div>
 </section>
 
-<a href="#start" class="btn sticky" id="sticky">Забрать план →</a>
+<a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn sticky" id="sticky">Получить разбор</a>
 
 <footer>
   <div class="wrap">VADIM KOTIVETS ✳ таргетолог-партнёр ✳ товарка, нутра, COD ✳ <a href="https://t.me/VadimkT" target="_blank" rel="noopener">@VadimkT</a></div>
