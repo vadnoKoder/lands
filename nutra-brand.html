@@ -113,7 +113,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .sol-list{list-style:none;margin-top:26px}
 .sol-list li{padding:13px 0 13px 30px;border-bottom:1px solid var(--line);position:relative;font-size:15px;color:var(--ink2)}
 .sol-list li:before{content:'✳';position:absolute;left:0;top:15px;color:var(--red);font-size:12px}
+.sub-h{font-size:clamp(21px,2.4vw,28px);margin:54px 0 22px}
 .sol-cards{display:grid;gap:14px}
+.sol-cards-2{grid-template-columns:1fr 1fr}
+@media(max-width:700px){.sol-cards-2{grid-template-columns:1fr}}
 .sol-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px 20px 52px;position:relative}
 .sol-card:before{content:'✳';position:absolute;left:19px;top:19px;color:var(--red);font-size:15px}
 .sol-card h4{font-family:var(--disp);font-size:14.5px;font-weight:700;margin-bottom:8px;line-height:1.3}
@@ -275,7 +278,7 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
     <div class="arrow">↓</div>
     <h2>Пока байер не в доле — ты не заработаешь</h2>
     <p>Все четыре проблемы выше — про то, как устроены деньги.</p>
-    <p>Наёмному байеру платят за процесс: за настройку, за ведение, за открученный бюджет. Поэтому он и приносит процесс — клики, показы, «мы протестировали». Он не видит вашего склада, не считает выкуп, не знает вашей маржи. И не должен: ему за это не платят.</p>
+    <p>Наёмному байеру платят за процесс: за настройку, за ведение, за открученный бюджет. Поэтому он и приносит процесс — клики, показы, «мы протестировали». Он не видит вашего склада, не считает выкуп, не знает вашей маржи.</p>
     <div class="reason-out">Вам не нужен человек, который настраивает рекламу.<br>Вам нужен человек, который считает ваши деньги как свои.</div>
   </div>
 </section>
@@ -284,13 +287,13 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <section>
   <div class="wrap">
     <span class="label reveal">Противоядие</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Таргетолог-партнёр, а не наёмный байер</h2>
-    <div class="sol-grid">
-      <div class="sol-text reveal">
-        <p>Захожу как партнёр, а не исполнитель задач. Смотрю на цифры как предприниматель: не на цену клика, а на то, что доехало до склада и сколько заработал владелец.</p>
-        <p>Отслеживаю всю цепочку — от креатива до выкупа — и говорю правду, даже когда она мне невыгодна. Поэтому клиент со мной второй год, а не третий байер подряд.</p>
-      </div>
-      <div class="sol-cards">
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Вам нужен таргетолог-партнёр, а не наёмный байер</h2>
+    <div class="sol-text reveal" style="max-width:780px;margin-top:30px">
+      <p>Захожу как партнёр, а не исполнитель задач.</p>
+      <p>Отслеживаю всю цепочку — от креатива до выкупа — и говорю правду, даже когда она мне невыгодна. Поэтому клиент со мной второй год.</p>
+    </div>
+    <h3 class="sub-h reveal">Преимущества работы со мной</h3>
+    <div class="sol-cards sol-cards-2">
         <div class="sol-card reveal">
           <h4>Инфраструктура, а не один кабинет</h4>
           <p>За 2 года — 10 кабинетов: часть крутит постоянно, часть под новые заливы. Объём растёт, когда его есть куда переложить.</p>
@@ -307,7 +310,6 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
           <h4>Скажу, когда пора остановиться</h4>
           <p>Оферы выгорают. Партнёр говорит вслух и предлагает переложить бюджет. Наёмник молчит, пока капает процент.</p>
         </div>
-      </div>
     </div>
     <div class="cta-inline reveal">
       <div>
@@ -325,23 +327,6 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
     <span>ЗАКАЗ $4,63 ✳ ПРИ KPI $6 ✳ ДВА ГОДА ПОДРЯД ✳ ЗАКАЗ $4,63 ✳ ПРИ KPI $6 ✳ ДВА ГОДА ПОДРЯД ✳ </span>
   </div>
 </div>
-
-<!-- COMPARE -->
-<section>
-  <div class="wrap">
-    <span class="label reveal">Разница</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px)">Наёмный байер и партнёр</h2>
-    <div class="cmp-wrap">
-    <table class="cmp reveal">
-      <tr><th></th><th>Наёмный байер</th><th>Таргетолог-партнёр</th></tr>
-      <tr><td>За что платят</td><td>За процесс: настройку и ведение</td><td>За результат: заказы в вашем KPI</td></tr>
-      <tr><td>Главная метрика</td><td>Цена лида в кабинете</td><td>Цена заказа с учётом выкупа</td></tr>
-      <tr><td>Рост объёма</td><td>Поднять бюджет в текущем кабинете</td><td>Расширять инфраструктуру и фронт оферов</td></tr>
-      <tr><td>Цена заказа при росте</td><td>Растёт с бюджетом — «ниша перегрета»</td><td>Падает: $5,04 → $4,99 → $4,20 при KPI $6</td></tr>
-    </table>
-    </div>
-  </div>
-</section>
 
 <!-- CASES -->
 <section id="cases">
