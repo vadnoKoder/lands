@@ -7,7 +7,7 @@
 <title>Как таргетолог с отрисованными кейсами похоронил инвестпроект · Разбор трафика</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Mulish:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Mulish:wght@400;500;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#faf8f4; --bg2:#f2eee6; --bg3:#eae5da; --card:#ffffff;
@@ -165,6 +165,8 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
   .res-facts div{padding:13px 12px}
   #start{scroll-margin-top:70px}
 }
+.scheme{width:100%;height:auto;display:block;background:#f7f3ea;border:1px solid var(--border);border-radius:var(--r2);margin:36px 0;box-shadow:0 10px 30px -18px rgba(26,23,20,.4)}
+.scheme text{font-family:'Caveat',cursive}
 </style>
 </head>
 <body>
@@ -187,9 +189,31 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 
 <article>
   <div class="wrap">
-    <p>Компания привлекала инвестиции в проект. Вход для инвестора от $35 000. Наняли таргетолога, дали бюджет, за три месяца получили около трёхсот заявок и ни одного инвестора.</p>
+    <p>Компания продавала инвесторам долю в действующем бизнесе — сеть под готовым брендом, которая уже работала и приносила выручку. Вход для инвестора — от $35 000. Наняли таргетолога, дали бюджет, за три месяца получили около трёхсот заявок и ни одного инвестора.</p>
     <p>Владелец закрыл рекламу и решил, что в инвестициях она не работает. А через полгода увидел, как соседний проект с того же рынка и с тем же чеком собирает инвесторов через ту же самую площадку.</p>
     <p>Разница была не в рекламе. Ниже три ошибки, которые убили этот проект, и то, на что надо было смотреть вместо цены заявки. Все три видно заранее.</p>
+
+    <svg class="scheme" viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Три месяца рекламы: около 300 заявок и ноль инвесторов">
+      <defs><filter id="heroRough" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+      <text x="380" y="50" text-anchor="middle" font-size="30" font-weight="700" fill="#1a1714">три месяца рекламы</text>
+      <g filter="url(#heroRough)" fill="none" stroke="#1a4a3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="150" cy="92" r="7"/><path d="M150 99 L150 116 M141 105 L159 105 M150 116 L143 127 M150 116 L157 127"/>
+        <circle cx="220" cy="92" r="7"/><path d="M220 99 L220 116 M211 105 L229 105 M220 116 L213 127 M220 116 L227 127"/>
+        <circle cx="290" cy="92" r="7"/><path d="M290 99 L290 116 M281 105 L299 105 M290 116 L283 127 M290 116 L297 127"/>
+        <circle cx="360" cy="92" r="7"/><path d="M360 99 L360 116 M351 105 L369 105 M360 116 L353 127 M360 116 L367 127"/>
+        <circle cx="430" cy="92" r="7"/><path d="M430 99 L430 116 M421 105 L439 105 M430 116 L423 127 M430 116 L437 127"/>
+        <circle cx="500" cy="92" r="7"/><path d="M500 99 L500 116 M491 105 L509 105 M500 116 L493 127 M500 116 L507 127"/>
+        <circle cx="570" cy="92" r="7"/><path d="M570 99 L570 116 M561 105 L579 105 M570 116 L563 127 M570 116 L577 127"/>
+        <path d="M180 170 L580 170 L455 280 L305 280 Z"/>
+        <path d="M250 200 L510 200" stroke-width="1.5"/>
+        <path d="M300 233 L460 233" stroke-width="1.5"/>
+        <path d="M380 280 L380 318 M380 318 l-7 -10 M380 318 l7 -10"/>
+      </g>
+      <text x="380" y="159" text-anchor="middle" font-size="25" font-weight="600" fill="#5c5449">≈ 300 заявок в CRM</text>
+      <text x="380" y="398" text-anchor="middle" font-size="92" font-weight="700" fill="#1a4a3c">0</text>
+      <text x="380" y="434" text-anchor="middle" font-size="27" font-weight="600" fill="#b23a2e">инвесторов</text>
+      <text x="380" y="462" text-anchor="middle" font-size="21" fill="#8d8477">ни одной сделки за три месяца</text>
+    </svg>
 
     <div class="ai-inline">
       <span class="ai-tag">ПОДБОР СПЕЦИАЛИСТА</span>
@@ -268,7 +292,6 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <p>Таргетолог показывал заявку по $6,80 и считал, что делает отличную работу. Формально он был прав: платили ему за цену заявки, и он вдвое улучшил этот показатель.</p>
     <p>Владелец закрыл рекламу и сделал вывод, к которому приходит большинство в этой нише:</p>
     <p class="punch">«В инвестициях реклама не работает. Тут только личные связи».</p>
-    <p>Сосед по рынку в это время продолжал лить.</p>
 
     <h2>Вскрытие: три ошибки, которые убили этот проект</h2>
     <p>Реклама здесь ни при чём. Провалились три конкретные вещи, и каждая из них повторяется в нише из проекта в проект.</p>
@@ -286,6 +309,31 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <p>Человек, готовый занести незнакомой компании $35 000, оставляет заявку тяжело: он уже всё взвесил и хочет разговора. А тому, кому просто любопытно, сколько нынче доходность, заявка не стоит ничего. Оставит за секунду и забудет через минуту.</p>
     <p>Второй тип дешевле в закупке. Всегда. Любой рекламный алгоритм найдёт его быстрее и дешевле, чем первого.</p>
     <p>Когда таргетолог гнал цену с $14 до $6,80, он не улучшал рекламу. Он менял состав заявок: вымывал тех, кто мог занести деньги, и набивал базу теми, кому интересно почитать.</p>
+
+    <svg class="scheme" viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Реклама гонит цену заявки вниз и вымывает платёжеспособных, оставляя зевак">
+      <defs><filter id="sieveRough" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+      <text x="380" y="46" text-anchor="middle" font-size="29" font-weight="700" fill="#1a1714">чем дешевле заявка — тем хуже она</text>
+      <g filter="url(#sieveRough)" fill="none" stroke="#1a4a3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M215 150 L545 150 L455 232 L305 232 Z"/>
+        <path d="M380 232 L380 264 M380 264 l-6 -9 M380 264 l6 -9"/>
+        <rect x="300" y="264" width="160" height="52" rx="7"/>
+        <circle cx="600" cy="118" r="17"/>
+        <circle cx="642" cy="150" r="17"/>
+        <path d="M545 165 C575 150 588 140 604 136" stroke="#b23a2e"/>
+        <path d="M604 136 l1 12 M604 136 l11 3" stroke="#b23a2e"/>
+      </g>
+      <text x="256" y="130" font-size="22" fill="#8d8477">?</text>
+      <text x="308" y="122" font-size="22" fill="#8d8477">?</text>
+      <text x="360" y="128" font-size="22" fill="#8d8477">?</text>
+      <text x="412" y="121" font-size="22" fill="#8d8477">?</text>
+      <text x="460" y="129" font-size="22" fill="#8d8477">?</text>
+      <text x="385" y="200" text-anchor="middle" font-size="22" font-weight="600" fill="#1a4a3c">дешевле</text>
+      <text x="380" y="296" text-anchor="middle" font-size="21" font-weight="600" fill="#1a1714">твои 300 заявок = зеваки</text>
+      <text x="600" y="125" text-anchor="middle" font-size="20" font-weight="700" fill="#1a4a3c">$</text>
+      <text x="642" y="157" text-anchor="middle" font-size="20" font-weight="700" fill="#1a4a3c">$</text>
+      <text x="628" y="205" text-anchor="middle" font-size="18" fill="#b23a2e">кто занёс бы $35 000 — мимо</text>
+      <text x="380" y="406" text-anchor="middle" font-size="24" font-weight="600" fill="#1a4a3c">гонишь цену вниз — теряешь тех, кто платит</text>
+    </svg>
     <p><strong>Почему владелец этого не видит.</strong> Потому что в кабинете обе заявки выглядят одинаково и стоят одинаково. Разницу узнаёт менеджер через двадцать минут разговора.</p>
     <p><strong>К чему приводит.</strong> Вы платите за заявки дважды. Первый раз деньгами в кабинете, второй раз временем отдела продаж. Второй счёт больше, и его никто не считает.</p>
 
@@ -319,7 +367,28 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <h2>Диагноз</h2>
     <p>Проблема не в том, что таргетолог был плохой. И не в том, что менеджеры ленивые.</p>
     <p>Проблема в разрыве: <strong>рекламу оптимизируют под цену заявки, а деньги вы зарабатываете на разговорах.</strong> Две разные цифры, и они тянут в противоположные стороны. Пока вы платите подрядчику за дешёвый лид, вы платите ему за то, чтобы качество падало.</p>
-    <p>Дороже потерянного бюджета обошёлся вывод, который владелец из этого сделал. Он теперь считает, что канал не работает, и не зайдёт в него ещё год. Сосед по рынку в это время собирает через тот же канал инвесторов.</p>
+
+    <svg class="scheme" viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Рекламу оптимизируют под цену заявки, а деньги зарабатываются на разговорах — разрыв между ними">
+      <defs><filter id="gapRough" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="6" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+      <text x="380" y="46" text-anchor="middle" font-size="29" font-weight="700" fill="#1a1714">две цифры тянут в разные стороны</text>
+      <g filter="url(#gapRough)" fill="none" stroke="#1a4a3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="70" y="90" width="250" height="150" rx="14"/>
+        <rect x="440" y="90" width="250" height="150" rx="14"/>
+        <path d="M195 192 L195 224 M195 224 l-7 -10 M195 224 l7 -10"/>
+        <path d="M565 224 L565 192 M565 192 l-7 10 M565 192 l7 10"/>
+        <path d="M320 165 L352 165"/>
+        <path d="M440 165 L408 165"/>
+        <path d="M352 150 L366 182 M394 150 L408 182"/>
+      </g>
+      <text x="195" y="128" text-anchor="middle" font-size="26" font-weight="700" fill="#1a1714">РЕКЛАМА</text>
+      <text x="195" y="172" text-anchor="middle" font-size="23" fill="#5c5449">цена заявки</text>
+      <text x="565" y="128" text-anchor="middle" font-size="26" font-weight="700" fill="#1a1714">РАЗГОВОРЫ</text>
+      <text x="565" y="172" text-anchor="middle" font-size="23" fill="#5c5449">здесь ваши деньги</text>
+      <text x="195" y="272" text-anchor="middle" font-size="20" fill="#8d8477">сюда смотрит подрядчик</text>
+      <text x="565" y="272" text-anchor="middle" font-size="20" fill="#8d8477">здесь считает владелец</text>
+      <text x="380" y="332" text-anchor="middle" font-size="24" font-weight="600" fill="#1a4a3c">оптимизируем одно — зарабатываем на другом</text>
+    </svg>
+    <p>Дороже потерянного бюджета обошёлся вывод, который владелец из этого сделал. Он теперь считает, что канал не работает, и не зайдёт в него ещё год. А канал работает — просто мерили в нём не то.</p>
 
     <h2>Что с этим делать</h2>
     <p>Не «нанять таргетолога получше». Смотреть на другие цифры.</p>
@@ -328,14 +397,16 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
     <p>Я веду инвестпроекты постоянно: недвижимость, крипта, энергетика. Ниши разные, боль одна. Работаю как партнёр, а не исполнитель задач: считаю не цену заявки, а во что вам обошёлся разговор.</p>
     <p>Как это выглядит на дистанции. Проект, который я веду 17-й месяц: солнечная электростанция, Украина, вход от $35 000, рекламы до меня не было.</p>
     <div class="nums">
-      <div><div class="n">$41 305</div><div class="l">бюджета и 4 079 заявок за 17 месяцев</div></div>
+      <div><div class="n">$41 403</div><div class="l">бюджета и 4 079 заявок за 17 месяцев</div></div>
       <div><div class="n">$16 → $7,56</div><div class="l">за заявку: вдвое дешевле, чем на старте</div></div>
       <div><div class="n">100 → 588</div><div class="l">заявок в месяц, объём вырос в 6 раз</div></div>
       <div><div class="n">$13,87 → $8,03</div><div class="l">2025 год против 2026: минус 42% при росте объёма</div></div>
     </div>
+    <img src="img/solar-campaigns.jpg" alt="Рекламный кабинет проекта: 44 кампании" class="shot">
+    <p class="cap">Кабинет проекта: 44 кампании, $41 403 бюджета и 4 079 заявок за 17 месяцев</p>
     <img src="img/solar-table.jpg" alt="Посуточная выгрузка по проекту" class="shot">
     <p class="cap">Посуточная выгрузка по проекту: спенд, заявки, цена заявки по дням</p>
-    <p>Разница с историей выше вот в чём. Там цена заявки падала, и это было плохо. Здесь падала тоже, но объём вырос в шесть раз, а проект живёт полтора года. Цена сама по себе не говорит ни о чём.</p>
+    <p>Здесь меня можно поймать за руку: всю статью цена заявки ничего не значила, а в доказательство я тащу именно её. Так и есть — сама по себе она и тут не значит ничего. Она и здесь упала, ровно как в истории выше. Разница в связке: объём вырос в шесть раз, а цена за ним вверх не поехала, и так 17 месяцев без единой паузы. Доказательство — не цифра $7,56, а то, что система живёт и растёт вторым годом. Ставка на дешёвую заявку из истории выше протянула три месяца и кончилась ничем.</p>
     <p>Перелом дала одна вещь: мы перестали показывать рендеры и показали объект, который физически стоит и работает. С декабря заявка стабильно ниже $9.</p>
     <p>Честно про то, чего в этих цифрах нет. Статистику по договорам клиент не передавал: сколько заявок стало инвесторами, я не знаю и придумывать не буду. Знаю другое. Никто не льёт полтора года и не поднимает дневной бюджет с $60 до $160, если сделок нет.</p>
   </div>
@@ -428,10 +499,10 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 (function(){
   var steps=[
     'Читаю вашу задачу…',
-    'Отбираю кандидатов по нише…',
-    'Проверяю кейсы и цифры из кабинетов…',
-    'Сверяю отзывы и историю проектов…',
-    'Отсекаю тех, кто не тянет ваш бюджет…',
+    'Отбираю по нише и бюджету…',
+    'Кейсы и отзывы пропускаю — их не проверить…',
+    'Смотрю, за что человек берёт оплату…',
+    'Отсекаю тех, кто считает клики вместо денег…',
     'Нашёл.'
   ];
 
