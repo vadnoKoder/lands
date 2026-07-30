@@ -67,6 +67,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .stat{background:var(--bg2);border:1px solid var(--line);padding:18px;clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
 .stat-n{font-family:var(--disp);font-size:24px;font-weight:800;color:var(--red);line-height:1;letter-spacing:-.02em}
 .stat-l{font-size:11.5px;color:var(--ink3);margin-top:8px;line-height:1.4}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px;max-width:680px}
+.hbadge{display:inline-flex;align-items:center;gap:9px;background:var(--bg2);border:1px solid var(--line);border-radius:100px;padding:11px 18px;font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.2}
+.hbadge:before{content:'✳';color:var(--red);font-size:13px;line-height:1}
 .ticker{background:var(--bg3);border:1px solid var(--line);padding:11px 20px;font-size:13px;color:var(--ink2);display:flex;align-items:center;gap:10px;overflow:hidden;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
 .ticker .ast{flex-shrink:0;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
@@ -142,7 +145,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .cmp tr:hover td{background:var(--bg3)}
 
 /* CASES */
-.cases{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.cases-wrap{position:relative;margin-top:44px}
+.cases{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;align-items:flex-start;padding-bottom:10px}
+.cases::-webkit-scrollbar{height:6px}
+.cases::-webkit-scrollbar-track{background:transparent}
+.cases::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px}
+.cases>.case{flex:0 0 47%;scroll-snap-align:start}
+.cnav{position:absolute;top:42%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(11,11,12,.82);color:var(--ink);font-size:26px;line-height:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;backdrop-filter:blur(6px)}
+.cnav:hover{border-color:var(--red);background:var(--red);color:#fff}
+.cnav-l{left:-12px}
+.cnav-r{right:-12px}
 .case{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
 .case:hover{border-color:var(--red)}
 .case-top{padding:28px 28px 22px}
@@ -154,8 +166,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);b
 .case-m .n{font-family:var(--disp);font-size:21px;font-weight:800;color:var(--red);letter-spacing:-.02em}
 .case-m .l{font-size:11.5px;color:var(--ink3);margin-top:5px;line-height:1.4}
 .case-sum{padding:18px 28px;font-size:13.5px;color:var(--cyan);font-weight:700;background:var(--bg3);border-top:1px solid var(--line)}
+.case-facts{list-style:none;margin-top:16px;display:grid;gap:10px}
+.case-facts li{padding-left:22px;position:relative;font-size:14.5px;color:var(--ink2)}
+.case-facts li:before{content:'✳';position:absolute;left:0;top:3px;color:var(--red);font-size:11px}
+.case-rows{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.case-rows .row{background:var(--bg2);padding:17px 28px;display:flex;justify-content:space-between;align-items:baseline;gap:18px}
+.case-rows .row .n{font-family:var(--disp);font-size:26px;font-weight:800;color:var(--red);letter-spacing:-.02em;line-height:1;white-space:nowrap}
+.case-rows .row .l{font-size:13px;color:var(--ink3);text-align:right;line-height:1.35}
 .shot{width:100%;display:block;border-top:1px solid var(--line);cursor:zoom-in}
 .shot-note{padding:11px 28px;font-size:11px;color:var(--ink3);background:var(--bg3);border-top:1px solid var(--line)}
+.shots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.shots-grid img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:top center;display:block;border:1px solid var(--line);border-radius:var(--r);cursor:zoom-in;transition:.25s;background:var(--bg2)}
+.shots-grid img:hover{border-color:var(--red);transform:translateY(-3px)}
+@media(max-width:700px){.shots-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* FAQ */
 .faq{margin-top:38px;max-width:860px}
@@ -192,12 +215,14 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 @media(max-width:960px){
   .hero-grid,.sol-grid,.final-grid{grid-template-columns:1fr;gap:36px}
   .hero .form-card{position:static}
-  .cases{grid-template-columns:1fr}
+  .cases>.case{flex:0 0 70%}
 }
 @media(max-width:700px){
   section{padding:64px 0}
   .hero{padding:120px 0 56px}
   .pains-grid,.stats{grid-template-columns:1fr}
+  .cases>.case{flex:0 0 86%}
+  .cnav{display:none}
   .sticky{display:block}
   .nav-in .btn{display:none}
   .star{display:none}
@@ -222,13 +247,13 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="star s3">✳</div>
   <div class="wrap">
     <div class="hero-col">
-      <h1>Упёрлись в <em>$100 в день</em>, а поднимаете бюджет — и заказ вылетает за KPI?</h1>
-      <p class="hero-sub">Наращиваю объём по нутре и COD так, чтобы цена заказа не вылетала за KPI.</p>
-      <div class="stats-h">Результат клиента за 2 года</div>
-      <div class="stats">
-        <div class="stat"><div class="stat-n">$4,63</div><div class="stat-l">средний заказ за 2 года при KPI $6</div></div>
-        <div class="stat"><div class="stat-n">$408 / в день</div><div class="stat-l">дневной рекламный бюджет на пике</div></div>
-        <div class="stat"><div class="stat-n">2 из 10</div><div class="stat-l">кабинетов потеряно за 2 года</div></div>
+      <h1>Ваш нутра-оффер застрял на <em>$100 в день</em>? Поднимаете бюджет — и заказ вылетает за KPI</h1>
+      <p class="hero-sub">Наращиваю объём нутры на COD так, чтобы цена заказа держалась в KPI — а не улетала вверх при первом же росте бюджета.</p>
+      <div class="stats-h">Ниже разобрал:</div>
+      <div class="hero-badges">
+        <span class="hbadge">Четыре причины, из-за которых объём стоит на месте</span>
+        <span class="hbadge">Почему пока байер не в доле — вы не будете зарабатывать</span>
+        <span class="hbadge">Кейс: 18 437 заказов по $4,63 при KPI $6</span>
       </div>
     </div>
   </div>
@@ -250,22 +275,22 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
       <div class="pain reveal">
         <div class="pain-n">01</div>
         <h3>Потолок объёма</h3>
-        <p>Поднимаете бюджет — заказ дорожает, экономика не сходится. Откатываете назад. И так по кругу.</p>
+        <p>Добавили бюджет — цена заказа поползла вверх, прибыль растаяла, откатили назад. Через неделю снова упираетесь в тот же потолок.</p>
       </div>
       <div class="pain reveal">
         <div class="pain-n">02</div>
         <h3>Кабинеты горят</h3>
-        <p>Бан — и залив встал. Пока поднимаете новый кабинет, обороты падают.</p>
+        <p>С утра прилетел бан — и весь залив встал. Пока поднимаете и прогреваете новый кабинет, обороты уже просели.</p>
       </div>
       <div class="pain reveal">
         <div class="pain-n">03</div>
-        <h3>Отчёты про клики, а не про склад</h3>
-        <p>Байер рапортует дешёвым лидом. Доехал ли он до склада, выкупили ли товар — не его тема.</p>
+        <h3>Отчёты про клики, а не про продажи</h3>
+        <p>Байер отчитывается дешёвым лидом и красивым CTR. А выкупили ли товар, вернулись ли деньги — «не его зона».</p>
       </div>
       <div class="pain reveal">
         <div class="pain-n">04</div>
         <h3>Мёртвый офер тянут до последнего</h3>
-        <p>Подрядчик на проценте от бюджета тянет мёртвое направление, пока платят.</p>
+        <p>Офер уже не окупается, но подрядчик на проценте от бюджета льёт в него до последнего — ему платят за открученную сумму, а не за вашу прибыль.</p>
       </div>
     </div>
   </div>
@@ -276,10 +301,8 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="wrap reason-in">
     <span class="label">Главная причина</span>
     <div class="arrow">↓</div>
-    <h2>Пока байер не в доле — вы не заработаете</h2>
-    <p>Все четыре проблемы выше — про то, как устроены деньги.</p>
-    <p>Наёмному байеру платят за процесс: за настройку, за ведение, за открученный бюджет. Поэтому он и приносит процесс — клики, показы, «мы протестировали». Он не видит вашего склада, не считает выкуп, не знает вашей маржи.</p>
-    <div class="reason-out">Вам не нужен человек, который настраивает рекламу.<br>Вам нужен человек, который считает ваши деньги как свои.</div>
+    <h2>Все четыре проблемы выше — про то, как устроены деньги. Пока байер не в доле — вы не заработаете</h2>
+    <p>Наёмному байеру платят за процесс: за настройку, за ведение, за открученный бюджет. Поэтому он и приносит клики, показы, говорит «мы протестировали». А выкуп, ваша маржа, выгодно ли вам вообще лить этот офер — ему всё равно. Это не его деньги.</p>
   </div>
 </section>
 
@@ -287,9 +310,8 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
 <section>
   <div class="wrap">
     <span class="label reveal">Противоядие</span>
-    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Вам нужен таргетолог-партнёр, а не наёмный байер</h2>
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Вам нужен партнёр, а не исполнитель задач</h2>
     <div class="sol-text reveal" style="max-width:780px;margin-top:30px">
-      <p>Захожу как партнёр, а не исполнитель задач.</p>
       <p>Отслеживаю всю цепочку — от креатива до выкупа — и говорю правду, даже когда она мне невыгодна. Поэтому клиент со мной второй год.</p>
     </div>
     <h3 class="sub-h reveal">Преимущества работы со мной</h3>
@@ -337,6 +359,9 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
   <div class="wrap">
     <span class="label reveal">Подтверждение</span>
     <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Два направления одного клиента, живые выгрузки</h2>
+    <div class="cases-wrap">
+      <button class="cnav cnav-l" onclick="scrollCases(-1)" aria-label="Предыдущий">‹</button>
+      <button class="cnav cnav-r" onclick="scrollCases(1)" aria-label="Следующий">›</button>
     <div class="cases">
       <div class="case reveal">
         <div class="case-top">
@@ -367,6 +392,43 @@ footer a{color:var(--red);text-decoration:none;font-weight:700}
         </div>
         <img src="img/tovarka-perfume.jpg" alt="Рекламный кабинет — товарка" class="shot">
       </div>
+      <div class="case reveal">
+        <div class="case-top">
+          <span class="case-tag">СВОДКА ПО ВСЕМ ОФФЕРАМ</span>
+          <h3>Посуточные выгрузки за 2 года</h3>
+          <p class="case-desc">Общий отчёт по клиенту: нутра + товарка вместе, день за днём.</p>
+        </div>
+        <div class="case-m">
+          <div><div class="n">$138 072</div><div class="l">бюджет за 2 года</div></div>
+          <div><div class="n">29 149</div><div class="l">покупок всего</div></div>
+          <div><div class="n">$5,03</div><div class="l">средняя покупка · 2025</div></div>
+          <div><div class="n">$4,16</div><div class="l">средняя покупка · 2026</div></div>
+        </div>
+        <img src="img/itogo-2025.jpg" alt="Сводный отчёт по всем офферам — 2025: бюджет $97 125, 19 306 покупок, средняя $5,03" class="shot">
+        <div class="shot-note">Итого 2025: бюджет $97 125, 19 306 покупок, средняя цена $5,03.</div>
+        <img src="img/itogo-2026.jpg" alt="Сводный отчёт по всем офферам — 2026: бюджет $40 946, 9 843 покупок, средняя $4,16" class="shot">
+        <div class="shot-note">Итого 2026: бюджет $40 946, 9 843 покупок, средняя цена $4,16.</div>
+      </div>
+    </div>
+    </div>
+    <div style="text-align:center;margin-top:38px">
+      <button class="btn btn-ghost" id="moreCasesBtn" onclick="showMoreCases()">Открыть ещё кейсы ↓</button>
+    </div>
+  </div>
+</section>
+
+<!-- CASES 2 — другие ниши -->
+<section id="cases2" style="display:none">
+  <div class="wrap">
+    <span class="label reveal">Работаю не только в нутре</span>
+    <h2 class="reveal" style="font-size:clamp(26px,3.2vw,40px);max-width:800px">Ещё ниши, где вёл трафик</h2>
+    <div class="shots-grid reveal">
+      <img src="img/case-chemodany.jpg" alt="Кейс: чемоданы DELSEY — бюджет $2 350, 1 852 обращения по $1,26" class="gshot">
+      <img src="img/case-odezhda-vizla.jpg" alt="Кейс: магазин женской одежды VIZLA — 203 продажи по $1,88, +22 000 подписчиков" class="gshot">
+      <img src="img/case-orehi.jpg" alt="Кейс: орехи и сухофрукты King Store — бюджет $3 523, 1 343 обращения" class="gshot">
+      <img src="img/case-showroom-kate.jpg" alt="Кейс: шоурум одежды KATE_STORE — бюджет $9 184, 160 342 перехода по $0,06" class="gshot">
+      <img src="img/case-korm.jpg" alt="Кейс: натуральный корм Pet's food-court — бюджет $489, 166 лидов" class="gshot">
+      <img src="img/case-avto.jpg" alt="Кейс: пригон авто из Европы и США — бюджет $3 737, 475 лидов по $1,49" class="gshot">
     </div>
   </div>
 </section>
@@ -434,6 +496,21 @@ function tFaq(btn){
   document.querySelectorAll('.fq').forEach(f=>f.classList.remove('on'));
   if(!open) item.classList.add('on');
 }
+function scrollCases(dir){
+  var c = document.querySelector('#cases .cases');
+  if(!c) return;
+  var card = c.querySelector('.case');
+  var step = card ? card.offsetWidth + 22 : c.clientWidth * 0.6;
+  c.scrollBy({left: dir * step, behavior:'smooth'});
+}
+function showMoreCases(){
+  var s = document.getElementById('cases2');
+  s.style.display = 'block';
+  s.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+  var b = document.getElementById('moreCasesBtn');
+  if(b) b.parentElement.style.display = 'none';
+  s.scrollIntoView({behavior:'smooth', block:'start'});
+}
 // ВНИМАНИЕ: форма НЕ отправляет данные на сервер — после отправки человека
 // перебрасывает в Telegram, где он пишет сам. Введённые в поля данные никуда
 // не сохраняются: если нужен сбор заявок в базу — подключить Formspree или бота.
@@ -487,7 +564,7 @@ io2.observe(document.getElementById('start'));
     img.classList.remove('zoom');
     document.body.style.overflow = '';
   }
-  document.querySelectorAll('.shot').forEach(function(el){
+  document.querySelectorAll('.shot, .gshot').forEach(function(el){
     el.addEventListener('click', function(){
       const note = el.nextElementSibling;
       const caption = note && note.classList.contains('shot-note') ? note.textContent.trim() : '';
