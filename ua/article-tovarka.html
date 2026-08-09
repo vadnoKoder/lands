@@ -171,6 +171,16 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 .lang a{color:var(--ink3);text-decoration:none;transition:.18s}
 .lang a:hover{color:var(--accent)}
 .lang b{color:var(--ink)}
+/* LIGHTBOX */
+.shot{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:300;background:rgba(12,10,8,.96);display:none;overflow:auto}
+.lb.on{display:block}
+.lb-stage{min-height:100%;display:flex;align-items:center;justify-content:center;padding:58px 20px 64px}
+.lb img{display:block;max-width:100%;max-height:calc(100vh - 130px);object-fit:contain;cursor:zoom-in;border:1px solid rgba(255,255,255,.14);border-radius:6px}
+.lb img.zoom{max-width:none;max-height:none;width:1600px;border-radius:0;cursor:zoom-out}
+.lb-x{position:fixed;top:14px;right:16px;z-index:2;width:44px;height:44px;border:none;border-radius:50%;background:var(--accent);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.lb-cap{position:fixed;left:0;right:0;bottom:0;z-index:2;padding:13px 20px;background:rgba(12,10,8,.92);color:#d9d2c6;font-size:13px;text-align:center}
+@media(max-width:700px){.lb-stage{padding:58px 8px 64px}.lb img.zoom{width:1100px}}
 </style>
 </head>
 <body>
@@ -548,6 +558,44 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
       setTimeout(next,1150);
     });
   });
+})();
+
+// LIGHTBOX: клик по скрину открывает его крупно, повторный клик по картинке — зум до 100%
+(function(){
+  var shots=document.querySelectorAll('.shot');
+  if(!shots.length) return;
+  var lb=document.createElement('div');
+  lb.className='lb';
+  lb.innerHTML='<button class="lb-x" aria-label="Закрити">&times;</button>'+
+               '<div class="lb-stage"><img alt=""></div>'+
+               '<div class="lb-cap"></div>';
+  document.body.appendChild(lb);
+  var img=lb.querySelector('img'), cap=lb.querySelector('.lb-cap');
+  function open(src, alt, caption){
+    img.src=src; img.alt=alt||'';
+    img.classList.remove('zoom');
+    cap.textContent=caption||'';
+    cap.style.display=caption?'block':'none';
+    lb.classList.add('on');
+    lb.scrollTop=0;
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('on');
+    img.classList.remove('zoom');
+    document.body.style.overflow='';
+  }
+  Array.prototype.forEach.call(shots,function(el){
+    el.addEventListener('click',function(){
+      var note=el.nextElementSibling;
+      var caption=note && note.classList.contains('cap') ? note.textContent.trim() : '';
+      open(el.currentSrc||el.src, el.alt, caption);
+    });
+  });
+  img.addEventListener('click',function(e){ e.stopPropagation(); img.classList.toggle('zoom'); });
+  lb.querySelector('.lb-x').addEventListener('click',close);
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && lb.classList.contains('on')) close(); });
 })();
 </script>
 
