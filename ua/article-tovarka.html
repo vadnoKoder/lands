@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Замовлення по $4,20 в кабінеті, а прибутку немає · Розбір трафіку</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Mulish:wght@400;500;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4; --bg2:#f2eee6; --bg3:#eae5da; --card:#ffffff;
+  --ink:#1a1714; --ink2:#5c5449; --ink3:#8d8477;
+  --accent:#1a4a3c; --accent2:#123328;
+  --border:#e2dccf; --border2:#cec6b5;
+  --sans:'Mulish',sans-serif; --serif:'Fraunces',serif;
+  --r:12px; --r2:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.72;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);line-height:1.14;font-weight:900;letter-spacing:-.02em}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:1180px;margin:0 auto;padding:15px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:var(--serif);font-weight:900;font-size:17px;display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.btn{background:var(--accent);color:#faf8f4;border:none;padding:13px 22px;border-radius:100px;font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.btn:hover{background:var(--accent2);transform:translateY(-1px)}
+
+.art-head{padding:132px 0 40px;border-bottom:1px solid var(--border)}
+.art-tag{display:inline-block;background:var(--bg3);border-radius:100px;padding:5px 13px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:18px}
+.art-head h1{font-size:clamp(30px,4.4vw,46px);margin-bottom:18px}
+.art-meta{font-size:14px;color:var(--ink3)}
+
+article{padding:44px 0 60px}
+article h2{font-size:clamp(23px,3vw,30px);margin:52px 0 18px}
+article h3{font-size:20px;font-weight:700;margin:38px 0 14px}
+article p{font-size:17.5px;color:var(--ink2);margin-bottom:19px}
+article strong{color:var(--ink);font-weight:700}
+article em{color:var(--ink3);font-style:italic}
+article hr{border:none;border-top:1px solid var(--border);margin:46px 0}
+blockquote{margin:26px 0;padding:20px 24px;background:var(--bg2);border-left:3px solid var(--border2);border-radius:0 var(--r) var(--r) 0}
+blockquote p{margin:0;font-size:17px;color:var(--ink);font-style:italic}
+.note{font-size:14.5px;color:var(--ink3);font-style:italic;text-align:center;padding:18px 20px;background:var(--bg2);border-radius:var(--r);margin:34px 0}
+
+.check{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 30px;margin:28px 0}
+.check ul{list-style:none}
+.check li{position:relative;padding:11px 0 11px 34px;font-size:16px;color:var(--ink2);border-bottom:1px solid var(--border)}
+.check li:last-child{border-bottom:none}
+.check li:before{content:'';position:absolute;left:0;top:15px;width:17px;height:17px;border:2px solid var(--border2);border-radius:4px;transition:.15s}
+.check li[tabindex]{cursor:pointer;-webkit-user-select:none;user-select:none;outline:none}
+.check li[tabindex]:hover:before{border-color:var(--accent)}
+.check li[tabindex]:focus-visible{color:var(--ink)}
+.check li[tabindex]:focus-visible:before{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,74,60,.15)}
+.check li.on{color:var(--ink)}
+.check li.on:before{background:var(--accent);border-color:var(--accent)}
+.check li.on:after{content:'✓';position:absolute;left:0;top:15px;width:17px;height:17px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#faf8f4}
+.score{margin-top:24px;padding-top:22px;border-top:2px solid var(--border)}
+.score p{font-size:15.5px;margin-bottom:12px}
+.score p:last-child{margin-bottom:0}
+.score-count{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:13px}
+
+.cta-box{background:var(--accent);color:#faf8f4;border-radius:var(--r2);padding:32px 34px;margin:44px 0;text-align:center}
+.cta-box p{color:#faf8f4;opacity:.9;font-size:16.5px;margin-bottom:20px}
+.cta-box .btn{background:#faf8f4;color:var(--accent);padding:15px 30px;font-size:15px}
+.cta-box .btn:hover{background:#fff}
+
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin:30px 0}
+.nums div{background:var(--card);padding:20px 22px}
+.nums .n{font-family:var(--serif);font-size:24px;font-weight:900;color:var(--accent);line-height:1.1}
+.nums .l{font-size:13px;color:var(--ink3);margin-top:6px;line-height:1.4}
+
+.ai-widget p{margin-bottom:0}
+
+.ai{background:var(--bg2);border-top:1px solid var(--border);padding:58px 0}
+.ai .lead{font-size:16.5px;color:var(--ink2);margin-top:12px}
+.ai-tag{display:inline-block;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:5px 13px;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:16px}
+.ai-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 30px;margin-top:26px}
+.ai-inline{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:26px 28px;margin:36px 0}
+.ai-inline .ai-h{font-family:var(--serif);font-size:23px;font-weight:900;letter-spacing:-.02em;line-height:1.15;margin:0 0 10px;color:var(--ink)}
+.ai-inline .ai-sub{font-size:15.5px;color:var(--ink2);margin:0}
+.ai-inline .ai-box{margin-top:20px;padding:24px 24px}
+.fld{display:block;margin-bottom:17px}
+.fld > span{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.fld input,.fld textarea,.fld select{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--accent)}
+.fld select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:42px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='none' stroke='%238d8477' stroke-width='2' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
+.fld select:invalid{color:var(--ink3)}
+.fld textarea{resize:vertical;min-height:76px;line-height:1.5}
+.ai-box .btn{width:100%;padding:16px;font-size:15px;text-align:center}
+.ai-hint{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:12px}
+.err{font-size:13px;color:#a33;margin-top:10px;display:none}
+
+.load{display:none;text-align:center;padding:34px 6px 30px}
+.spin{width:38px;height:38px;border:3px solid var(--bg3);border-top-color:var(--accent);border-radius:50%;margin:0 auto 22px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-txt{font-size:16px;color:var(--ink2);min-height:26px;transition:opacity .25s}
+.bar{height:4px;background:var(--bg3);border-radius:100px;margin:24px auto 0;max-width:290px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:100px;transition:width .5s ease}
+
+.res{display:none;animation:pop .45s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.res-found{font-size:13px;color:var(--ink3);text-align:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--border)}
+.res-found b{color:var(--accent)}
+.res-top{display:flex;gap:20px;align-items:center}
+.ava{width:82px;height:82px;flex:0 0 82px;border-radius:50%;background:var(--accent) url('img/vadim.jpg') center/cover no-repeat;color:transparent;font-size:0;overflow:hidden}
+.res-name{font-family:var(--serif);font-size:22px;font-weight:900;line-height:1.15}
+.res-role{font-size:14px;color:var(--ink3);margin-top:5px}
+.match{display:inline-block;background:var(--bg3);color:var(--accent);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:700;margin-top:10px}
+.res-desc{font-size:16px;color:var(--ink2);margin-top:20px}
+.res-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:22px 0 24px}
+.res-facts div{background:var(--card);padding:15px 12px;text-align:center}
+.res-facts b{display:block;font-family:var(--serif);font-size:18px;color:var(--accent);line-height:1.1}
+.res-facts span{display:block;font-size:11.5px;color:var(--ink3);line-height:1.35;margin-top:5px}
+
+.final{background:var(--bg3);border-top:1px solid var(--border);padding:60px 0}
+.final h2{margin-top:0}
+.final ul{list-style:none;margin:22px 0}
+.final li{position:relative;padding:11px 0 11px 30px;font-size:16px;color:var(--ink2)}
+.final li:before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
+.final .btn{margin-top:14px;padding:16px 32px;font-size:15px}
+
+.shot{width:100%;border:1px solid var(--border);border-radius:var(--r);display:block;margin-top:6px}
+.cap{font-size:13px;color:var(--ink3);text-align:center;margin-top:10px}
+
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:26px 28px;margin-top:26px;max-width:540px}
+.field{margin-bottom:13px}
+.field input{width:100%;padding:13px 15px;border:1px solid var(--border2);border-radius:var(--r);font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--bg);outline:none;transition:.2s}
+.field input:focus{border-color:var(--accent)}
+.form-card .btn{width:100%;padding:15px;text-align:center;margin-top:4px}
+.form-note{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:12px}
+.ok{display:none;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:30px 28px;margin-top:26px;max-width:540px;text-align:center}
+.ok.on{display:block}
+.ok-i{font-size:28px;color:var(--accent);line-height:1;margin-bottom:12px}
+.ok h3{font-family:var(--serif);font-size:21px;font-weight:900;margin-bottom:8px}
+.ok p{font-size:15px;color:var(--ink2);margin-bottom:18px}
+#start{scroll-margin-top:84px}
+
+footer{padding:34px 0;text-align:center;color:var(--ink3);font-size:13px}
+footer a{color:var(--accent);text-decoration:none;font-weight:700}
+.back{display:inline-block;margin-bottom:26px;color:var(--ink3);text-decoration:none;font-size:14px}
+.back:hover{color:var(--accent)}
+@media(max-width:700px){
+  .art-head{padding:104px 0 30px}
+  article p{font-size:16.5px}
+  .nums{grid-template-columns:1fr}
+  .nav-in{padding:12px 18px}
+  .nav-in .btn{padding:10px 15px;font-size:13px}
+  .brand{font-size:15.5px}
+  .ai-box{padding:22px 18px}
+  .ai-inline{padding:22px 18px}
+  .ai-inline .ai-h{font-size:21px}
+  .ai-inline .ai-box{padding:18px 15px}
+  .check{padding:22px 18px}
+  .cta-box{padding:26px 20px}
+  .form-card,.ok{padding:22px 18px}
+  .res-top{flex-direction:column;align-items:center;text-align:center;gap:13px}
+  .ava{width:78px;height:78px;flex:0 0 78px}
+  .res-name{font-size:20px}
+  .res-facts{grid-template-columns:1fr}
+  .res-facts div{padding:13px 12px}
+  #start{scroll-margin-top:70px}
+}
+.scheme{width:100%;height:auto;display:block;background:#f7f3ea;border:1px solid var(--border);border-radius:var(--r2);margin:36px 0;box-shadow:0 10px 30px -18px rgba(26,23,20,.4)}
+.scheme text{font-family:'Caveat',cursive}
+.lang{margin-left:auto;margin-right:18px;display:inline-flex;gap:9px;align-items:center;font-size:12px;font-weight:700;letter-spacing:.06em}
+.lang a{color:var(--ink3);text-decoration:none;transition:.18s}
+.lang a:hover{color:var(--accent)}
+.lang b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="brand"><span class="dot"></span>Розбір трафіку</a>
+    <span class="lang"><b>UA</b><a href="../article-tovarka.html">RU</a></span>
+    <a href="#start" class="btn">Забрати розбір →</a>
+  </div>
+</nav>
+
+<header class="art-head">
+  <div class="wrap">
+    <a href="index.html" class="back">← До всіх матеріалів</a>
+    <span class="art-tag">ТОВАРКА І НУТРА · COD · ПРЯМІ РЕКЛИ</span>
+    <h1>Замовлення по $4,20 в кабінеті, а прибутку немає. Де ламається економіка COD</h1>
+    <p class="art-meta">4 хвилини читання</p>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <p>Звіт нормальний: замовлення по $4, бюджет відкручено, баєр задоволений. А на складі лежить товар, який не викупили, і наприкінці місяця ви рахуєте прибуток і не розумієте, куди він подівся.</p>
+    <p>Якщо це про вас, проблема майже ніколи не в креативах. Прямий рекл втрачає гроші в трьох точках, яких не видно з рекламного кабінету. Жодна з них не виглядає як проблема, поки ви дивитеся у звіт.</p>
+    <p>Нижче всі три: як кожна виглядає у звіті, чому ви її не бачите і у що вона обходиться. І що рахувати замість ціни замовлення.</p>
+
+    <svg class="scheme" viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="У кабінеті замовлення дешевше і це перемога, а на складі повернення і збиток">
+      <defs><filter id="tHeroRough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+      <text x="380" y="56" text-anchor="middle" font-size="31" font-weight="700" fill="#1a1714">одна ціна — дві правди</text>
+      <g filter="url(#tHeroRough)" fill="none" stroke="#1a4a3c" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="95" y="92" width="220" height="140" rx="12"/>
+        <path d="M95 122 L315 122"/>
+        <circle cx="113" cy="107" r="3.4" fill="#1a4a3c"/>
+        <circle cx="127" cy="107" r="3.4" fill="#1a4a3c"/>
+        <circle cx="141" cy="107" r="3.4" fill="#1a4a3c"/>
+        <path d="M247 178 l11 13 l24 -30" stroke-width="3"/>
+        <circle cx="205" cy="312" r="21"/>
+        <circle cx="197" cy="307" r="2.6" fill="#1a4a3c"/>
+        <circle cx="213" cy="307" r="2.6" fill="#1a4a3c"/>
+        <path d="M193 316 Q205 330 217 316"/>
+        <path d="M402 96 L390 128 L414 152 L392 184 L412 214 L398 248" stroke-width="2.3"/>
+        <rect x="492" y="176" width="58" height="52" rx="3"/>
+        <path d="M521 176 L521 228 M492 202 L550 202"/>
+        <rect x="556" y="176" width="58" height="52" rx="3"/>
+        <path d="M585 176 L585 228 M556 202 L614 202"/>
+        <rect x="524" y="120" width="58" height="52" rx="3"/>
+        <path d="M553 120 L553 172 M524 146 L582 146"/>
+        <path d="M590 112 C567 90 534 92 520 110" stroke="#b23a2e"/>
+        <path d="M520 110 l14 -3 M520 110 l3 14" stroke="#b23a2e"/>
+        <circle cx="555" cy="312" r="21"/>
+        <circle cx="547" cy="307" r="2.6" fill="#1a4a3c"/>
+        <circle cx="563" cy="307" r="2.6" fill="#1a4a3c"/>
+        <path d="M543 322 Q555 310 567 322"/>
+      </g>
+      <text x="192" y="192" text-anchor="middle" font-size="46" font-weight="700" fill="#1a4a3c">$4,20</text>
+      <text x="205" y="266" text-anchor="middle" font-size="27" font-weight="600" fill="#1a1714">КАБІНЕТ</text>
+      <text x="205" y="360" text-anchor="middle" font-size="21" fill="#8d8477">звіт красивий</text>
+      <text x="640" y="128" text-anchor="middle" font-size="30" font-weight="700" fill="#b23a2e">✗</text>
+      <text x="555" y="266" text-anchor="middle" font-size="27" font-weight="600" fill="#1a1714">СКЛАД</text>
+      <text x="555" y="360" text-anchor="middle" font-size="21" fill="#8d8477">дохід у мінусі</text>
+      <text x="380" y="432" text-anchor="middle" font-size="25" font-weight="600" fill="#1a4a3c">у кабінеті плюс — по грошах мінус</text>
+    </svg>
+
+    <div class="ai-inline">
+      <span class="ai-tag">ПІДБІР СПЕЦІАЛІСТА</span>
+      <p class="ai-h">Читати ніколи? Хай підбере ШІ</p>
+      <p class="ai-sub">База перевірених баєрів. Опишіть проєкт у трьох рядках, і я покажу, хто підходить під вашу нішу, задачу та бюджет.</p>
+
+      <div class="ai-box ai-widget">
+        <form class="w-form" novalidate>
+          <label class="fld"><span>Ваша ніша</span>
+            <input class="w-f1" type="text" placeholder="Нутра COD, товарка COD, Польща, Румунія…" autocomplete="off">
+          </label>
+          <label class="fld"><span>Чому шукаєте спеціаліста</span>
+            <textarea class="w-f2" placeholder="Коротко: обсяг стоїть на місці. Або викуп просідає. Або підрядник звітує кліками…"></textarea>
+          </label>
+          <label class="fld"><span>Бюджет на рекламу</span>
+            <select class="w-f3" required>
+              <option value="" disabled selected>Оберіть бюджет</option>
+              <option>до $50 на день</option>
+              <option>до $250 на день</option>
+              <option>до $1 000 на день</option>
+              <option>більше $1 000 на день</option>
+            </select>
+          </label>
+          <button type="submit" class="btn">Запустити ШІ →</button>
+          <p class="err w-err">Заповніть усі три поля, інакше добирати немає за чим.</p>
+          <p class="ai-hint">Дані нікуди не йдуть: підбір відбувається прямо в браузері.</p>
+        </form>
+
+        <div class="load w-load">
+          <div class="spin"></div>
+          <div class="load-txt w-txt">Читаю вашу задачу…</div>
+          <div class="bar"><i class="w-bar"></i></div>
+        </div>
+
+        <div class="res w-res">
+          <p class="res-found">Під нішу «<b class="w-niche">товарка COD</b>» і бюджет <b class="w-budget">…</b> підходить <b>1 спеціаліст</b> із бази</p>
+          <div class="res-top">
+            <div class="ava">ВК</div>
+            <div>
+              <div class="res-name">Вадим Котівець</div>
+              <div class="res-role">Таргетолог-партнер · COD, товарка, нутра, інвестпроєкти</div>
+              <span class="match">Збіг 96%</span>
+            </div>
+          </div>
+          <p class="res-desc">Працює за методикою партнерського заливу: заходить у проєкт як партнер, а не як виконавець завдань. Рахує не ціну замовлення з кабінету, а те, що доїхало до складу і скільки на цьому заробив власник. Про вигорілий офер каже вголос, а не коли бюджет уже злитий.</p>
+          <div class="res-facts">
+            <div><b>$4,63</b><span>ціна замовлення по нутрі за два роки при KPI $6</span></div>
+            <div><b>12 893</b><span>замовлень по товарці, середня $4,99</span></div>
+            <div><b>$7 → $249</b><span>денний бюджет без зростання ціни замовлення</span></div>
+          </div>
+          <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Зв'язатися зі спеціалістом →</a>
+          <p class="ai-hint">Напишіть слово РОЗБІР. Перші 20 хвилин безкоштовно.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Як обирають баєра в COD і чому це нічого не вирішує</h2>
+    <p>Один прямий рекл, з яким я працюю другий рік, починав так: роздав бюджети <strong>трьом баєрам одночасно</strong> і став дивитися, хто витягне.</p>
+    <p>Логіка нормальна: у COD людину не перевірити за резюме. Скриншоти малюються, кейси переказуються, «лив на Європу два роки» кажуть усі. Тому ви даєте бюджет і чекаєте цифру.</p>
+    <p>Проблема в тому, <strong>що саме ви потім порівнюєте.</strong> Через місяць у вас три звіти з ціною замовлення. Ви берете найнижчу і залишаєте цю людину. А ціна замовлення в кабінеті не має стосунку до того, скільки ви заробили.</p>
+    <p>Той клієнт працює зі мною другий рік. Але обрав він тоді не за ціною замовлення. Дослівно:</p>
+    <blockquote><p>«Ти показав найкращу комунікацію, найкраще за ціною ліда, ну і стосунки. Запуски не відкладалися: якщо треба щось увімкнути день у день, ти завжди вмикав.»</p></blockquote>
+    <p>Швидкість стояла першою. Це не про ввічливість, а про гроші: у ніші, де офер живе пару місяців, тиждень очікування підрядника і є втрачений офер.</p>
+
+    <h2>Головна проблема: баєру платять за процес, тому він приносить процес</h2>
+    <p>Найманому баєру платять за налаштування, ведення, відкручений бюджет. Він і приносить рівно це: кліки, покази, «ми протестували». Складу вашого він не бачить, викуп не рахує, маржі не знає.</p>
+
+    <svg class="scheme" viewBox="0 0 760 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Баєру платять за кліки, покази і бюджет, а склад, викуп і маржу він не бачить">
+      <defs><filter id="procRough" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+      <text x="380" y="44" text-anchor="middle" font-size="28" font-weight="700" fill="#1a1714">баєру платять за процес — процес він і приносить</text>
+      <g filter="url(#procRough)" fill="none" stroke="#1a4a3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="70" y="90" width="280" height="215" rx="14"/>
+        <rect x="410" y="90" width="280" height="215" rx="14"/>
+        <path d="M96 168 l6 8 l13 -17"/>
+        <path d="M96 210 l6 8 l13 -17"/>
+        <path d="M96 252 l6 8 l13 -17"/>
+        <path d="M440 162 l15 16 M455 162 l-15 16" stroke="#b23a2e"/>
+        <path d="M440 204 l15 16 M455 204 l-15 16" stroke="#b23a2e"/>
+        <path d="M440 246 l15 16 M455 246 l-15 16" stroke="#b23a2e"/>
+      </g>
+      <text x="210" y="128" text-anchor="middle" font-size="26" font-weight="700" fill="#1a1714">ПЛАТЯТЬ ЗА</text>
+      <text x="128" y="180" font-size="24" fill="#5c5449">кліки</text>
+      <text x="128" y="222" font-size="24" fill="#5c5449">покази</text>
+      <text x="128" y="264" font-size="24" fill="#5c5449">відкручений бюджет</text>
+      <text x="550" y="128" text-anchor="middle" font-size="26" font-weight="700" fill="#1a1714">НЕ БАЧИТЬ</text>
+      <text x="472" y="180" font-size="24" fill="#5c5449">склад</text>
+      <text x="472" y="222" font-size="24" fill="#5c5449">викуп</text>
+      <text x="472" y="264" font-size="24" fill="#5c5449">маржу</text>
+      <text x="380" y="360" text-anchor="middle" font-size="24" font-weight="600" fill="#1a4a3c">де ваші гроші — туди він і не дивиться</text>
+    </svg>
+    <p>І не повинен. Йому за це не платять.</p>
+    <p>Звідси росте все інше. Будувати інфраструктуру з десяти кабінетів немає навіщо: можна лити в один, поки не згорить. Казати, що офер вигорів, теж немає навіщо: відсоток капає з бюджету. І у викуп лізти немає навіщо, якщо в кабінеті «дешевий лід».</p>
+    <p>Далі три місця, де це коштує вам грошей.</p>
+
+    <h2>Біль 1. Дешеве замовлення з поганим викупом — це збиток, який виглядає як перемога</h2>
+    <p><strong>Як це виглядає.</strong> Баєр приносить замовлення по $4,00 замість $5,20 і показує, що стало на 23% дешевше. У кабінеті це тріумф.</p>
+    <p><strong>Чому ви цього не бачите.</strong> У рекламному кабінеті замовлення по $4 з викупом 50% завжди красивіше, ніж замовлення по $5,20 з викупом 80%. Різниця проявляється на складі через два тижні, коли посилки їдуть назад. До цього моменту зв'язка вже масштабована.</p>
+    <p><strong>До чого призводить.</strong> Ви платите за доставку в обидва боки, товар повертається пом'ятим, а гроші заморожені в логістиці. Ваш баєр у цей момент звітує найкращим місяцем за квартал.</p>
+    <p>Дешевий лід, за яким ніхто не приїхав на пошту, дорожчий за нормальний. Бачить це тільки прямий рекл: у нього є доступ до реальної економіки. Баєр із сітками оптимізує цифру, яка до ваших грошей стосунку не має.</p>
+
+    <h2>Біль 2. Стеля обсягу: піднімаєте бюджет, ціна повзе вгору</h2>
+    <p><strong>Як це виглядає.</strong> Ви вперлися в $100 на день. Піднімаєте до $150, і замовлення дорожчає, економіка перестає сходитися. Відкочуєте назад. Через місяць пробуєте знову. І так по колу.</p>
+
+    <svg class="scheme" viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Піднімаєш бюджет — упираєшся в стелю, і ціна замовлення лізе вгору">
+      <defs><filter id="ceilRough" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="8" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+      <text x="380" y="46" text-anchor="middle" font-size="29" font-weight="700" fill="#1a1714">стеля обсягу</text>
+      <g filter="url(#ceilRough)" fill="none" stroke="#1a4a3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M110 178 L650 178"/>
+        <path d="M150 178 l-11 13 M198 178 l-11 13 M246 178 l-11 13 M294 178 l-11 13 M342 178 l-11 13 M390 178 l-11 13 M438 178 l-11 13 M486 178 l-11 13 M534 178 l-11 13 M582 178 l-11 13 M630 178 l-11 13"/>
+        <path d="M290 330 L290 194 M290 194 l-8 12 M290 194 l8 12"/>
+        <path d="M470 164 L470 82 M470 82 l-8 12 M470 82 l8 12" stroke="#b23a2e"/>
+      </g>
+      <text x="290" y="356" text-anchor="middle" font-size="23" font-weight="600" fill="#1a4a3c">бюджет</text>
+      <text x="255" y="150" text-anchor="middle" font-size="20" fill="#8d8477">$100 на день</text>
+      <text x="470" y="70" text-anchor="middle" font-size="23" font-weight="600" fill="#b23a2e">ціна замовлення ↑</text>
+      <text x="380" y="383" text-anchor="middle" font-size="23" font-weight="600" fill="#1a4a3c">тиснеш бюджет — дорожчає замовлення, і ти відкочуєш назад</text>
+    </svg>
+    <p><strong>Чому ви цього не бачите.</strong> Здається, що справа в креативах або в офері. Ви ганяєте тести, міняєте підходи, шукаєте нову зв'язку.</p>
+    <p><strong>До чого призводить.</strong> Обсяг стоїть. А обсяг і є ваші гроші: маржа з одиниці фіксована, заробляє той, хто пропускає більше.</p>
+    <p>Власник, який живе з цим болем прямо зараз:</p>
+    <blockquote><p>«Турбує маленький бюджет, який ми зараз ллємо. Єдиний біль зараз — це маленький обсяг: я хочу лити від тисячі доларів на добу.»</p></blockquote>
+    <p>Обсяг упирається не в гроші, а в те, <strong>куди ці гроші покласти.</strong> Коли лити нікуди, ви стоїте на $100 на день і думаєте, що проблема в креативах.</p>
+    <p>Для порівняння, на моїх проєктах: товарка розігналася з $7 до $249 на день за вісім місяців, на піку разом із нутрою виходило $408 на день. Ціна замовлення при цьому не зростала: $4,99 при KPI клієнта $6.</p>
+
+    <h2>Біль 3. Мертвий офер тягнуть, поки капає відсоток</h2>
+    <p><strong>Як це виглядає.</strong> Офер відпрацював своє і поїхав униз. Замовлення дорожчають, але підрядник каже «дайте ще тиждень, алгоритм навчиться».</p>
+    <p><strong>Чому ви цього не бачите.</strong> Чесна відповідь звучить «перекладіть бюджет туди, де він працює», а для найманця це мінус його відсоток. Мовчати вигідніше.</p>
+    <p><strong>До чого призводить.</strong> Бюджет місяцями йде в напрям, який уже не везе. Офери вигорають, це нормально. Ненормально дізнаватися про це останнім.</p>
+
+    <h2>Перевірте себе за 30 секунд</h2>
+    <p>Відмітьте те, що про вас:</p>
+    <div class="check">
+      <ul id="chk">
+        <li tabindex="0">Ви знаєте ціну замовлення з кабінету, але не знаєте свою ціну <strong>викупленого</strong> замовлення</li>
+        <li tabindex="0">Ваш підрядник жодного разу не казав вам «цей офер час закривати»</li>
+        <li tabindex="0">Обсяг стоїть на місці більше двох місяців поспіль</li>
+        <li tabindex="0">Ви ллєте в один-два кабінети, а новий піднімаєте вже після бану</li>
+        <li tabindex="0">Ваш підрядник звітує кліками і показами, а про склад питаєте ви самі</li>
+      </ul>
+      <div class="score">
+        <div class="score-count" id="scoreCount">Відмічено: 0 з 5</div>
+        <p id="scoreTxt">Відмітьте пункти, і я скажу, де у вас зараз витікають гроші.</p>
+      </div>
+    </div>
+
+    <h2>Діагноз</h2>
+    <p>Навіть один відмічений пункт — уже про це. Справа не в тому, що потрібен бюджет побільше або креативи свіжіші.</p>
+    <p>Проблема в розриві: <strong>рішення ухвалюються за цифрою з кабінету, а гроші рахуються на складі.</strong> Дві різні реальності, і між ними нікого немає. Баєр туди не дивиться: йому не платять за склад. Ви дивитеся, але постфактум, коли місяць уже закрито.</p>
+    <p>Поки цей розрив є, будь-яка ціна замовлення безглузда. Можна догнати її хоч до $3, але при викупі 40% ви просто швидше втрачаєте гроші.</p>
+
+    <div class="cta-box">
+      <p>Тут логічно зупинитися і перевірити: я порахую вашу реальну економіку за вашими ж цифрами. Безкоштовно.</p>
+      <a href="#start" class="btn">Забрати розбір →</a>
+    </div>
+
+    <h2>Що з цим робити</h2>
+    <p>Не «налаштувати рекламу краще». Дивитися на інші цифри.</p>
+    <p>Рахувати не ціну замовлення, а те, що доїхало до складу і скільки на цьому заробив власник. Упиратися обсягом не в стелю одного кабінету, а у вашу здатність обробляти замовлення. І чути про вигорілий офер вчасно, а не коли бюджет уже злитий.</p>
+    <p>Я працюю за методикою партнерського заливу: заходжу в проєкт як партнер, а не виконавець завдань, і дивлюся на цифри як підприємець. Що це дало на дистанції:</p>
+    <div class="nums">
+      <div><div class="n">$4,63</div><div class="l">середня ціна замовлення по нутрі за два роки при KPI клієнта $6</div></div>
+      <div><div class="n">$4,99</div><div class="l">по товарці за весь час, 12 893 замовлення</div></div>
+      <div><div class="n">$149 725</div><div class="l">бюджету і 31 330 замовлень за двома напрямами</div></div>
+      <div><div class="n">2 из 10</div><div class="l">кабінетів втрачено за два роки на сірій ніші</div></div>
+    </div>
+    <img src="../img/nutra-cabinet.jpg" alt="Рекламний кабінет по нутрі" class="shot">
+    <p class="cap">Кабінет по нутрі: $31 937 бюджету за два роки</p>
+    <img src="../img/tovarka-perfume.jpg" alt="Рекламний кабінет по товарці" class="shot">
+    <p class="cap">Рекламний кабінет по товарці: спенд, замовлення, ціна замовлення</p>
+    <p>Тут легко тицьнути в суперечність: уся стаття — про те, що ціна замовлення з кабінету нічого не значить, а на доказ я приношу саме її. Усе так. Сама по собі $4,99 не доводить нічого: за нею може стояти і збиток. Доводить зв'язка — це замовлення тримає ціну не тиждень, а два роки, а денний бюджет при цьому виріс із $7 до $249. Ніхто не заливає роками і не піднімає бюджет у десятки разів у напрям, який не приносить прибутку: вигоріло б на першому збитковому місяці.</p>
+    <p>Чесно про те, чого в цих цифрах немає. Відсоток викупу і маржу клієнти не розкривають — це їхня економіка, вигадувати її я не буду. Але ознака здоров'я видна і без них.</p>
+    <p>Не тому, що я знаю секретний креатив. Тому, що за два роки нічого не зламалося.</p>
+  </div>
+</article>
+
+<section class="final" id="start">
+  <div class="wrap">
+    <h2>Розбір ваших цифр</h2>
+    <p>Безкоштовно для товарки та нутри по COD від $50 на день. За 20 хвилин ви заберете:</p>
+    <ul>
+      <li>Розрахунок реальної економіки з урахуванням викупу, а не за цифрою з кабінету</li>
+      <li>Аудит кампаній: де зливається бюджет і на чому тримається ціна замовлення</li>
+      <li>Розбір оферів: які час закривати, а які масштабувати</li>
+      <li>Roadmap на 30 днів</li>
+    </ul>
+    <div class="form-card" id="leadForm">
+      <div class="field"><input type="text" id="fContact" placeholder="Телефон або Telegram" autocomplete="off"></div>
+      <div class="field"><input type="text" id="fNiche" placeholder="Ваша ніша і задача у двох словах" autocomplete="off"></div>
+      <button type="button" class="btn" id="fSend">Забрати розбір →</button>
+      <p class="form-note">Без продажу в лоб. Якщо проблема не в трафіку, я скажу і це.</p>
+    </div>
+    <div class="ok" id="leadOk">
+      <div class="ok-i">✳</div>
+      <h3>Прийнято</h3>
+      <p>Переношу вас у Telegram. Напишіть там пару слів про проєкт, відповім протягом доби.</p>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Відкрити Telegram →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Вадим Котівець · таргетолог-партнер · <a href="https://t.me/VadimkT" target="_blank" rel="noopener">@VadimkT</a></div>
+</footer>
+
+<script>
+// Форма-заглушка: данные никуда не отправляются, человека перебрасывает
+// в Telegram, где он пишет сам. Нужен сбор в базу: подключить Formspree или бота.
+(function(){
+  var btn=document.getElementById('fSend');
+  if(!btn) return;
+  var form=document.getElementById('leadForm'),
+      ok=document.getElementById('leadOk'),
+      fields=form.querySelectorAll('input');
+
+  btn.addEventListener('click',function(){
+    var valid=true;
+    Array.prototype.forEach.call(fields,function(i){
+      if(!i.value.trim()){ i.style.borderColor='#a33'; valid=false; }
+      else { i.style.borderColor=''; }
+    });
+    if(!valid) return;
+    form.style.display='none';
+    ok.classList.add('on');
+    setTimeout(function(){ window.location.href='https://t.me/VadimkT'; },1200);
+  });
+})();
+
+(function(){
+  var list=document.getElementById('chk');
+  if(!list) return;
+  var items=list.querySelectorAll('li'),
+      cnt=document.getElementById('scoreCount'),
+      out=document.getElementById('scoreTxt'),
+      touched=false;
+
+  var TXT={
+    0:'<strong>Жодної відмітки.</strong> Рідкісний випадок, і тоді питання інше: до якого денного бюджету ваша поточна зв\'язка доживе без зростання ціни замовлення? Стеля обсягу приходить і до тих, у кого економіка сходиться. Просто пізніше, і зазвичай у найнезручніший місяць.',
+    1:'<strong>Один пункт.</strong> Це не «все під контролем». Це точка, де кабінет і склад починають розходитися. Поки вона одна, закрити її коштує дешево. Далі розходження росте саме.',
+    2:'<strong>Два пункти.</strong> Ви втрачаєте не на ціні замовлення, а на різниці між кабінетом і складом. Поки місяць не закрито, цю різницю не видно в жодному звіті.',
+    3:'<strong>Три пункти.</strong> Розрив між кабінетом і складом у вас уже системний. Зазвичай це десятки відсотків прибутку, які йдуть тихо і не виглядають як проблема.',
+    4:'<strong>Чотири пункти.</strong> Ваш підрядник оптимізує свої метрики, а не ваші гроші. Найімовірніше він не винен: йому так платять.',
+    5:'<strong>Усі п\'ять.</strong> Повний набір. Рішення у вас ухвалюються за цифрою з кабінету, а гроші рахуються на складі, і між цими двома реальностями зараз нікого немає. Що це означає для вашої ціни замовлення, читайте в наступному абзаці.'
+  };
+
+  function upd(){
+    var n=list.querySelectorAll('li.on').length;
+    cnt.textContent='Відмічено: '+n+' з '+items.length;
+    if(touched) out.innerHTML=TXT[n];
+  }
+
+  Array.prototype.forEach.call(items,function(li){
+    function toggle(){ li.classList.toggle('on'); touched=true; upd(); }
+    li.addEventListener('click',toggle);
+    li.addEventListener('keydown',function(e){
+      if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(); }
+    });
+  });
+})();
+
+(function(){
+  var steps=[
+    'Читаю вашу задачу…',
+    'Відбираю за нішею і бюджетом…',
+    'Кейси та скриншоти пропускаю — їх малюють…',
+    'Дивлюся, чи рахує людина викуп, а не кліки…',
+    'Відсікаю тих, хто звітує процесом…',
+    'Знайшов.'
+  ];
+
+  Array.prototype.forEach.call(document.querySelectorAll('.ai-widget'),function(box){
+    var form=box.querySelector('.w-form'),
+        load=box.querySelector('.w-load'),
+        res=box.querySelector('.w-res'),
+        txt=box.querySelector('.w-txt'),
+        bar=box.querySelector('.w-bar'),
+        err=box.querySelector('.w-err');
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var niche=box.querySelector('.w-f1').value.trim(),
+          pain=box.querySelector('.w-f2').value.trim(),
+          budget=box.querySelector('.w-f3').value.trim();
+
+      if(!niche||!pain||!budget){ err.style.display='block'; return; }
+      err.style.display='none';
+
+      box.querySelector('.w-niche').textContent=niche;
+      box.querySelector('.w-budget').textContent=budget;
+
+      form.style.display='none';
+      load.style.display='block';
+
+      var i=1;
+      function next(){
+        txt.style.opacity=0;
+        setTimeout(function(){
+          txt.textContent=steps[i];
+          txt.style.opacity=1;
+          bar.style.width=Math.round((i+1)/steps.length*100)+'%';
+          i++;
+          if(i<steps.length){ setTimeout(next, i===steps.length-1?900:1150); }
+          else{
+            setTimeout(function(){
+              load.style.display='none';
+              res.style.display='block';
+            },700);
+          }
+        },250);
+      }
+      txt.textContent=steps[0];
+      bar.style.width=Math.round(1/steps.length*100)+'%';
+      setTimeout(next,1150);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
