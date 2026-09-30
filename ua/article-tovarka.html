@@ -5,6 +5,23 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Замовлення по $4,20 в кабінеті, а прибутку немає · Розбір трафіку</title>
+<!-- Meta Pixel Code: «МОИ САЙТЫ для привлечения клиентов - ТАРГЕТ» -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1007840178984408');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1007840178984408&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Mulish:wght@400;500;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -445,7 +462,7 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 </section>
 
 <footer>
-  <div class="wrap">Вадим Котівець · таргетолог-партнер · <a href="https://t.me/VadimkT" target="_blank" rel="noopener">@VadimkT</a></div>
+  <div class="wrap">Вадим Котівець · таргетолог-партнер · <a href="https://t.me/VadimkT" target="_blank" rel="noopener">@VadimkT</a> ✳ <a href="https://t.me/+g0MKklJIKCYwZGVi" target="_blank" rel="noopener">Telegram-канал</a></div>
 </footer>
 
 <script>
@@ -465,6 +482,7 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
       else { i.style.borderColor=''; }
     });
     if(!valid) return;
+    if (typeof fbq === 'function') fbq('track', 'Lead');
     form.style.display='none';
     ok.classList.add('on');
     setTimeout(function(){ window.location.href='https://t.me/VadimkT'; },1200);
@@ -599,5 +617,13 @@ footer a{color:var(--accent);text-decoration:none;font-weight:700}
 })();
 </script>
 
+<script>
+// Події пікселя: заявка з форми — Lead; клік на мій Telegram — Contact; на Telegram-канал — Subscribe.
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="t.me/"]');
+  if (!a || typeof fbq !== 'function') return;
+  fbq('track', a.href.indexOf('t.me/+') > -1 ? 'Subscribe' : 'Contact');
+});
+</script>
 </body>
 </html>
