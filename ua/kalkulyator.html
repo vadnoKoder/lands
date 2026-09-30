@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чи окупиться таргетолог · калькулятор · Вадим Котівець</title>
+<meta name="description" content="Порахуйте, скільки продажів потрібно, щоб реклама з таргетологом вийшла в нуль.">
+<!-- Meta Pixel Code: «МОИ САЙТЫ для привлечения клиентов - ТАРГЕТ» -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1007840178984408');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1007840178984408&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000000; --bg2:#0b0b0c; --bg3:#141416; --line:#232326;
+  --ink:#ffffff; --ink2:#a5a5ad; --ink3:#6e6e78;
+  --red:#DD0510; --red2:#850615; --cyan:#54C7E4; --teal:#418E94;
+  --green:#3ecf7a; --yellow:#f5b82e;
+  --disp:'Unbounded',sans-serif; --sans:'Manrope',sans-serif;
+  --r:14px; --r2:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1.1;letter-spacing:-.03em}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:var(--disp);font-weight:900;font-size:15px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--red);font-size:19px;line-height:0}
+.btn{background:var(--red);color:#fff;border:none;padding:14px 24px;font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.02em;cursor:pointer;text-decoration:none;display:inline-block;text-align:center;transition:.18s;clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)}
+.btn:hover{background:#ff1420;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-ghost:hover{background:var(--bg3);box-shadow:inset 0 0 0 1px var(--cyan)}
+
+/* HERO */
+.hero{padding:132px 0 40px;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(ellipse at center,rgba(221,5,16,.28),transparent 68%);pointer-events:none}
+.hero-in{position:relative;z-index:1}
+.hero h1{font-size:clamp(28px,5vw,50px);margin:0 auto 20px;max-width:760px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-sub{font-size:17px;color:var(--ink2);max-width:640px;margin:0 auto}
+.hero-sub b{color:var(--ink)}
+.hero-note{display:inline-block;white-space:nowrap;font-family:var(--disp);font-size:11px;font-weight:700;letter-spacing:.01em;color:var(--cyan);border:1px solid var(--line);border-radius:20px;padding:7px 14px;margin-bottom:18px}
+.formula{margin:30px auto 0;max-width:640px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;font-size:15px;color:var(--ink2)}
+.formula b{color:var(--ink);font-weight:800}
+.formula .eq{font-family:var(--disp);font-size:13.5px;color:var(--ink);line-height:1.5;display:block;margin-top:6px}
+.formula .eq i{font-style:normal;color:var(--red)}
+
+/* QUESTIONS */
+.calc{padding:24px 0 20px}
+.q{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);padding:26px 26px 24px;margin-bottom:16px;transition:border-color .25s}
+.q.done{border-color:#2d2d31}
+.q-n{font-family:var(--disp);font-size:11px;font-weight:800;color:var(--red);letter-spacing:.1em;margin-bottom:10px;display:flex;justify-content:space-between;gap:10px}
+.q-n .opt{color:var(--ink3);letter-spacing:.06em}
+.q h2{font-size:18px;line-height:1.3;margin-bottom:6px}
+.q .hint{font-size:14px;color:var(--ink3);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{min-height:48px;min-width:76px;padding:12px 18px;background:var(--bg3);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:var(--disp);font-size:15px;font-weight:700;cursor:pointer;transition:.15s;-webkit-tap-highlight-color:transparent}
+.chip small{display:block;font-family:var(--sans);font-size:11.5px;font-weight:500;color:var(--ink3);margin-top:2px;letter-spacing:0}
+.chip:hover{border-color:var(--ink3)}
+.chip.on{background:var(--red);border-color:var(--red);color:#fff}
+.chip.on small{color:rgba(255,255,255,.8)}
+.chip:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.own{display:none;margin-top:12px;align-items:center;gap:10px}
+.own.on{display:flex}
+.own label{font-size:14px;color:var(--ink2)}
+.own .inp{position:relative;flex:0 1 200px}
+.own .inp:before{content:attr(data-u);position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink3);font-weight:700}
+.own .inp.pct:before{left:auto;right:14px}
+.own input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:13px 14px 13px 30px;color:var(--ink);font-family:var(--disp);font-size:16px;font-weight:700;outline:none}
+.own .inp.pct input{padding:13px 32px 13px 14px}
+.own input:focus{border-color:var(--red)}
+.fixed{display:flex;justify-content:space-between;align-items:center;gap:18px;background:var(--bg3);border:1px dashed var(--line);border-radius:var(--r2);padding:20px 24px;margin-bottom:16px}
+.fixed .l{font-size:14px;color:var(--ink2)}
+.fixed .l b{display:block;color:var(--ink);font-family:var(--disp);font-size:15px;margin-bottom:3px}
+.fixed .n{font-family:var(--disp);font-size:26px;font-weight:800;color:var(--ink);white-space:nowrap}
+.fixed .n small{font-size:13px;color:var(--ink3)}
+.go{text-align:center;padding:14px 0 40px}
+.go-btn{font-size:15px;padding:19px 56px;min-width:280px}
+.go-btn:disabled{background:var(--bg3);color:var(--ink3);cursor:not-allowed;transform:none}
+.wait{font-size:14px;color:var(--ink3);margin-top:12px}
+.go.hide{display:none}
+.loader{display:none;flex-direction:column;align-items:center;gap:18px;padding:40px 0 70px}
+.loader.on{display:flex}
+.ring{width:64px;height:64px;border-radius:50%;border:5px solid var(--bg3);border-top-color:var(--red);border-right-color:var(--red);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-t{font-family:var(--disp);font-size:14px;color:var(--ink2);min-height:20px}
+
+/* RESULT */
+.res{display:none;padding:10px 0 40px;scroll-margin-top:92px}
+.res.on{display:block;animation:up .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.label{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);font-weight:800;margin-bottom:14px}
+.label:before{content:'✳';color:var(--red);font-size:14px}
+.big{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.big-top{padding:28px 28px 24px}
+.big-top .t{font-size:15px;color:var(--ink2);margin-bottom:6px}
+.big-top .num{font-family:var(--disp);font-size:clamp(46px,9vw,72px);font-weight:900;color:var(--red);line-height:1;letter-spacing:-.04em}
+.big-top .num small{font-size:.3em;color:var(--ink);letter-spacing:0;margin-left:6px}
+.big-top .eq{margin-top:14px;font-family:var(--disp);font-size:13px;color:var(--ink2);line-height:1.5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.grid div{background:var(--bg2);padding:18px 22px}
+.grid .n{font-family:var(--disp);font-size:22px;font-weight:800;letter-spacing:-.02em}
+.grid .n.r{color:var(--red)} .grid .n.c{color:var(--cyan)}
+.grid .l{font-size:12.5px;color:var(--ink3);margin-top:5px;line-height:1.4}
+.bars{padding:22px 28px;border-top:1px solid var(--line)}
+.bars .ttl{font-size:13px;color:var(--ink2);margin-bottom:12px}
+.bar{height:14px;border-radius:7px;background:var(--bg3);overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+.bar .b1{background:var(--cyan)} .bar .b2{background:var(--red)}
+.leg{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:12.5px;color:var(--ink3)}
+.leg span:before{content:'';display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.leg .k1:before{background:var(--cyan)} .leg .k2:before{background:var(--red)}
+
+.cmp{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cmp .c{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);padding:22px}
+.cmp .c h3{font-size:14px;margin-bottom:14px;line-height:1.3}
+.cmp .row{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--ink2);padding:7px 0;border-bottom:1px solid var(--line)}
+.cmp .row:last-child{border-bottom:none}
+.cmp .row b{color:var(--ink);font-family:var(--disp);font-size:14px;white-space:nowrap}
+.cmp .row b.plus{color:var(--green)} .cmp .row b.minus{color:var(--red)}
+
+
+.verdict{margin-top:22px;border-radius:var(--r2);padding:30px 28px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.verdict:after{content:'✳';position:absolute;right:-10px;bottom:-44px;font-size:150px;color:rgba(255,255,255,.07);line-height:1;pointer-events:none}
+.verdict.v-red{background:linear-gradient(120deg,#2a0306,#4a060d)}
+.verdict.v-yellow{background:linear-gradient(120deg,#2a1f05,#3d2c06)}
+.verdict.v-green{background:linear-gradient(120deg,#062616,#0b3a22)}
+.verdict.v-blue{background:linear-gradient(120deg,#07202a,#0b3040)}
+.verdict .tag{display:inline-block;font-family:var(--disp);font-size:10.5px;font-weight:800;letter-spacing:.12em;padding:5px 12px;margin-bottom:14px;color:#000;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+.v-red .tag{background:#ff5a63} .v-yellow .tag{background:var(--yellow)} .v-green .tag{background:var(--green)} .v-blue .tag{background:var(--cyan)}
+.verdict h3{font-size:clamp(20px,3.4vw,26px);margin-bottom:12px;position:relative;z-index:1}
+.verdict p{font-size:15.5px;color:rgba(255,255,255,.85);position:relative;z-index:1;margin-bottom:10px}
+.verdict ul{list-style:none;margin:14px 0 4px;position:relative;z-index:1}
+.verdict li{padding:9px 0 9px 26px;position:relative;font-size:15px;color:rgba(255,255,255,.9);border-top:1px solid rgba(255,255,255,.1)}
+.verdict li:before{content:'✳';position:absolute;left:0;top:10px;color:var(--red);font-size:12px}
+.verdict .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;position:relative;z-index:1}
+.verdict .acts .btn{background:#fff;color:#000}
+.verdict .acts .btn:hover{background:var(--cyan)}
+.verdict .acts .btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.verdict .acts .btn-ghost:hover{background:rgba(255,255,255,.08)}
+.offer{position:relative;z-index:1;margin:18px 0 6px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:18px 20px}
+.offer b{display:block;font-family:var(--disp);font-size:15px;margin-bottom:8px;color:#fff}
+.offer p{font-size:14.5px;margin-bottom:6px}
+.offer p:last-child{margin-bottom:0}
+.verdict p.how{margin:16px 0 0;font-weight:700;color:#fff}
+.res.pos .no-pos{display:none}
+.only-pos{display:none}
+.res.pos .only-pos{display:block}
+.res.pos .only-neg{display:none}
+.why .cta-end{margin:20px 0 20px}
+.cta-end{margin-top:28px;background:linear-gradient(120deg,var(--red2),var(--red));border-radius:var(--r2);padding:32px 28px;position:relative;overflow:hidden}
+.cta-end:after{content:'✳';position:absolute;right:-12px;bottom:-40px;font-size:150px;color:rgba(255,255,255,.1);line-height:1;pointer-events:none}
+.cta-end h3{font-size:clamp(19px,3vw,23px);margin-bottom:10px;position:relative;z-index:1}
+.cta-end p{font-size:15px;color:rgba(255,255,255,.9);margin-bottom:20px;max-width:560px;position:relative;z-index:1}
+.cta-end .btn{background:#fff;color:#000;position:relative;z-index:1}
+.cta-end .btn:hover{background:var(--cyan)}
+@media(max-width:640px){.cta-end{padding:28px 20px}.cta-end .btn{width:100%}}
+.res.pos .cmp{grid-template-columns:1fr}
+.res.pos .why{border-top:none;padding-top:0;margin-top:24px}
+
+.why{margin-top:8px}
+.again{margin-top:6px}
+
+footer{padding:34px 0;text-align:center;color:var(--ink3);font-size:12.5px;border-top:1px solid var(--line)}
+footer a{color:var(--red);text-decoration:none;font-weight:700}
+
+@media(max-width:640px){
+  .hero{padding:108px 0 30px}
+  .q{padding:22px 18px 20px}
+  .chip{flex:1 1 calc(33.33% - 10px);min-width:0;padding:12px 8px}
+  .chips.two .chip{flex-basis:calc(50% - 10px)}
+  .big-top,.bars{padding-left:20px;padding-right:20px}
+  .grid div{padding:16px 18px}
+  .grid .n{font-size:19px}
+  .cmp{grid-template-columns:1fr}
+  .verdict{padding:26px 20px}
+  .verdict .acts .btn{width:100%}
+  .fixed{flex-direction:column;align-items:flex-start;gap:8px}
+  .nav-in .btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="brand"><span>✳</span>VADIM KOTIVETS</a>
+    <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Написати в Telegram</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-in">
+    <h1>Чи окупиться <em>таргетолог</em> у вашому бізнесі?</h1>
+    <p class="hero-note">3 питання · 1 хвилина · без реєстрації</p>
+    <p class="hero-sub">Калькулятор покаже, скільки продажів потрібно, щоб <b>реклама хоча б окупилась</b>, і що робити з вашим бюджетом.</p>
+  </div>
+</header>
+
+<main class="wrap calc">
+
+  <section class="q" id="q-check">
+    <div class="q-n"><span>01 / 03</span></div>
+    <h2>Скільки коштує ваш товар або послуга?</h2>
+    <p class="hint">Якщо товарів кілька, візьміть той, який хочете рекламувати.</p>
+    <div class="chips two" data-key="check">
+      <button class="chip" data-v="20">$20</button>
+      <button class="chip" data-v="50">$50</button>
+      <button class="chip" data-v="100">$100</button>
+      <button class="chip" data-v="own">Свій варіант</button>
+    </div>
+    <div class="own" data-own="check"><label>Ціна:</label><div class="inp" data-u="$"><input type="number" inputmode="decimal" min="1" placeholder="150"></div></div>
+  </section>
+
+  <section class="q" id="q-margin">
+    <div class="q-n"><span>02 / 03</span></div>
+    <h2>Скільки грошей з одного продажу залишається вам?</h2>
+    <p class="hint">Від ціни відніміть закупівлю, доставку, комісії. Те, що лишилось, і є ваш заробіток з продажу.</p>
+    <div class="chips two" data-key="margin">
+      <button class="chip" data-v="20">20%<small class="mh"></small></button>
+      <button class="chip" data-v="30">30%<small class="mh"></small></button>
+      <button class="chip" data-v="50">50%<small class="mh"></small></button>
+      <button class="chip" data-v="own">Свій варіант<small>впишу суму</small></button>
+    </div>
+    <div class="own" data-own="margin"><label>Залишається з продажу:</label><div class="inp" data-u="$"><input type="number" inputmode="decimal" min="0.1" placeholder="25"></div></div>
+  </section>
+
+  <section class="q" id="q-budget">
+    <div class="q-n"><span>03 / 03</span></div>
+    <h2>Скільки готові витрачати на рекламу на місяць?</h2>
+    <p class="hint">Тільки гроші, які підуть у Facebook та Instagram. Оплату спеціаліста сюди не додавайте.</p>
+    <div class="chips" data-key="budget">
+      <button class="chip" data-v="300">$300</button>
+      <button class="chip" data-v="500">$500</button>
+      <button class="chip" data-v="1000">$1000</button>
+      <button class="chip" data-v="2000">$2000</button>
+      <button class="chip" data-v="own">Свій варіант</button>
+    </div>
+    <div class="own" data-own="budget"><label>Бюджет на місяць:</label><div class="inp" data-u="$"><input type="number" inputmode="decimal" min="1" placeholder="700"></div></div>
+  </section>
+
+  <section class="q" id="q-cpa">
+    <div class="q-n"><span>БОНУС</span><span class="opt">МОЖНА ПРОПУСТИТИ</span></div>
+    <h2>Скільки вам зараз коштує один клієнт з реклами?</h2>
+    <p class="hint">Витратили $100 і отримали 5 продажів: один клієнт коштує $20. Не запускали рекламу — лишіть «Не знаю».</p>
+    <div class="chips" data-key="cpa">
+      <button class="chip on" data-v="0">Не знаю</button>
+      <button class="chip" data-v="5">$5</button>
+      <button class="chip" data-v="10">$10</button>
+      <button class="chip" data-v="25">$25</button>
+      <button class="chip" data-v="own">Свій варіант</button>
+    </div>
+    <div class="own" data-own="cpa"><label>Один клієнт:</label><div class="inp" data-u="$"><input type="number" inputmode="decimal" min="0.1" placeholder="15"></div></div>
+  </section>
+
+  <div class="go">
+    <button class="btn go-btn" id="go" disabled>Порахувати</button>
+    <p class="wait" id="wait">Дайте відповідь на 3 питання вище.</p>
+  </div>
+
+  <div class="loader" id="loader" aria-live="polite">
+    <div class="ring"></div>
+    <div class="load-t" id="load-t">Рахуємо маржу з продажу…</div>
+  </div>
+
+  <section class="res" id="res">
+    <div class="verdict" id="verdict">
+      <span class="tag" id="v-tag"></span>
+      <h3 id="v-h"></h3>
+      <div id="v-body"></div>
+      <div class="acts">
+        <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn" id="v-cta">Написати в Telegram</a>
+      </div>
+    </div>
+
+    <div class="label" style="margin-top:36px">Звідки ці цифри</div>
+
+    <div class="big">
+      <div class="big-top">
+        <div class="t">Щоб вийти в нуль за місяць з таргетологом, потрібно</div>
+        <div class="num"><span id="r-need">0</span><small id="r-need-w">продажів</small></div>
+        <div class="eq" id="r-eq"></div>
+      </div>
+      <div class="grid">
+        <div><div class="n c" id="r-maxcpa">$0</div><div class="l">максимальна ціна одного продажу, щоб вийти в нуль</div></div>
+        <div><div class="n" id="r-margin">$0</div><div class="l">ваша маржа з одного продажу</div></div>
+        <div class="no-pos"><div class="n" id="r-need0">0</div><div class="l">продажів потрібно, якщо запускати самому, без спеціаліста</div></div>
+        <div class="no-pos"><div class="n r" id="r-share">0%</div><div class="l">усіх витрат іде на оплату спеціаліста, а не на рекламу</div></div>
+      </div>
+      <div class="bars">
+        <div class="ttl">Куди йдуть гроші за місяць: <b id="r-total">$0</b></div>
+        <div class="bar"><i class="b1" id="b-ads"></i><i class="b2" id="b-spec"></i></div>
+        <div class="leg"><span class="k1" id="l-ads">Реклама</span><span class="k2" id="l-spec">Спеціаліст</span></div>
+      </div>
+    </div>
+
+    <div class="cmp" id="cmp" hidden>
+      <div class="c">
+        <h3 id="c-title1">З таргетологом за $500</h3>
+        <div class="row"><span>Потрібно продажів, щоб вийти в нуль</span><b id="c-need1">0</b></div>
+        <div class="row"><span id="c-sales-l">Бюджет дасть продажів</span><b id="c-sales">0</b></div>
+        <div class="row"><span class="gross-l">Маржа з цих продажів</span><b id="c-gross">$0</b></div>
+        <div class="row"><span>Реклама + таргетолог</span><b id="c-cost1">$0</b></div>
+        <div class="row"><span class="res-l">Підсумок за місяць</span><b id="c-res1">$0</b></div>
+      </div>
+      <div class="c no-pos">
+        <h3>Самостійно, весь бюджет у рекламу</h3>
+        <div class="row"><span>Потрібно продажів, щоб вийти в нуль</span><b id="c-need0">0</b></div>
+        <div class="row"><span id="c-sales0-l">Бюджет дасть продажів</span><b id="c-sales0">0</b></div>
+        <div class="row"><span class="gross-l">Маржа з цих продажів</span><b id="c-gross0">$0</b></div>
+        <div class="row"><span>Витрати</span><b id="c-cost0">$0</b></div>
+        <div class="row"><span class="res-l">Підсумок за місяць</span><b id="c-res0">$0</b></div>
+      </div>
+    </div>
+
+
+    <div class="cta-end only-pos">
+      <h3>Хочете більше кейсів і стратегію для свого бізнесу?</h3>
+      <p>Напишіть мені в Telegram. Покажу кейси, познайомимось, і я розпишу безкоштовну стратегію запуску під ваш бюджет.</p>
+      <a href="https://t.me/VadimkT" target="_blank" rel="noopener" class="btn">Перейти в Telegram</a>
+    </div>
+
+    <div class="why">
+      <div class="cta-end only-neg">
+        <h3>Поки думаєте, підпишіться на мій Telegram-канал</h3>
+        <p>Там більше про рекламу для бізнесу. Звідти ж можна замовити в мене послуги, коли будете готові.</p>
+        <a href="https://t.me/+g0MKklJIKCYwZGVi" target="_blank" rel="noopener" class="btn">Підписатися на канал</a>
+      </div>
+      <button class="btn btn-ghost again" id="again">Порахувати інший варіант</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">VADIM KOTIVETS ✳ таргет для бізнесу з бюджетом від $1 000 ✳ <a href="https://t.me/VadimkT" target="_blank" rel="noopener">@VadimkT</a></div>
+</footer>
+
+<script>
+const SPEC = 500;        // оплата таргетолога, $/міс (середня по ринку)
+const MIN_BUDGET = 1000; // мінімальний бюджет, з якого беру проєкти
+
+const st = { check:null, margin:null, budget:null, cpa:0 };
+let timer = null;
+
+const $ = id => document.getElementById(id);
+const num = n => n.toLocaleString('uk-UA');
+// Межа ціни продажу: округлюємо вниз, щоб за показаною ціною не вийти в мінус
+const cap = v => usd(v >= 10 ? Math.floor(v) : Math.floor(v * 100) / 100);
+const usd = v => {
+  const a = Math.abs(v);
+  // Копійки показуємо, якщо сума неціла і менша за $1000 ($12,50), інакше округлюємо до долара
+  const s = a < 1000 && Math.round(a * 100) % 100 ? a.toFixed(2).replace('.', ',') : num(Math.round(a));
+  return (v < 0 ? '−$' : '$') + s;
+};
+const plural = (n, one, few, many) => {
+  const m10 = n % 10, m100 = n % 100;
+  if (m10 === 1 && m100 !== 11) return one;
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+  return many;
+};
+const sales = n => plural(n, 'продаж', 'продажі', 'продажів');
+// «Свій варіант» ціни клієнта з порожнім полем не вважаємо відповіддю «Не знаю»
+const cpaOwnEmpty = () => document.querySelector('.chips[data-key="cpa"] .chip.on')?.dataset.v === 'own' && !st.cpa;
+const ready = () => !!(st.check && st.margin && st.budget) && !cpaOwnEmpty();
+
+// Вибір варіантів
+document.querySelectorAll('.chips').forEach(group => {
+  const key = group.dataset.key;
+  const own = document.querySelector(`.own[data-own="${key}"]`);
+  const set = val => {
+    st[key] = val;
+    group.closest('.q').classList.toggle('done', val !== null);
+    changed();
+  };
+  group.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      group.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      if (key === 'margin') st.marginOwn = chip.dataset.v === 'own';  // своя маржа — в доларах
+      if (chip.dataset.v === 'own') {
+        own.classList.add('on');
+        const inp = own.querySelector('input');
+        inp.focus();
+        const v = parseFloat(inp.value);
+        set(v > 0 ? v : (key === 'cpa' ? 0 : null));
+      } else {
+        if (own) own.classList.remove('on');
+        set(parseFloat(chip.dataset.v));
+      }
+      if (key === 'check') marginHints();
+    });
+  });
+  if (own) own.querySelector('input').addEventListener('input', e => {
+    const v = parseFloat(e.target.value);
+    set(v > 0 ? v : (key === 'cpa' ? 0 : null));
+    if (key === 'check') marginHints();
+  });
+});
+
+// Підказка під відсотками: скільки це в доларах від обраної ціни
+function marginHints(){
+  document.querySelectorAll('#q-margin .chip').forEach(chip => {
+    const h = chip.querySelector('.mh');
+    if (h) h.textContent = st.check ? `${usd(st.check * chip.dataset.v / 100)} з ${usd(st.check)}` : '';
+  });
+}
+const marginUsd = () => Math.min(st.marginOwn ? st.margin : st.check * st.margin / 100, st.check);
+
+// Будь-яка зміна відповіді ховає старий результат
+function changed(){
+  clearTimeout(timer);
+  $('loader').classList.remove('on');
+  const wasShown = $('res').classList.contains('on');
+  $('res').classList.remove('on');
+  $('go').parentElement.classList.remove('hide');
+  $('go').disabled = !ready();
+  $('go').textContent = wasShown || $('go').dataset.used ? 'Перерахувати' : 'Порахувати';
+  $('wait').style.display = ready() ? 'none' : '';
+  $('wait').textContent = st.check && st.margin && st.budget && cpaOwnEmpty()
+    ? 'Впишіть, скільки коштує клієнт, або оберіть «Не знаю».'
+    : 'Дайте відповідь на 3 питання вище.';
+}
+
+$('go').addEventListener('click', () => {
+  if (!ready()) return;
+  $('go').dataset.used = '1';
+  $('go').parentElement.classList.add('hide');
+  $('loader').classList.add('on');
+  $('loader').scrollIntoView({ behavior:'smooth', block:'center' });
+  const steps = ['Рахуємо маржу з продажу…', 'Додаємо оплату спеціаліста…', 'Шукаємо точку беззбитковості…'];
+  let i = 0;
+  $('load-t').textContent = steps[0];
+  const tick = () => {
+    i++;
+    if (i < steps.length) { $('load-t').textContent = steps[i]; timer = setTimeout(tick, 550); }
+    else {
+      $('loader').classList.remove('on');
+      calc();
+      $('res').classList.add('on');
+      $('res').scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+  };
+  timer = setTimeout(tick, 550);
+});
+
+function calc(){
+  const { budget, cpa } = st;
+  const m = marginUsd();                          // маржа з продажу, $
+  const total = budget + SPEC;                    // витрати за місяць з таргетологом
+  const need = Math.ceil(total / m);              // продажів до нуля з таргетологом
+  const need0 = Math.ceil(budget / m);            // без таргетолога
+  const maxCpa = budget * m / total;              // макс. ціна продажу, щоб вийти в нуль
+  const share = Math.round(SPEC / total * 100);
+
+  $('r-need').textContent = num(need);
+  $('r-need-w').textContent = sales(need);
+  $('r-eq').textContent = `(${usd(budget)} + ${usd(SPEC)}) ÷ ${usd(m)} = ${num(need)} ${sales(need)}`;
+  $('r-maxcpa').textContent = cap(maxCpa);
+  $('r-margin').textContent = usd(m);
+  $('r-need0').textContent = num(need0);
+  $('r-share').textContent = share + '%';
+  $('r-total').textContent = usd(total);
+  $('b-ads').style.width = (100 - share) + '%';
+  $('b-spec').style.width = share + '%';
+  $('l-ads').textContent = `Реклама ${usd(budget)}`;
+  $('l-spec').textContent = `Спеціаліст ${usd(SPEC)}, середня ціна по ринку`;
+
+  // Прибуток, якщо відома ціна продажу
+  let n = 0, res1 = null, res0 = null;
+  if (cpa > 0) {
+    n = Math.floor(budget / cpa);
+    res1 = n * m - total;   // з таргетологом за місяць
+    res0 = n * m - budget;  // самостійно за місяць
+    $('cmp').hidden = false;
+    $('c-need1').textContent = num(need);
+    $('c-need0').textContent = num(need0);
+    $('c-sales').textContent = $('c-sales0').textContent = num(n);
+    $('c-sales-l').textContent = $('c-sales0-l').textContent = `Бюджет дасть продажів (${usd(budget)} ÷ ${usd(cpa)})`;
+    $('c-gross').textContent = $('c-gross0').textContent = usd(n * m);
+    $('c-cost1').textContent = usd(total);
+    $('c-cost0').textContent = usd(budget);
+    setRes('c-res1', res1); setRes('c-res0', res0);
+  } else $('cmp').hidden = true;
+
+  // Два варіанти відповіді
+  // Ціна клієнта відома: окупається, якщо з таргетологом за місяць плюс
+  // (самостійно людина заробляє більше, ніж $500 оплати спеціаліста). Бюджет тут не важливий.
+  // Ціна невідома: прибуток не порахувати, тому дивимось на поріг бюджету $1000.
+  const pays = cpa > 0 ? res1 > 0 : budget >= MIN_BUDGET;
+  $('res').classList.toggle('pos', pays);  // якщо окупається — показуємо тільки варіант з таргетологом
+  $('c-title1').textContent = pays ? `Скільки заробите з таргетологом за ${usd(SPEC)}` : `З таргетологом за ${usd(SPEC)}`;
+  const v = $('verdict');
+
+  if (pays) {
+    v.className = 'verdict v-green';
+    $('v-tag').textContent = 'ТАРГЕТОЛОГ ОКУПИТЬСЯ';
+    $('v-h').textContent = cpa > 0
+      ? `Можна підключати таргетолога: ви в плюсі на ${usd(res1)} за місяць`
+      : `Можна підключати таргетолога, якщо клієнт коштуватиме до ${cap(maxCpa)}`;
+    $('v-body').innerHTML = `
+      <p>${cpa > 0
+        ? `Бюджет ${usd(budget)} при ціні клієнта ${usd(cpa)} дає ${num(n)} ${sales(n)}. Цього вистачає, щоб покрити рекламу й оплату спеціаліста.`
+        : `Бюджету вистачає, щоб працювати зі спеціалістом. Щоб вийти в нуль за місяць, потрібно ${num(need)} ${sales(need)} по ${cap(maxCpa)} або дешевше.`}</p>
+      <div class="offer">
+        <b>Безкоштовна стратегія для вашої реклами</b>
+        <p>Напишіть мені в Telegram «Хочу стратегію». Обговоримо, що можна впровадити у вашу рекламу вже зараз і з чого почати.</p>
+      </div>`;
+    $('v-cta').textContent = 'Отримати мою стратегію';
+  } else {
+    // Три причини «поки не окупиться»:
+    // selfLoss — клієнт коштує дорожче, ніж приносить: мінус навіть без спеціаліста;
+    // selfBest — самостійно заробіток не більше $500 за місяць, тож оплата спеціаліста з'їдає весь плюс;
+    // інакше   — ціна клієнта невідома, а бюджет менше $1000.
+    const selfLoss = cpa > 0 && cpa > m;
+    const selfBest = cpa > 0 && !selfLoss;
+    v.className = 'verdict v-yellow';
+    $('v-tag').textContent = selfBest ? 'ПОКИ ВИГІДНІШЕ САМОСТІЙНО' : 'ТАРГЕТОЛОГ ПОКИ НЕ ОКУПИТЬСЯ';
+    $('v-h').textContent = selfLoss ? 'Спершу підніміть маржу, потім запускайте рекламу'
+      : selfBest ? `При ціні клієнта ${usd(cpa)} таргетолог поки не окупиться`
+      : 'Краще запустити рекламу самостійно';
+    let p;
+    if (selfLoss) {
+      p = `<p>Один клієнт коштує ${usd(cpa)}, а приносить ${usd(m)} маржі. Кожен продаж з реклами забирає гроші навіть без оплати спеціаліста: самостійно підсумок ${usd(res0)} за місяць.</p>
+        <p>Підніміть чек або знизьте собівартість і порахуйте ще раз.</p>`;
+    } else if (selfBest) {
+      p = `<p>${res0 > 0
+        ? `Самостійно ви заробите ${usd(res0)} за місяць. Оплата спеціаліста ${usd(SPEC)} з'їдає весь цей плюс`
+        : `Самостійно реклама виходить приблизно в нуль. Оплата спеціаліста ${usd(SPEC)} піде в мінус`}: з таргетологом підсумок ${usd(res1)}. Щоб він окупився, клієнт має коштувати до ${cap(maxCpa)}.</p>`;
+    } else {
+      p = `<p>${budget < SPEC
+        ? 'Спеціаліст коштує більше, ніж сама реклама.'
+        : `${share}% ваших грошей піде на спеціаліста, а не на рекламу.`}
+        З таргетологом, щоб вийти в нуль за місяць, потрібно ${num(need)} ${sales(need)}, самостійно — ${num(need0)}.
+        ${cpa > 0 ? `З таргетологом підсумок ${usd(res1)} за місяць, самостійно ${res0 > 0 ? '+' : ''}${usd(res0)}.` : ''}</p>`;
+    }
+    $('v-body').innerHTML = `${p}
+      <ul>
+        <li>Вкладіть увесь бюджет у рекламу, а не в оплату підряду.</li>
+        <li>Візьміть у мене одну консультацію: разом налаштуємо кабінет, аудиторії та креативи, далі ведете самі.</li>
+        <li>${cpa > 0
+          ? `Або розберіться в рекламі самі. Коли клієнт коштуватиме до ${cap(maxCpa)}, пишіть мені.`
+          : `Або розберіться в рекламі самі. Коли бюджет буде від ${usd(MIN_BUDGET)} на місяць, пишіть мені.`}</li>
+      </ul>`;
+    $('v-cta').textContent = 'Записатися на консультацію';
+  }
+}
+
+function setRes(id, v){
+  const el = $(id);
+  el.textContent = (v > 0 ? '+' : '') + usd(v);
+  el.className = v >= 0 ? 'plus' : 'minus';
+}
+
+$('again').addEventListener('click', () => $('q-check').scrollIntoView({ behavior:'smooth', block:'center' }));
+
+// Події пікселя: перехід у мій Telegram — Contact, у Telegram-канал — Subscribe.
+// Lead залишаємо для лендингів із формою заявки.
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href*="t.me/"]');
+  if (!a || typeof fbq !== 'function') return;
+  fbq('track', a.href.includes('t.me/+') ? 'Subscribe' : 'Contact');
+});
+</script>
+</body>
+</html>
